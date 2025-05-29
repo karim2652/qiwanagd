@@ -218,7 +218,7 @@ const HomeCover = memo(() => {
                   key={wordIndex}
                   className={
                     word === t(currentContent.highlightKey)
-                      ? 'text-[#ffee44] drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
+                      ? 'text-[#F76F51] drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
                       : undefined
                   }
                 >
@@ -268,7 +268,7 @@ const HomeCover = memo(() => {
                     key={wordIndex}
                     className={
                       word === t(nextContent.highlightKey)
-                        ? 'text-[#ffee44] drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
+                        ? 'text-[#F76F51] drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
                         : undefined
                     }
                   >
