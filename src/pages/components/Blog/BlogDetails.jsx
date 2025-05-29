@@ -68,6 +68,8 @@ const BlogDetails = () => {
     let inToc = false;
     let tocEndIndex = -1;
     let seenSections = new Set();
+    let currentSectionTitle = null;
+    let isInQuestion = false;
 
     // First pass: identify TOC items and find where TOC ends
     for (let i = 0; i < paragraphs.length; i++) {
@@ -135,29 +137,53 @@ const BlogDetails = () => {
         continue;
       }
 
-      // Skip numbered sections that are already in TOC (but keep the main content under them)
+      // Handle section headers (numbered sections)
       const sectionMatch = trimmed.match(/^\d+\.\s/);
       if (sectionMatch) {
         const sectionNumber = sectionMatch[0].replace('.', '').trim();
         if (tocNumbers.has(sectionNumber)) {
           // Add as section header with ID for scrolling
           const sectionId = createSectionId(trimmed);
+          currentSectionTitle = trimmed;
           filteredContent.push({
             type: 'section-header',
             content: trimmed,
             sectionId: sectionId,
             index: i,
           });
+          isInQuestion = false; // Reset question flag when we hit a new section
           continue;
         }
+      }
+
+      // Handle Q&A format (س: and ج:)
+      if (trimmed.startsWith('س:') || trimmed.startsWith('Q:')) {
+        filteredContent.push({
+          type: 'question',
+          content: trimmed,
+          index: i,
+        });
+        isInQuestion = true;
+        continue;
+      }
+
+      if (trimmed.startsWith('ج:') || trimmed.startsWith('A:')) {
+        filteredContent.push({
+          type: 'answer',
+          content: trimmed,
+          index: i,
+        });
+        isInQuestion = false;
+        continue;
       }
 
       // Add regular content
       if (trimmed) {
         filteredContent.push({
-          type: 'content',
+          type: isInQuestion ? 'answer-content' : 'content',
           content: paragraphs[i],
           index: i,
+          sectionTitle: currentSectionTitle,
         });
       }
     }
@@ -275,6 +301,31 @@ const BlogDetails = () => {
             )}
           </div>
         );
+      case 'question':
+        return (
+          <p
+            className={`text-gray-900 font-semibold mb-2 mt-4 ${isArabic ? 'text-right' : 'text-left'}`}
+            style={{ fontFamily }}
+            dir={isArabic ? 'rtl' : 'ltr'}
+          >
+            {content}
+          </p>
+        );
+      case 'answer':
+      case 'answer-content':
+        return (
+          <div 
+            className={`bg-gradient-to-r ${isArabic ? 'from-gray-100 to-gray-50' : 'from-gray-50 to-gray-100'} rounded-xl p-4 mb-4 border border-gray-200 shadow-sm`}
+          >
+            <p
+              className={`text-gray-700 leading-relaxed ${isArabic ? 'text-right' : 'text-left'}`}
+              style={{ fontFamily }}
+              dir={isArabic ? 'rtl' : 'ltr'}
+            >
+              {content}
+            </p>
+          </div>
+        );
       case 'content':
         const trimmedContent = content.trim();
 
@@ -283,6 +334,7 @@ const BlogDetails = () => {
           return (
             <div
               className={`flex items-start gap-3 mb-4 ${isArabic ? 'flex-row-reverse text-right' : ''}`}
+              dir={isArabic ? 'rtl' : 'ltr'}
             >
               <span className='mt-1 text-[#FF5E3A] text-base'>●</span>
               <span className='text-gray-700 leading-relaxed' style={{ fontFamily }}>
