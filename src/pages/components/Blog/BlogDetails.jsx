@@ -61,13 +61,17 @@ const BlogDetails = () => {
       .toLowerCase();
   };
 
-  // Function to parse table of contents
-  const parseTableOfContents = (paragraphs) => {
+  // Function to parse table of contents and filter content
+  const parseContentWithTOC = (paragraphs) => {
     const tocItems = [];
+    const filteredContent = [];
     let inToc = false;
+    let tocEndIndex = -1;
+    let seenSections = new Set();
 
-    for (const paragraph of paragraphs) {
-      const trimmed = paragraph.trim();
+    // First pass: identify TOC items and find where TOC ends
+    for (let i = 0; i < paragraphs.length; i++) {
+      const trimmed = paragraphs[i].trim();
 
       // Check if this is the start of table of contents
       if (
@@ -81,20 +85,84 @@ const BlogDetails = () => {
       // If we're in TOC and find a numbered item
       if (inToc && /^\d+\.\s/.test(trimmed)) {
         const sectionId = createSectionId(trimmed);
-        tocItems.push({
-          text: trimmed,
-          id: sectionId,
-          number: trimmed.match(/^\d+/)[0],
-        });
+        const sectionNumber = trimmed.match(/^\d+/)[0];
+
+        // Avoid duplicate sections
+        if (!seenSections.has(sectionNumber)) {
+          tocItems.push({
+            text: trimmed,
+            id: sectionId,
+            number: sectionNumber,
+          });
+          seenSections.add(sectionNumber);
+        }
       }
 
-      // Stop if we hit an empty line or content that doesn't look like TOC
+      // Check if TOC section has ended
       if (inToc && (trimmed === '' || (!trimmed.match(/^\d+\./) && tocItems.length > 0))) {
-        break;
+        tocEndIndex = i;
+        inToc = false;
       }
     }
 
-    return tocItems;
+    // Second pass: filter out TOC items from main content
+    const tocNumbers = new Set(tocItems.map((item) => item.number));
+
+    for (let i = 0; i < paragraphs.length; i++) {
+      const trimmed = paragraphs[i].trim();
+
+      // Skip TOC section entirely
+      if (
+        trimmed.includes('فهرس المحتويات') ||
+        trimmed.toLowerCase().includes('table of contents')
+      ) {
+        // Add TOC as special content block
+        filteredContent.push({
+          type: 'toc',
+          content: trimmed,
+          tocItems: tocItems,
+          index: i,
+        });
+
+        // Skip until TOC ends
+        while (i < paragraphs.length) {
+          i++;
+          const nextTrimmed = paragraphs[i]?.trim() || '';
+          if (nextTrimmed === '' || (!nextTrimmed.match(/^\d+\./) && tocItems.length > 0)) {
+            break;
+          }
+        }
+        continue;
+      }
+
+      // Skip numbered sections that are already in TOC (but keep the main content under them)
+      const sectionMatch = trimmed.match(/^\d+\.\s/);
+      if (sectionMatch) {
+        const sectionNumber = sectionMatch[0].replace('.', '').trim();
+        if (tocNumbers.has(sectionNumber)) {
+          // Add as section header with ID for scrolling
+          const sectionId = createSectionId(trimmed);
+          filteredContent.push({
+            type: 'section-header',
+            content: trimmed,
+            sectionId: sectionId,
+            index: i,
+          });
+          continue;
+        }
+      }
+
+      // Add regular content
+      if (trimmed) {
+        filteredContent.push({
+          type: 'content',
+          content: paragraphs[i],
+          index: i,
+        });
+      }
+    }
+
+    return { tocItems, filteredContent };
   };
 
   // Function to scroll to section
@@ -156,36 +224,49 @@ const BlogDetails = () => {
     return dateStr;
   };
 
-  const isTOC = (txt) =>
-    txt.trim().startsWith('فهرس المحتويات') ||
-    txt.trim().toLowerCase().startsWith('table of contents');
+  // Parse content with TOC handling
+  const { tocItems, filteredContent } = parseContentWithTOC(paragraphs);
 
-  // Parse table of contents
-  const tocItems = parseTableOfContents(paragraphs);
+  const ContentBlock = ({ item }) => {
+    const { type, content, sectionId, tocItems } = item;
 
-  const ContentBlock = ({ type, content, sectionId }) => {
     switch (type) {
-      case 'title':
+      case 'section-header':
         return (
-          <h2 id={sectionId} className='text-lg font-semibold text-gray-900 mb-4 scroll-mt-20'>
+          <h2
+            id={sectionId}
+            className='text-xl sm:text-2xl font-bold text-gray-900 mb-6 mt-8 scroll-mt-20 border-b-2 border-[#FF5E3A] pb-2'
+            style={{ fontFamily }}
+          >
             {content}
           </h2>
         );
       case 'toc':
         return (
-          <div className='bg-gray-50 rounded-xl p-4 mb-6 border border-gray-200'>
-            <h3 className='text-xl font-bold text-gray-900 mb-4 tracking-wide'>{content}</h3>
-            {tocItems.length > 0 && (
+          <div className='bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 mb-8 border border-gray-200 shadow-sm'>
+            <h3
+              className='text-xl sm:text-2xl font-bold text-gray-900 mb-6 tracking-wide text-center'
+              style={{ fontFamily }}
+            >
+              {content}
+            </h3>
+            {tocItems && tocItems.length > 0 && (
               <div className='mt-4'>
-                <ul className='space-y-2'>
+                <ul
+                  className={`space-y-3 ${isArabic ? 'text-right' : 'text-left'}`}
+                  dir={isArabic ? 'rtl' : 'ltr'}
+                >
                   {tocItems.map((item, index) => (
-                    <li key={index}>
+                    <li key={index} className={`${isArabic ? 'text-right' : 'text-left'}`}>
                       <button
                         onClick={() => scrollToSection(item.id)}
-                        className='text-left w-full text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 cursor-pointer'
+                        className={`w-full text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 cursor-pointer p-2 rounded-md hover:bg-blue-50 ${isArabic ? 'text-right' : 'text-left'}`}
                         style={{ fontFamily }}
+                        dir={isArabic ? 'rtl' : 'ltr'}
                       >
-                        {item.text}
+                        <span className={`block ${isArabic ? 'text-right' : 'text-left'}`}>
+                          {item.text}
+                        </span>
                       </button>
                     </li>
                   ))}
@@ -194,30 +275,37 @@ const BlogDetails = () => {
             )}
           </div>
         );
-      case 'bullet':
+      case 'content':
+        const trimmedContent = content.trim();
+
+        // Handle bullet points
+        if (trimmedContent.startsWith('•') || trimmedContent.startsWith('- ')) {
+          return (
+            <div
+              className={`flex items-start gap-3 mb-4 ${isArabic ? 'flex-row-reverse text-right' : ''}`}
+            >
+              <span className='mt-1 text-[#FF5E3A] text-base'>●</span>
+              <span className='text-gray-700 leading-relaxed' style={{ fontFamily }}>
+                {trimmedContent.replace(/^[-•]\s*/, '')}
+              </span>
+            </div>
+          );
+        }
+
+        // Handle regular paragraphs
         return (
-          <div className='flex items-start gap-2 mb-4'>
-            <span className='mt-1 text-[#FF5E3A] text-base'>●</span>
-            <span className='text-gray-700'>{content}</span>
-          </div>
+          <p
+            className={`text-gray-700 mb-6 leading-relaxed ${isArabic ? 'text-right' : 'text-left'}`}
+            style={{ fontFamily }}
+            dir={isArabic ? 'rtl' : 'ltr'}
+          >
+            {content}
+          </p>
         );
       default:
-        return <p className='text-gray-700 mb-6 leading-relaxed'>{content}</p>;
+        return null;
     }
   };
-
-  const BulletGroup = ({ items }) => (
-    <div className='bg-gray-100 rounded-xl p-4 mb-2 shadow-sm'>
-      <ul className='space-y-2 m-0'>
-        {items.map((item, idx) => (
-          <li key={idx} className='flex items-start gap-2'>
-            <span className='mt-1 text-[#FF5E3A] text-base'>●</span>
-            <span className='text-gray-700'>{item.replace(/^[-•]\s*/, '')}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
 
   return (
     <>
@@ -286,86 +374,42 @@ const BlogDetails = () => {
                 <div className='sm:p-6 md:p-8 lg:p-12'>
                   {/* Article description */}
                   <div className='my-2 rounded-xl sm:rounded-2xl border border-[#FF5E3A]/10 p-4'>
-                    <h2 className='text-xl sm:text-md font-bold text-gray-900 my-1'>
+                    <h2
+                      className='text-xl sm:text-md font-bold text-gray-900 my-1'
+                      style={{ fontFamily }}
+                    >
                       {t('blog.details.about_article')}
                     </h2>
-                    <p className='text-base sm:text-md text-gray-600 leading-relaxed'>
+                    <p
+                      className={`text-base sm:text-md text-gray-600 leading-relaxed ${isArabic ? 'text-right' : 'text-left'}`}
+                      style={{ fontFamily }}
+                      dir={isArabic ? 'rtl' : 'ltr'}
+                    >
                       {translatedDescription}
                     </p>
                   </div>
 
                   <div className='prose prose-sm sm:prose-base md:prose-lg max-w-none mt-6'>
                     <div className='text-gray-600 leading-relaxed space-y-4 sm:space-y-6 md:space-y-8'>
-                      {(() => {
-                        if (!paragraphs.length) {
-                          return (
-                            <p className='text-base sm:text-lg text-gray-500 italic'>
-                              {t('blog.details.no_content')}
-                            </p>
-                          );
-                        }
-
-                        const elements = [];
-                        let bulletGroup = [];
-
-                        paragraphs.forEach((paragraph, index) => {
-                          const trimmedParagraph = paragraph.trim();
-
-                          if (
-                            trimmedParagraph.startsWith('•') ||
-                            trimmedParagraph.startsWith('- ')
-                          ) {
-                            bulletGroup.push(paragraph);
-                            if (bulletGroup.length >= 3) {
-                              elements.push(<BulletGroup key={index} items={bulletGroup} />);
-                              bulletGroup = [];
-                            }
-                          } else {
-                            if (bulletGroup.length > 0) {
-                              elements.push(
-                                <BulletGroup key={`bullet-${index}`} items={bulletGroup} />
-                              );
-                              bulletGroup = [];
-                            }
-
-                            const type = isTOC(paragraph)
-                              ? 'toc'
-                              : trimmedParagraph.match(/^\d+\./) ||
-                                  trimmedParagraph.endsWith(':') ||
-                                  (trimmedParagraph.length < 40 &&
-                                    trimmedParagraph === trimmedParagraph.toUpperCase())
-                                ? 'title'
-                                : 'paragraph';
-
-                            // Create section ID for numbered sections
-                            const sectionId = trimmedParagraph.match(/^\d+\./)
-                              ? createSectionId(trimmedParagraph)
-                              : undefined;
-
-                            elements.push(
-                              <ContentBlock
-                                key={index}
-                                type={type}
-                                content={paragraph.replace(/:$/, '')}
-                                sectionId={sectionId}
-                              />
-                            );
-                          }
-                        });
-
-                        if (bulletGroup.length > 0) {
-                          elements.push(<BulletGroup key='final-bullets' items={bulletGroup} />);
-                        }
-
-                        return elements;
-                      })()}
+                      {filteredContent.length === 0 ? (
+                        <p className='text-base sm:text-lg text-gray-500 italic'>
+                          {t('blog.details.no_content')}
+                        </p>
+                      ) : (
+                        filteredContent.map((item, index) => (
+                          <ContentBlock key={index} item={item} />
+                        ))
+                      )}
                     </div>
                   </div>
 
                   {/* Tags */}
                   {post.tags && post.tags.length > 0 && (
                     <div className='mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200'>
-                      <h3 className='text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4'>
+                      <h3
+                        className='text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4'
+                        style={{ fontFamily }}
+                      >
                         {isArabic ? 'الوسوم' : 'Tags'}
                       </h3>
                       <div className='flex flex-wrap gap-2 sm:gap-3'>
@@ -373,6 +417,7 @@ const BlogDetails = () => {
                           <span
                             key={index}
                             className='bg-gray-100 text-gray-700 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-[#FF5E3A] hover:text-white transition-colors duration-300'
+                            style={{ fontFamily }}
                           >
                             {getTranslatedTag(tag)}
                           </span>
@@ -402,6 +447,7 @@ const BlogDetails = () => {
                           <span
                             key={index}
                             className='bg-gray-100 text-gray-700 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium'
+                            style={{ fontFamily }}
                           >
                             {keyword.trim()}
                           </span>
@@ -411,6 +457,7 @@ const BlogDetails = () => {
                   )}
                 </div>
               </motion.div>
+
               {/* Back to blog button */}
               <div className='mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200 flex justify-center'>
                 <button
@@ -435,6 +482,7 @@ const BlogDetails = () => {
                 </button>
               </div>
             </div>
+
             {/* Suggested articles */}
             <div
               className={`w-full md:w-80 order-0 md:order-1 ${isArabic ? 'md:order-0' : 'md:order-1'} `}
