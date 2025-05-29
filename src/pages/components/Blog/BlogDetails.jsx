@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -32,26 +32,83 @@ const BlogDetails = () => {
     return (
       <div className='min-h-screen flex items-center justify-center'>
         <div className='text-center'>
-          <p className='text-2xl text-gray-600 mb-4'>المقال غير موجود</p>
+          <p className='text-2xl text-gray-600 mb-4'>
+            {isArabic ? 'المقال غير موجود' : 'Article not found'}
+          </p>
           <button
             onClick={() => navigate('/blog')}
             className='px-6 py-3 bg-[#FF5E3A] text-white rounded-lg hover:bg-[#FF5E3A]/90 transition-colors duration-300'
           >
-            العودة إلى المدونة
+            {isArabic ? 'العودة إلى المدونة' : 'Back to Blog'}
           </button>
         </div>
       </div>
     );
   }
 
-  // Remove hardcoded translations and use data directly
   const translatedTitle = post.title;
   const translatedDescription = post.description;
   const content = post.schema.articleBody;
 
   const paragraphs = content ? content.split('\n').filter((p) => p.trim()) : [];
 
-  // Update category translation to use data directly
+  // Function to create section ID from text
+  const createSectionId = (text) => {
+    return text
+      .replace(/^\d+\.\s*/, '') // Remove number and dot
+      .replace(/[^\w\s\u0600-\u06FF]/g, '') // Keep only letters, numbers, spaces, and Arabic characters
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .toLowerCase();
+  };
+
+  // Function to parse table of contents
+  const parseTableOfContents = (paragraphs) => {
+    const tocItems = [];
+    let inToc = false;
+
+    for (const paragraph of paragraphs) {
+      const trimmed = paragraph.trim();
+
+      // Check if this is the start of table of contents
+      if (
+        trimmed.includes('فهرس المحتويات') ||
+        trimmed.toLowerCase().includes('table of contents')
+      ) {
+        inToc = true;
+        continue;
+      }
+
+      // If we're in TOC and find a numbered item
+      if (inToc && /^\d+\.\s/.test(trimmed)) {
+        const sectionId = createSectionId(trimmed);
+        tocItems.push({
+          text: trimmed,
+          id: sectionId,
+          number: trimmed.match(/^\d+/)[0],
+        });
+      }
+
+      // Stop if we hit an empty line or content that doesn't look like TOC
+      if (inToc && (trimmed === '' || (!trimmed.match(/^\d+\./) && tocItems.length > 0))) {
+        break;
+      }
+    }
+
+    return tocItems;
+  };
+
+  // Function to scroll to section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
+    }
+  };
+
   const getTranslatedCategory = (category) => {
     if (isArabic) return category;
     switch (category) {
@@ -70,20 +127,13 @@ const BlogDetails = () => {
     }
   };
 
-  // Update description to use data directly
-  const description = post.description;
-
-  // ترجمة الوسوم (إذا كانت موجودة في ملف الترجمة)
   const getTranslatedTag = (tag) => {
     if (isArabic) return tag;
-    // يمكنك إضافة ترجمة الوسوم هنا إذا كانت ثابتة
     return tag;
   };
 
-  // Update date translation
   const getTranslatedDate = (dateStr) => {
     if (isArabic) {
-      // Convert English date to Arabic if needed
       const monthsMap = {
         January: 'يناير',
         February: 'فبراير',
@@ -109,16 +159,39 @@ const BlogDetails = () => {
   const isTOC = (txt) =>
     txt.trim().startsWith('فهرس المحتويات') ||
     txt.trim().toLowerCase().startsWith('table of contents');
-  let tocInserted = false;
 
-  const ContentBlock = ({ type, content }) => {
+  // Parse table of contents
+  const tocItems = parseTableOfContents(paragraphs);
+
+  const ContentBlock = ({ type, content, sectionId }) => {
     switch (type) {
       case 'title':
-        return <h2 className='text-lg font-semibold text-gray-900 mb-4'>{content}</h2>;
+        return (
+          <h2 id={sectionId} className='text-lg font-semibold text-gray-900 mb-4 scroll-mt-20'>
+            {content}
+          </h2>
+        );
       case 'toc':
         return (
           <div className='bg-gray-50 rounded-xl p-4 mb-6 border border-gray-200'>
             <h3 className='text-xl font-bold text-gray-900 mb-4 tracking-wide'>{content}</h3>
+            {tocItems.length > 0 && (
+              <div className='mt-4'>
+                <ul className='space-y-2'>
+                  {tocItems.map((item, index) => (
+                    <li key={index}>
+                      <button
+                        onClick={() => scrollToSection(item.id)}
+                        className='text-left w-full text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 cursor-pointer'
+                        style={{ fontFamily }}
+                      >
+                        {item.text}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         );
       case 'bullet':
@@ -168,7 +241,7 @@ const BlogDetails = () => {
       >
         <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex flex-col-reverse md:flex-row gap-8'>
-            {/* محتوى المقال */}
+            {/* Article content */}
             <div className={`flex-1 order-1 md:order-0 ${isArabic ? 'md:order-1' : 'md:order-0'}`}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -176,7 +249,7 @@ const BlogDetails = () => {
                 transition={{ duration: 0.5 }}
                 className='bg-white rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden'
               >
-                {/* صورة المقال الرئيسية */}
+                {/* Article main image */}
                 <div className='relative w-full rounded-t-2xl sm:rounded-t-3xl overflow-hidden aspect-[2] sm:aspect-[2/1] md:aspect-[2/1]'>
                   <LazyLoadImage
                     src={post.image}
@@ -188,25 +261,12 @@ const BlogDetails = () => {
                   <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent' />
                   <div className='absolute bottom-0 left-0 right-0 p-2 sm:p-4 md:p-6 lg:p-10 text-white z-10'>
                     <div className='flex flex-wrap items-center gap-1 sm:gap-2 md:gap-4 mb-1 sm:mb-2 md:mb-4'>
-                      {isArabic ? (
-                        <>
-                          <span className='bg-white/20 backdrop-blur-sm text-white text-[10px] sm:text-xs md:text-sm font-medium px-2 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-2 rounded-full shadow'>
-                            {getTranslatedCategory(post.category)}
-                          </span>
-                          <span className='text-white/80 text-[10px] sm:text-xs md:text-sm'>
-                            {getTranslatedDate(post.date)}
-                          </span>
-                        </>
-                      ) : (
-                        <>
-                          <span className='bg-white/20 backdrop-blur-sm text-white text-[10px] sm:text-xs md:text-sm font-medium px-2 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-2 rounded-full shadow'>
-                            {getTranslatedCategory(post.category)}
-                          </span>
-                          <span className='text-white/80 text-[10px] sm:text-xs md:text-sm'>
-                            {getTranslatedDate(post.date)}
-                          </span>
-                        </>
-                      )}
+                      <span className='bg-white/20 backdrop-blur-sm text-white text-[10px] sm:text-xs md:text-sm font-medium px-2 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-2 rounded-full shadow'>
+                        {getTranslatedCategory(post.category)}
+                      </span>
+                      <span className='text-white/80 text-[10px] sm:text-xs md:text-sm'>
+                        {getTranslatedDate(post.date)}
+                      </span>
                     </div>
                     <h1 className='text-base sm:text-lg md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2 md:mb-4 drop-shadow-lg line-clamp-2'>
                       {translatedTitle}
@@ -222,9 +282,9 @@ const BlogDetails = () => {
                   </div>
                 </div>
 
-                {/* محتوى المقال */}
+                {/* Article content */}
                 <div className='sm:p-6 md:p-8 lg:p-12'>
-                  {/* وصف المقال */}
+                  {/* Article description */}
                   <div className='my-2 rounded-xl sm:rounded-2xl border border-[#FF5E3A]/10 p-4'>
                     <h2 className='text-xl sm:text-md font-bold text-gray-900 my-1'>
                       {t('blog.details.about_article')}
@@ -277,11 +337,17 @@ const BlogDetails = () => {
                                 ? 'title'
                                 : 'paragraph';
 
+                            // Create section ID for numbered sections
+                            const sectionId = trimmedParagraph.match(/^\d+\./)
+                              ? createSectionId(trimmedParagraph)
+                              : undefined;
+
                             elements.push(
                               <ContentBlock
                                 key={index}
                                 type={type}
                                 content={paragraph.replace(/:$/, '')}
+                                sectionId={sectionId}
                               />
                             );
                           }
@@ -296,11 +362,11 @@ const BlogDetails = () => {
                     </div>
                   </div>
 
-                  {/* الوسوم */}
+                  {/* Tags */}
                   {post.tags && post.tags.length > 0 && (
                     <div className='mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200'>
                       <h3 className='text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4'>
-                        الوسوم
+                        {isArabic ? 'الوسوم' : 'Tags'}
                       </h3>
                       <div className='flex flex-wrap gap-2 sm:gap-3'>
                         {post.tags.map((tag, index) => (
@@ -315,7 +381,7 @@ const BlogDetails = () => {
                     </div>
                   )}
 
-                  {/* الكلمات المفتاحية */}
+                  {/* Keywords */}
                   {post.metaKeywords && (
                     <div className='mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200'>
                       <div className='flex flex-wrap gap-2 sm:gap-3'>
@@ -345,7 +411,7 @@ const BlogDetails = () => {
                   )}
                 </div>
               </motion.div>
-              {/* زر العودة إلى المدونة */}
+              {/* Back to blog button */}
               <div className='mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200 flex justify-center'>
                 <button
                   onClick={() => navigate('/blog')}
@@ -369,7 +435,7 @@ const BlogDetails = () => {
                 </button>
               </div>
             </div>
-            {/* مقالات مقترحة */}
+            {/* Suggested articles */}
             <div
               className={`w-full md:w-80 order-0 md:order-1 ${isArabic ? 'md:order-0' : 'md:order-1'} `}
             >
