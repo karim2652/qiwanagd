@@ -399,7 +399,7 @@ const Footer = () => {
           <span className='w-full md:w-auto mx-auto'>
             {isRTL ? (
               <>
-                © {new Date().getFullYear()} شركة قوي نجد للاستشارات الهندسية | أفضل شركة هندسية
+                © {new Date().getFullYear()} شركة قوى نجد للاستشارات الهندسية | أفضل شركة هندسية
                 بالرياض. جميع الحقوق محفوظة.
               </>
             ) : (
