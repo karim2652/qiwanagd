@@ -1,0 +1,21 @@
+{
+  "name": "Qiwanagd للاستشارات الهندسية",
+  "short_name": "Qiwanagd",
+  "description": "شركة رائدة في مجال التصميم والبناء، نسعى دائماً لتقديم أفضل الخدمات لعملائنا الكرام",
+  "theme_color": "#F03E2F",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/src/assets/images/logo/Capture.webp",
+      "sizes": "192x192 512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "dir": "rtl",
+  "lang": "ar"
+}

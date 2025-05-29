@@ -1,0 +1,310 @@
+{
+  "welcome": "Welcome to Qawi Najd Company",
+  "language": "Language",
+  "request_quote": "Request Free Consultation",
+  "home": {
+    "company_name": "Qawi Najd",
+    "request_quote": "Request Quote",
+    "slide1": {
+      "title": "Welcome to Qawi Najd Company",
+      "description": "Your Trusted Partner in Building and Development",
+      "highlight": "Qawi"
+    },
+    "slide2": {
+      "title": "Building With High Quality",
+      "description": "We build excellence with precision and care",
+      "highlight": "Quality"
+    },
+    "slide3": {
+      "title": "Innovative Solutions",
+      "description": "Turning visions into reality",
+      "highlight": "Innovative"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "pricing": "Pricing",
+    "portfolio": "Portfolio",
+    "blog": "Blog"
+  },
+  "navigation": {
+    "home": "Home",
+    "blog": "Blog",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "footer": {
+    "about": "A leading company in design and construction, always striving to provide the best services to our valued customers",
+    "usefulLinks": "Useful Links",
+    "workingHours": "Working Hours",
+    "monToFri": "Monday to Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "contactUs": "Contact Us",
+    "address": "250 Main Street, 2nd Floor.\nRiyadh, Saudi Arabia",
+    "copyright": "© All Rights Reserved",
+    "terms": "Terms & Conditions / Privacy Policy",
+    "newsletter": {
+      "title": "Subscribe to our newsletter",
+      "subtitle": "Stay always in touch!",
+      "placeholder": "Enter your email",
+      "button": "Subscribe Now",
+      "terms": "I have accepted",
+      "termsLink": "Terms & Conditions"
+    },
+    "lattice": "Qawi Najd",
+    "pricing_plan": "Pricing Plan",
+    "company_info": "250 Main Street, 2nd Floor.\nSaudi Arabia, 56004",
+    "copyright_text": "©ThemeForest All Right Reserved",
+    "terms_text": "Terms & Condition / Privacy Policy"
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "Qawi Najd Engineering Consulting Company",
+    "description": "We are a group of engineering offices accredited throughout the Kingdom, comprising a select group of engineers specialized in providing integrated and innovative engineering solutions. We have extensive experience in engineering consultancy, project management, and technical supervision for the implementation of government, private, and tourism projects.",
+    "commitment": "At 'Qawi Najd', we are committed to quality, speed, and accuracy in delivering our services, to be the best engineering partner for your project success.",
+    "services": "Our Specialized Services",
+    "licensesTitle": "Licenses and Permits",
+    "licensesDescription": "We provide services for obtaining all types of engineering licenses and municipal permits, including:",
+    "satisfaction": "Client Satisfaction",
+    "experience": "Years of Experience",
+    "projects": "Completed Projects",
+    "features": {
+      "design": "Engineering Design",
+      "design_desc": "Preparing professional interior and exterior designs",
+      "survey": "Engineering Survey",
+      "survey_desc": "Implementing land surveys and planning with high precision",
+      "project": "Project Management",
+      "project_desc": "Managing architectural and construction projects",
+      "license": "Licensing",
+      "license_desc": "Uploading technical plans and organizing licensing files"
+    },
+    "licenses": {
+      "building": "Building permits for residential units and commercial establishments",
+      "demolish": "Demolition and removal licenses according to regulatory requirements",
+      "renovation": "Renovation and architectural modifications licenses",
+      "expansion": "Expansion and development permits for existing projects",
+      "all": "All types of engineering licenses and official permits"
+    },
+    "categories": {
+      "commercial": "Commercial",
+      "industrial": "Industrial",
+      "residential": "Residential",
+      "corporate": "Corporate",
+      "hotels": "Hotels",
+      "tourism": "Tourism"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "main": "We seek to achieve a leading position for our offices on the map of the Kingdom and the region as diverse consulting offices that invest their energies and resources for growth and create distinct value for their clients, employees, and all stakeholders, while playing their role in supporting the Kingdom's Vision 2030"
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Our Distinguished Works",
+    "description": "We pride ourselves on delivering a diverse range of successful projects across various sectors",
+    "filter": {
+      "all": "All",
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "industrial": "Industrial",
+      "governmental": "Governmental",
+      "educational": "Educational"
+    },
+    "view_more": "View More",
+    "view_details": "View Details"
+  },
+  "branches": {
+    "title": "Our Branches",
+    "subtitle": "Our Locations",
+    "description": "We are located in several strategic locations in Saudi Arabia",
+    "locations": {
+      "riyadh": "Riyadh",
+      "jeddah": "Jeddah",
+      "dammam": "Dammam",
+      "makkah": "Makkah",
+      "medina": "Madinah"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Latest articles and news in engineering and consulting",
+    "latest_posts": "Latest Posts",
+    "read_our_news": "Read Our Latest News",
+    "read_more": "Read More",
+    "by": "By",
+    "categories": {
+      "featured": "Featured",
+      "engineering_services": "Engineering Services",
+      "surveying": "Surveying",
+      "architecture": "Architecture & Design",
+      "construction": "Construction"
+    },
+    "details": {
+      "not_found": "Article Not Found",
+      "back_to_blog": "Back to Blog",
+      "featured_article": "Featured Article",
+      "related_posts": "Related Posts",
+      "share": "Share",
+      "tags": "Tags",
+      "author": "Author",
+      "about_article": "About the Article"
+    },
+    "suggested_articles": "Suggested Articles"
+  },
+  "blog_content": {
+    "posts": {
+      "1": {
+        "title": "The Complete Guide to Engineering Consulting Services in Saudi Arabia",
+        "category": "Featured Article",
+        "date": "May 23, 2025",
+        "description": "Learn about engineering consulting services in Saudi Arabia from architectural design to supervision and project management. A detailed guide for developers and owners in 2025.",
+        "content": "Did you know that good engineering consulting can save you millions of riyals in your project execution?\nIn the fast-paced Saudi construction market, developers and owners face a constant challenge to balance quality, cost, and timelines.\nWhether you are starting a residential project in Riyadh or planning to build a commercial complex in Jeddah, professional engineering guidance is the key to success.\n\nTable of Contents:\n1. What are Engineering Consulting Services?\n2. Architectural Design: From Concept to Implementation Plan\n3. Surveying Work and its Role in Project Success\n4. Project Management: Smart Planning and Implementation\n5. Engineering Supervision: Quality Assurance at Every Stage\n6. Feasibility Studies and Technical Evaluation\n7. How to Choose an Engineering Consulting Office in Saudi Arabia?\n8. Major Saudi Cities in the Engineering Consulting Market\n9. Frequently Asked Questions\n10. Checklist for Selecting a Consulting Company\n\nWhat are Engineering Consulting Services?\nEngineering consulting services encompass a wide range of professional services that help ensure the success of construction and development projects. These services include:\n\n• Architectural design and planning\n• Structural engineering and analysis\n• Surveying and land measurement\n• Project management and supervision\n• Feasibility studies and technical evaluation\n• Building permit applications and documentation\n• Quality control and assurance\n• Cost estimation and budgeting\n\nArchitectural Design: From Concept to Implementation Plan\nThe architectural design phase is crucial in transforming your vision into a practical, buildable plan. This process includes:\n\n• Initial concept development\n• Space planning and layout design\n• 3D modeling and visualization\n• Material selection and specifications\n• Building code compliance\n• Sustainability and energy efficiency\n• Construction documentation\n• Interior design coordination\n\nSurveying Work and its Role in Project Success\nAccurate surveying is fundamental to any construction project. Key surveying services include:\n\n• Land boundary determination\n• Topographic surveying\n• Construction layout\n• As-built documentation\n• Deed updates and verification\n• Municipal compliance surveys\n• GPS and total station measurements\n• Digital mapping and CAD drawings\n\nProject Management: Smart Planning and Implementation\nEffective project management ensures your project stays on track and within budget:\n\n• Project scheduling and timeline management\n• Resource allocation and optimization\n• Cost control and monitoring\n• Quality assurance procedures\n• Risk management and mitigation\n• Contractor coordination\n• Progress reporting and documentation\n• Change order management\n\nEngineering Supervision: Quality Assurance at Every Stage\nProfessional supervision is essential for maintaining quality standards:\n\n• Construction site monitoring\n• Quality control inspections\n• Safety compliance verification\n• Material testing and verification\n• Work progress documentation\n• Technical issue resolution\n• Contractor performance evaluation\n• Final inspection and handover\n\nFeasibility Studies and Technical Evaluation\nComprehensive studies help make informed decisions:\n\n• Market analysis and demand assessment\n• Technical feasibility evaluation\n• Cost-benefit analysis\n• Risk assessment and mitigation\n• Environmental impact studies\n• Regulatory compliance review\n• Financial viability analysis\n• Implementation strategy development\n\nHow to Choose an Engineering Consulting Office in Saudi Arabia?\nSelecting the right consulting office is crucial for project success. Consider these factors:\n\n• Professional certifications and licenses\n• Experience in similar projects\n• Technical expertise and capabilities\n• Team qualifications and experience\n• Project management approach\n• Quality assurance procedures\n• Communication and reporting systems\n• Client references and track record\n\nMajor Saudi Cities in the Engineering Consulting Market\nThe engineering consulting market is active across major Saudi cities:\n\n• Riyadh: The capital and largest market\n• Jeddah: Major commercial and residential projects\n• Dammam: Industrial and commercial development\n• Makkah: Religious tourism infrastructure\n• Madinah: Urban development and expansion\n• Khobar: Industrial and commercial projects\n• Taif: Tourism and residential development\n• Jubail: Industrial city development\n\nFrequently Asked Questions\nCommon questions about engineering consulting services:\n\n• What services are included in engineering consulting?\n• How much do engineering consulting services cost?\n• How long does it take to complete a typical project?\n• What qualifications should I look for in a consulting office?\n• How do I ensure quality in the consulting services?\n• What documentation is required for projects?\n• How are project timelines managed?\n• What happens if there are changes during the project?\n\nChecklist for Selecting a Consulting Company\nUse this checklist when choosing your engineering consultant:\n\n• Verify professional licenses and certifications\n• Check experience in similar projects\n• Review technical capabilities and expertise\n• Assess project management approach\n• Evaluate quality control procedures\n• Consider communication and reporting systems\n• Review client references and track record\n• Compare costs and value proposition"
+      },
+      "2": {
+        "title": "Saudi Systems for Updating Property Deeds: Your Comprehensive Guide in Riyadh",
+        "category": "Engineering Services",
+        "date": "May 22, 2025",
+        "description": "Learn about the steps and requirements for updating property deeds in Riyadh according to Saudi regulations, and the importance of consulting a certified engineering office.",
+        "content": "With the rapid changes in the Saudi real estate market, updating property deeds has become a necessity for owners and developers in Riyadh. According to the Ministry of Justice, more than 2 million electronic requests for deed updates have been registered since the launch of the unified platform \"Ihkam\", reflecting the importance of this step to ensure clear and updated property ownership.\n\nTable of Contents:\n1. Understanding Property Deed Updates in Saudi Arabia\n2. The Importance of Updated Property Deeds\n3. Required Documents for Deed Updates\n4. The Deed Update Process\n5. Common Challenges and Solutions\n6. Costs and Timeframes\n7. Professional Assistance\n8. Frequently Asked Questions\n\nUnderstanding Property Deed Updates in Saudi Arabia\nProperty deed updates are essential for maintaining accurate property records and ensuring legal ownership. The process involves:\n\n• Verifying current property information\n• Updating ownership details\n• Recording property boundaries\n• Documenting any changes or modifications\n• Ensuring compliance with regulations\n• Maintaining accurate records\n• Protecting property rights\n• Facilitating future transactions\n\nThe Importance of Updated Property Deeds\nUpdated property deeds are crucial for several reasons:\n\n• Legal protection of ownership rights\n• Facilitation of property transactions\n• Compliance with government regulations\n• Prevention of ownership disputes\n• Support for development projects\n• Access to municipal services\n• Property value documentation\n• Inheritance and transfer processes\n\nRequired Documents for Deed Updates\nThe following documents are typically required:\n\n• Original property deed\n• Owner identification documents\n• Survey reports and maps\n• Building permits (if applicable)\n• Municipal certificates\n• Payment receipts\n• Authorization documents\n• Additional supporting documents\n\nThe Deed Update Process\nThe process typically involves these steps:\n\n• Initial document review\n• Property survey and verification\n• Application submission\n• Government department review\n• Payment processing\n• Document updates\n• Final approval\n• New deed issuance\n\nCommon Challenges and Solutions\nProperty owners often face these challenges:\n\n• Missing or incomplete documents\n• Boundary disputes\n• Ownership verification issues\n• Technical requirements\n• Processing delays\n• Cost management\n• Communication barriers\n• Regulatory compliance\n\nCosts and Timeframes\nUnderstanding the financial and time aspects:\n\n• Government fees and charges\n• Professional service costs\n• Processing timeframes\n• Additional expenses\n• Payment schedules\n• Cost optimization\n• Time management\n• Budget planning\n\nProfessional Assistance\nWorking with professionals offers several benefits:\n\n• Expert guidance and support\n• Document preparation assistance\n• Process management\n• Government liaison\n• Technical expertise\n• Time savings\n• Cost efficiency\n• Peace of mind\n\nFrequently Asked Questions\nCommon questions about deed updates:\n\n• How long does the process take?\n• What are the costs involved?\n• What documents are required?\n• How can I track my application?\n• What if there are disputes?\n• Can I update the deed myself?\n• What are the common challenges?\n• How can professionals help?"
+      },
+      "3": {
+        "title": "Surveying in Riyadh: Importance, Steps, and Costs in Real Estate Projects",
+        "category": "Surveying",
+        "date": "May 21, 2025",
+        "description": "Learn about the steps and importance of surveying in Riyadh, estimated costs, and the role of certified engineering offices in providing accurate reports.",
+        "content": "Surveying in Riyadh has become one of the most important regulatory requirements that property owners and developers must carry out accurately, whether for updating property deeds, submitting land division requests, or obtaining building permits. According to the Ihkam system and the General Authority for State Real Estate, any request to amend a deed or prove ownership requires a certified survey report from a licensed engineering consulting office.\n\nTable of Contents:\n1. Understanding Surveying in Riyadh\n2. Types of Surveying Services\n3. Required Documents and Procedures\n4. Surveying Process and Steps\n5. Costs and Timeframes\n6. Choosing a Surveying Office\n7. Common Challenges and Solutions\n8. Frequently Asked Questions\n\nUnderstanding Surveying in Riyadh\nSurveying is a critical process that involves:\n\n• Accurate land measurement\n• Boundary determination\n• Property documentation\n• Regulatory compliance\n• Technical verification\n• Digital mapping\n• Report preparation\n• Government submission\n\nTypes of Surveying Services\nDifferent surveying services are available:\n\n• Property boundary surveying\n• Topographic surveying\n• Construction surveying\n• Deed update surveying\n• Municipal compliance surveying\n• GPS surveying\n• Digital mapping\n• As-built documentation\n\nRequired Documents and Procedures\nThe following are typically required:\n\n• Property deed or ownership document\n• Owner identification\n• Previous survey reports\n• Municipal certificates\n• Building permits\n• Authorization documents\n• Payment receipts\n• Additional requirements\n\nSurveying Process and Steps\nThe process typically includes:\n\n• Initial consultation\n• Document review\n• Site visit and measurement\n• Data collection and analysis\n• Report preparation\n• Government submission\n• Approval process\n• Final documentation\n\nCosts and Timeframes\nUnderstanding the financial aspects:\n\n• Surveying fees\n• Government charges\n• Additional costs\n• Processing time\n• Payment schedules\n• Cost optimization\n• Time management\n• Budget planning\n\nChoosing a Surveying Office\nConsider these factors when selecting a surveying office:\n\n• Professional certification\n• Experience and expertise\n• Technical capabilities\n• Equipment and technology\n• Service quality\n• Cost efficiency\n• Customer service\n• Track record\n\nCommon Challenges and Solutions\nProperty owners often face these challenges:\n\n• Document preparation\n• Technical requirements\n• Processing delays\n• Cost management\n• Communication issues\n• Regulatory compliance\n• Quality assurance\n• Time constraints\n\nFrequently Asked Questions\nCommon questions about surveying:\n\n• How long does surveying take?\n• What are the costs involved?\n• What documents are needed?\n• How accurate are the surveys?\n• What equipment is used?\n• How are results verified?\n• What if there are disputes?\n• How can I track progress?"
+      },
+      "4": {
+        "title": "Obtaining a Building Permit in Riyadh: Steps, Requirements, and Costs 2025",
+        "category": "Construction",
+        "date": "May 20, 2025",
+        "description": "Planning to build in Riyadh? Discover the steps to obtain a building permit, municipal requirements, key documents, and prices, with instant issuance services from a certified engineering office.",
+        "content": "If you are planning to build a residential or commercial property in Riyadh, obtaining a building permit is the first and most important official procedure you must start with. In line with Saudi Vision 2030, the building permit system has become more advanced and faster through the Balady platform, provided that all conditions and certified surveying are met.\n\nTable of Contents:\n1. Understanding Building Permits in Riyadh\n2. Required Documents and Conditions\n3. Application Process and Steps\n4. Costs and Timeframes\n5. Common Challenges and Solutions\n6. Professional Assistance\n7. Frequently Asked Questions\n8. Tips for Success\n\nUnderstanding Building Permits in Riyadh\nBuilding permits are essential for:\n\n• Legal construction authorization\n• Regulatory compliance\n• Safety standards\n• Property development\n• Municipal services\n• Future transactions\n• Insurance requirements\n• Project documentation\n\nRequired Documents and Conditions\nThe following are typically required:\n\n• Property ownership documents\n• Survey reports\n• Architectural drawings\n• Structural designs\n• Technical specifications\n• Owner identification\n• Payment receipts\n• Additional requirements\n\nApplication Process and Steps\nThe process typically includes:\n\n• Document preparation\n• Application submission\n• Technical review\n• Payment processing\n• Approval process\n• Permit issuance\n• Documentation\n• Project start\n\nCosts and Timeframes\nUnderstanding the financial aspects:\n\n• Government fees\n• Professional services\n• Additional costs\n• Processing time\n• Payment schedules\n• Cost optimization\n• Time management\n• Budget planning\n\nCommon Challenges and Solutions\nApplicants often face these challenges:\n\n• Document preparation\n• Technical requirements\n• Processing delays\n• Cost management\n• Communication issues\n• Regulatory compliance\n• Quality assurance\n• Time constraints\n\nProfessional Assistance\nWorking with professionals offers several benefits:\n\n• Expert guidance\n• Document preparation\n• Process management\n• Government liaison\n• Technical expertise\n• Time savings\n• Cost efficiency\n• Peace of mind\n\nFrequently Asked Questions\nCommon questions about building permits:\n\n• How long does it take?\n• What are the costs?\n• What documents are needed?\n• How can I track my application?\n• What if there are issues?\n• Can I apply myself?\n• What are common challenges?\n• How can professionals help?\n\nTips for Success\nFollow these tips for a smooth process:\n\n• Prepare documents early\n• Understand requirements\n• Work with professionals\n• Follow up regularly\n• Maintain communication\n• Plan for costs\n• Consider timelines\n• Stay informed"
+      },
+      "5": {
+        "title": "Surveying Services in Riyadh: Surveying, Boundary Determination, and Deed Updates",
+        "category": "Surveying",
+        "date": "May 19, 2025",
+        "description": "Learn about surveying services in Riyadh, the importance of surveying for buildings and deeds, municipal requirements, and a full explanation of prices and execution steps.",
+        "content": "In the world of real estate and construction, surveying services are the cornerstone from which every project begins. Whether you are a landowner, about to issue a building permit, or seeking to update deed data, surveying in Riyadh is the first and most important step.\n\nTable of Contents:\n1. Understanding Surveying Services\n2. Types of Surveying Services\n3. Required Documents\n4. Surveying Process\n5. Costs and Pricing\n6. Choosing a Surveying Office\n7. Common Challenges\n8. Frequently Asked Questions\n\nUnderstanding Surveying Services\nSurveying services are essential for:\n\n• Property boundary determination\n• Land measurement and documentation\n• Building permit applications\n• Deed updates and verification\n• Construction planning\n• Municipal compliance\n• Property development\n• Legal documentation\n\nTypes of Surveying Services\nDifferent types of surveying services include:\n\n• Property boundary surveying\n• Topographic surveying\n• Construction surveying\n• Deed update surveying\n• Municipal compliance surveying\n• GPS surveying\n• Digital mapping\n• As-built documentation\n\nRequired Documents\nThe following documents are typically required:\n\n• Property deed or ownership document\n• Owner identification\n• Previous survey reports\n• Municipal certificates\n• Building permits\n• Authorization documents\n• Payment receipts\n• Additional requirements\n\nSurveying Process\nThe process typically includes these steps:\n\n• Initial consultation\n• Document review\n• Site visit and measurement\n• Data collection and analysis\n• Report preparation\n• Government submission\n• Approval process\n• Final documentation\n\nCosts and Pricing\nUnderstanding the costs involved:\n\n• Surveying fees\n• Government charges\n• Additional costs\n• Processing fees\n• Payment schedules\n• Cost optimization\n• Time management\n• Budget planning\n\nChoosing a Surveying Office\nConsider these factors when selecting a surveying office:\n\n• Professional certification\n• Experience and expertise\n• Technical capabilities\n• Equipment and technology\n• Service quality\n• Cost efficiency\n• Customer service\n• Track record\n\nCommon Challenges\nProperty owners often face these challenges:\n\n• Document preparation\n• Technical requirements\n• Processing delays\n• Cost management\n• Communication issues\n• Regulatory compliance\n• Quality assurance\n• Time constraints\n\nFrequently Asked Questions\nCommon questions about surveying services:\n\n• How long does surveying take?\n• What are the costs involved?\n• What documents are needed?\n• How accurate are the surveys?\n• What equipment is used?\n• How are results verified?\n• What if there are disputes?\n• How can I track progress?"
+      },
+      "6": {
+        "title": "Obtaining a Building Permit in Riyadh: Steps, Requirements, and Costs 2025",
+        "category": "Construction",
+        "date": "May 18, 2025",
+        "description": "Your comprehensive guide to obtaining a building permit in Riyadh 2025. Learn about requirements, steps, costs, and required documents with a certified engineering office.",
+        "content": "Your comprehensive guide to obtaining a building permit in Riyadh 2025. Learn about requirements, steps, costs, and required documents with a certified engineering office.\n\nTable of Contents:\n1. Understanding Building Permits\n2. Required Documents\n3. Application Process\n4. Costs and Timeframes\n5. Common Challenges\n6. Professional Assistance\n7. Frequently Asked Questions\n8. Tips for Success\n\nUnderstanding Building Permits\nBuilding permits are essential for:\n\n• Legal construction authorization\n• Regulatory compliance\n• Safety standards\n• Property development\n• Municipal services\n• Future transactions\n• Insurance requirements\n• Project documentation\n\nRequired Documents\nThe following documents are typically required:\n\n• Property ownership documents\n• Survey reports\n• Architectural drawings\n• Structural designs\n• Technical specifications\n• Owner identification\n• Payment receipts\n• Additional requirements\n\nApplication Process\nThe process typically includes these steps:\n\n• Document preparation\n• Application submission\n• Technical review\n• Payment processing\n• Approval process\n• Permit issuance\n• Documentation\n• Project start\n\nCosts and Timeframes\nUnderstanding the financial aspects:\n\n• Government fees\n• Professional services\n• Additional costs\n• Processing time\n• Payment schedules\n• Cost optimization\n• Time management\n• Budget planning\n\nCommon Challenges\nApplicants often face these challenges:\n\n• Document preparation\n• Technical requirements\n• Processing delays\n• Cost management\n• Communication issues\n• Regulatory compliance\n• Quality assurance\n• Time constraints\n\nProfessional Assistance\nWorking with professionals offers several benefits:\n\n• Expert guidance\n• Document preparation\n• Process management\n• Government liaison\n• Technical expertise\n• Time savings\n• Cost efficiency\n• Peace of mind\n\nFrequently Asked Questions\nCommon questions about building permits:\n\n• How long does it take?\n• What are the costs?\n• What documents are needed?\n• How can I track my application?\n• What if there are issues?\n• Can I apply myself?\n• What are common challenges?\n• How can professionals help?\n\nTips for Success\nFollow these tips for a smooth process:\n\n• Prepare documents early\n• Understand requirements\n• Work with professionals\n• Follow up regularly\n• Maintain communication\n• Plan for costs\n• Consider timelines\n• Stay informed"
+      }
+    }
+  },
+  "services": {
+    "title": "Our Diverse Services",
+    "subtitle": "We provide the best diverse services to meet your various needs"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to answer all your inquiries and provide the best engineering services",
+    "feedback_form": "Feedback Form",
+    "questions": "Do you have questions?",
+    "about_us": "About Us",
+    "happy_to_answer": "Happy to Answer All Your Questions",
+    "placeholder_text": "We are an engineering company specialized in providing the best engineering solutions",
+    "form": {
+      "name": "Name*",
+      "phone": "Phone Number*",
+      "email": "Email ID*",
+      "address": "Address*",
+      "message": "Message...",
+      "submit": "Submit Query",
+      "sending": "Sending..."
+    },
+    "locations": {
+      "title": "Our Branches",
+      "subtitle": "We are located in several strategic locations in Saudi Arabia",
+      "address": "Address",
+      "phone_numbers": "Phone Numbers",
+      "view_on_google": "View on Google Maps",
+      "offices": {
+        "alkharj": "Al Kharj Office",
+        "mulham": "Mulham Office",
+        "alaqiq": "Al Aqiq Office",
+        "albaha": "Al Garshi Office"
+      }
+    },
+    "cards": {
+      "mail_us": "Mail Us 24/7",
+      "location": "Our Location",
+      "location_text": "Qawi Najd Office – Riyadh, Al Malqa District, Anas Bin Malik Road, Kingdom of Saudi Arabia",
+      "call_us": "Call Us 24/7",
+      "working_days": "Working Days",
+      "working_days_text": "From Saturday to Friday:<br />08am - 04pm"
+    }
+  },
+  "qrcode": {
+    "title": "Your Business",
+    "qr": "QR Code",
+    "description": "Verify the following information directly:",
+    "info_list": [
+      "Commercial Registration",
+      "Municipal License",
+      "Nitaqat Program",
+      "Saudization Certificate",
+      "Zakat Certificate",
+      "Chamber of Commerce"
+    ],
+    "alt": "QR Code"
+  },
+  "quote": {
+    "title": "Request Free Consultation",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "location": "Location",
+    "how_did_you_find": "How did you find us?",
+    "request_type": "Request Type",
+    "work_type": "Work Type",
+    "service": "Service",
+    "required_service": "Required Service",
+    "comment": "Additional Notes",
+    "date": "Date",
+    "click_to_upload": "Click to upload",
+    "upload_concept": "Attach your concept or idea (optional)",
+    "sending": "Sending...",
+    "submit": "Submit Request",
+    "commercial": "Commercial",
+    "industrial": "Industrial",
+    "residential": "Residential",
+    "corporate": "Corporate",
+    "how_did_you_find_options": ["Facebook", "X", "Google", "Friend"],
+    "request_types": ["Design", "Consultation"],
+    "required_services": [
+      "Engineering designs",
+      "Executive drawings",
+      "Quantity calculation",
+      "Electromechanical design",
+      "Site coordination",
+      "Decorative design"
+    ],
+    "contact_info": "Contact Information",
+    "request_details": "Request Details",
+    "additional_notes": "Additional Notes",
+    "main_title": "Start Your Project Now Design",
+    "subtitle": "Send the initial data and you will receive a response within 24 hours maximum",
+    "design_types": {
+      "external": "External",
+      "3d": "3D",
+      "architectural": "Architectural",
+      "structural": "Structural"
+    },
+    "know_about_us": "Know About Us"
+  },
+  "partners": {
+    "title": "Success Partners",
+    "view_more": "View More"
+  }
+}
