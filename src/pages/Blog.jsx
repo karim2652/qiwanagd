@@ -1,6 +1,4 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import HeroSection from './HeroSection';
 import BlogContant from './components/Blog/BlogContant';

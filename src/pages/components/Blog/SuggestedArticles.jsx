@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { blogData } from '../../../data/blogData';
 import { blogDataEn } from '../../../data/blogDataEn';
