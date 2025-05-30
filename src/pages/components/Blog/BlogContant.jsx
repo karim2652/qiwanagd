@@ -1,7 +1,5 @@
 import { Card } from '../../../components/ui/card';
 import { useTranslation } from 'react-i18next';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useNavigate } from 'react-router-dom';
 
 const BlogContant = ({ blogData }) => {
@@ -64,12 +62,11 @@ const BlogContant = ({ blogData }) => {
               <Card className='bg-white rounded-[2rem] shadow-lg overflow-hidden flex flex-col border-0 p-0 h-full min-h-[50px] transition-all duration-500 ease-in-out hover:shadow-2xl hover:-translate-y-2'>
                 <div className='relative overflow-hidden'>
                   <div className='overflow-hidden'>
-                    <LazyLoadImage
+                    <img
                       src={post.image}
                       alt={post.title}
-                      effect='blur'
-                      className='w-full h-[400px] md:h-[500px] object-cover transform transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform '
-                      placeholderSrc='/assets/images/placeholder.png'
+                      loading='lazy'
+                      className='w-full h-[400px] md:h-[500px] object-cover transform transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform'
                       style={{
                         borderTopLeftRadius: '2rem',
                         borderTopRightRadius: '2rem',
@@ -80,6 +77,9 @@ const BlogContant = ({ blogData }) => {
                         transformOrigin: 'center',
                         backfaceVisibility: 'hidden',
                         WebkitBackfaceVisibility: 'hidden',
+                      }}
+                      onError={(e) => {
+                        e.target.src = '/assets/images/placeholder.png';
                       }}
                     />
                   </div>
