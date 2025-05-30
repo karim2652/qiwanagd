@@ -129,7 +129,7 @@ const BlogDetails = () => {
                     style={{ fontFamily }}
                     dir={isArabic ? 'rtl' : 'ltr'}
                   >
-                    {item.text}
+                    {idx + 1}. {item.text}
                   </button>
                 </li>
               ))}

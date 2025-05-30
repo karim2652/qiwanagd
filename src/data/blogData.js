@@ -179,11 +179,10 @@ export const blogData = {
             { number: '3', text: 'الأعمال المساحية ودورها في نجاح المشروع', id: 'section-3' },
             { number: '4', text: 'إدارة المشاريع: التخطيط والتنفيذ الذكي', id: 'section-4' },
             { number: '5', text: 'الإشراف الهندسي: ضمان الجودة في كل مرحلة', id: 'section-5' },
-            { number: '6', text: 'دراسات الجدوى والتقييم الفني', id: 'section-6' },
-            { number: '7', text: 'كيف تختار مكتب استشارات هندسية في السعودية؟', id: 'section-7' },
-            { number: '8', text: 'أهم المدن السعودية في سوق الاستشارات الهندسية', id: 'section-8' },
-            { number: '9', text: 'أسئلة شائعة', id: 'section-9' },
-            { number: '10', text: 'قائمة مراجعة لاختيار شركة الاستشارات', id: 'section-10' },
+
+        
+            { number: '6', text: 'أسئلة شائعة', id: 'section-6' },
+            { number: '7', text: 'قائمة مراجعة لاختيار شركة الاستشارات', id: 'section-7' },
           ],
         },
         {
@@ -302,8 +301,8 @@ export const blogData = {
         },
         {
           type: 'section-header',
-          id: 'section-9',
-          text: '9. أسئلة شائعة',
+          id: 'section-6',
+          text: '6. أسئلة شائعة',
         },
         {
           type: 'qa',
@@ -317,8 +316,8 @@ export const blogData = {
         },
         {
           type: 'section-header',
-          id: 'section-10',
-          text: '10. قائمة مراجعة لاختيار شركة استشارات هندسية:',
+          id: 'section-7',
+          text: '7. قائمة مراجعة لاختيار شركة استشارات هندسية:',
         },
         {
           type: 'checklist',
@@ -1209,16 +1208,8 @@ export const blogData = {
           title: 'فهرس المحتوى:',
           items: [
             { number: '1', text: 'ما هي رخصة البناء؟', id: 'section-1' },
-            { number: '2', text: 'من المسؤول عن إصدار الرخصة في الرياض؟', id: 'section-2' },
-            { number: '3', text: 'ما هي شروط الحصول على رخصة بناء في الرياض؟', id: 'section-3' },
-            { number: '4', text: 'ما هي خطوات إصدار رخصة بناء في الرياض؟', id: 'section-4' },
-            { number: '5', text: 'المستندات المطلوبة', id: 'section-5' },
-            { number: '6', text: 'أهم الأخطاء التي تؤدي إلى رفض الطلب', id: 'section-6' },
-            { number: '7', text: 'دور المكتب الهندسي في تسريع الإجراءات', id: 'section-7' },
-            { number: '8', text: 'ما بعد إصدار الرخصة: ماذا تفعل؟', id: 'section-8' },
-            { number: '9', text: 'تكلفة رخصة البناء في الرياض', id: 'section-9' },
-            { number: '10', text: 'أسئلة شائعة', id: 'section-10' },
-            { number: '11', text: 'الخلاصة ودعوة للتواصل', id: 'section-11' },
+            { number: '2', text: 'أسئلة شائعة', id: 'section-2' },
+            { number: '3', text: 'الخلاصة ودعوة للتواصل', id: 'section-3' },
           ],
         },
         {
@@ -1241,8 +1232,8 @@ export const blogData = {
         },
         {
           type: 'section-header',
-          id: 'section-10',
-          text: '10. أسئلة شائعة',
+          id: 'section-2',
+          text: '2. أسئلة شائعة',
         },
         {
           type: 'qa',
@@ -1300,8 +1291,8 @@ export const blogData = {
         },
         {
           type: 'section-header',
-          id: 'section-11',
-          text: '11. الخلاصة ودعوة للتواصل',
+          id: 'section-3',
+          text: '3. الخلاصة ودعوة للتواصل',
         },
         {
           type: 'paragraph',
