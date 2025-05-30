@@ -148,6 +148,274 @@ Engineering consulting services are not just a luxury but a crucial element in t
 The right choice of engineering partner saves you time, money, and reduces risks.
 Start now and request a free consultation from our experts to evaluate your project from an integrated engineering perspective.`,
       },
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Did you know that high-quality engineering consulting can save you millions of riyals in your project execution?',
+        },
+        {
+          type: 'paragraph',
+          text: "In Saudi Arabia's rapidly growing construction market, developers and property owners face constant challenges in balancing quality, cost, and timeline commitments.",
+        },
+        {
+          type: 'paragraph',
+          text: "Whether you're starting a residential project in Riyadh or planning to build a commercial complex in Jeddah, professional engineering guidance is the key to success.",
+        },
+        {
+          type: 'paragraph',
+          text: "In this comprehensive guide, we'll explore the various engineering consulting services in Saudi Arabia, from architectural design to precise construction supervision, including surveying and project management. You'll learn how to choose the right firm and understand the principles that ensure integrated and effective engineering implementation.",
+        },
+        {
+          type: 'toc',
+          title: 'Table of Contents:',
+          items: [
+            { number: '1', text: 'What are Engineering Consulting Services?', id: 'section-1' },
+            {
+              number: '2',
+              text: 'Architectural Design: From Concept to Execution Plan',
+              id: 'section-2',
+            },
+            {
+              number: '3',
+              text: 'Surveying Services and Their Role in Project Success',
+              id: 'section-3',
+            },
+            {
+              number: '4',
+              text: 'Project Management: Smart Planning and Execution',
+              id: 'section-4',
+            },
+            {
+              number: '5',
+              text: 'Engineering Supervision: Quality Assurance at Every Stage',
+              id: 'section-5',
+            },
+            { number: '6', text: 'Feasibility Studies and Technical Evaluation', id: 'section-6' },
+            {
+              number: '7',
+              text: 'How to Choose an Engineering Consulting Firm in Saudi Arabia',
+              id: 'section-7',
+            },
+            {
+              number: '8',
+              text: 'Major Saudi Cities in the Engineering Consulting Market',
+              id: 'section-8',
+            },
+            { number: '9', text: 'Frequently Asked Questions', id: 'section-9' },
+            { number: '10', text: 'Checklist for Selecting a Consulting Firm', id: 'section-10' },
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-1',
+          text: '1. What are Engineering Consulting Services?',
+        },
+        {
+          type: 'paragraph',
+          text: 'Engineering consulting services encompass an integrated set of technical solutions to support real estate and infrastructure projects, including:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Architectural design',
+            'Surveying services',
+            'Project management',
+            'Engineering supervision',
+            'Technical studies and feasibility studies',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'These services help you achieve your project with the best possible quality and in compliance with Saudi regulations.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-2',
+          text: '2. Architectural Design: From Concept to Execution Plan',
+        },
+        {
+          type: 'paragraph',
+          text: 'Every successful project begins with a well-studied architectural concept. Architectural design includes:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Preparing initial designs and architectural concepts',
+            'Developing execution plans',
+            'Incorporating sustainability and energy efficiency elements',
+            'Using modern software like Revit and AutoCAD',
+          ],
+        },
+        {
+          type: 'callout',
+          icon: '📝',
+          text: 'Tip: Projects in cities like NEOM and Green Riyadh now require a higher percentage of sustainable designs.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-3',
+          text: '3. Surveying Services and Their Role in Project Success',
+        },
+        {
+          type: 'paragraph',
+          text: 'Land surveying and property division are fundamental to every construction project, including:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Precise surveying using Total Station and GPS devices',
+            'Sorting and dividing real estate units',
+            'Updating title deeds and documenting them through the "Efraagh" platform',
+            'Preparing reports approved by municipalities',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Practical Example: Updating a land deed in North Riyadh helped one of our clients incorporate it into a commercial plan that provides a high return on investment.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-4',
+          text: '4. Project Management: Smart Planning and Execution',
+        },
+        {
+          type: 'paragraph',
+          text: 'Engineering project management includes:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Strategic planning and cost estimation',
+            'Contractor selection and execution monitoring',
+            'Scheduling using programs like Primavera',
+            'Risk management and overcoming obstacles',
+          ],
+        },
+        {
+          type: 'callout',
+          icon: '📊',
+          text: 'Statistic: Projects that adopt professional management achieve savings of up to 15-20% of the total budget.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-5',
+          text: '5. Engineering Supervision: Quality Assurance at Every Stage',
+        },
+        {
+          type: 'paragraph',
+          text: 'Engineering supervision is your eyes on the site, and includes:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Daily monitoring of implementation',
+            'Reviewing material quality and compliance with specifications',
+            'Issuing periodic reports to owners',
+            'Adherence to schedules',
+          ],
+        },
+        {
+          type: 'callout',
+          icon: '📌',
+          text: 'Important Information: The Ministry of Municipal Affairs requires certified engineering supervision for certain projects within urban boundaries.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-6',
+          text: '6. Feasibility Studies and Technical Evaluation',
+        },
+        {
+          type: 'paragraph',
+          text: 'Before starting any project, you need:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Engineering and financial feasibility study',
+            'Technical evaluation of the site and soil',
+            'Cost-benefit analysis (ROI)',
+            'Technical recommendations for government and private projects',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-7',
+          text: '7. How to Choose an Engineering Consulting Firm in Saudi Arabia',
+        },
+        {
+          type: 'paragraph',
+          text: "Here's a quick checklist:",
+        },
+        {
+          type: 'table',
+          headers: ['Criterion', 'Verification'],
+          rows: [
+            ['Local market experience', '✅'],
+            ['Specialization in project type', '✅'],
+            ['Certificates and accreditations', '✅'],
+            ['Previous projects', '✅'],
+            ['Integrated team', '✅'],
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-8',
+          text: '8. Major Saudi Cities in the Engineering Consulting Market',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Riyadh: The capital and largest center for engineering consulting, especially in residential villa projects, commercial complexes, and smart infrastructure',
+            'Dammam and Khobar: Commercial and industrial projects',
+            'Madinah: Urban expansions and government projects',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: '(With a primary focus on Riyadh in this article)',
+        },
+        {
+          type: 'section-header',
+          id: 'section-9',
+          text: '9. Frequently Asked Questions',
+        },
+        {
+          type: 'qa',
+          question: "What's the difference between full and partial engineering supervision?",
+          answer:
+            'Full supervision follows the project from A to Z, while partial supervision covers only specific stages.',
+        },
+        {
+          type: 'qa',
+          question: 'Is updating the title deed a requirement for building approval?',
+          answer:
+            'Yes, in many municipalities, updating the title deed has become a condition for building permits.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-10',
+          text: '10. Checklist for Selecting an Engineering Consulting Firm:',
+        },
+        {
+          type: 'checklist',
+          items: [
+            'Do they have proven experience in similar projects?',
+            'Do they offer integrated services or just design?',
+            'Do they use modern technologies?',
+            'Do they have a qualified Saudi team?',
+            'Do they have a license approved by the Saudi Council of Engineers?',
+          ],
+        },
+        {
+          type: 'callout',
+          icon: '📌',
+          text: 'Conclusion: Engineering consulting services are not just a luxury, but a critical element in the success of any real estate or construction project in Saudi Arabia. The right engineering partner saves you time, money, and reduces risks.',
+        },
+        {
+          type: 'cta',
+          text: 'Start now and request a free consultation from our experts to evaluate your project from an integrated engineering perspective.',
+        },
+      ],
     },
     // 2
     {
@@ -294,6 +562,269 @@ Property deed updates in Riyadh have become an urgent necessity for anyone seeki
 📞 Need help updating your property deed?
 Contact us now for a free consultation from our engineering experts in Riyadh.`,
       },
+      content: [
+        {
+          type: 'paragraph',
+          text: 'With the rapid changes in the Saudi real estate market, updating property title deeds has become an urgent necessity for owners and real estate developers in Riyadh. According to the Ministry of Justice, more than 2 million electronic requests to update title deeds have been registered since the launch of the unified "Ehkam" platform, reflecting the importance of this step to ensure clear and updated property ownership.',
+        },
+        {
+          type: 'paragraph',
+          text: "However, individuals and institutions often face difficulties understanding the legal and technical procedures related to the update, which may lead to delays or rejection of the request. In this guide, we'll take you step by step to understand how the process of updating real estate title deeds in Riyadh works, what the regulatory requirements are, and how a professional engineering consultancy can contribute to expediting the process and ensuring its success.",
+        },
+        {
+          type: 'toc',
+          title: 'Table of Contents:',
+          items: [
+            {
+              number: '1',
+              text: 'What is a Property Title Deed and Why Should It Be Updated?',
+              id: 'section-1',
+            },
+            {
+              number: '2',
+              text: 'Authorities Responsible for Updating Title Deeds in Riyadh',
+              id: 'section-2',
+            },
+            {
+              number: '3',
+              text: 'Conditions and Requirements for Updating the Deed',
+              id: 'section-3',
+            },
+            {
+              number: '4',
+              text: 'Steps to Submit an Update Request via the "Ehkam" Platform',
+              id: 'section-4',
+            },
+            {
+              number: '5',
+              text: 'The Importance of Land Surveying in Updating Deeds',
+              id: 'section-5',
+            },
+            {
+              number: '6',
+              text: 'The Role of Engineering Consultancy Offices in the Process',
+              id: 'section-6',
+            },
+            { number: '7', text: 'Common Challenges and How to Overcome Them', id: 'section-7' },
+            { number: '8', text: 'Cost of Updating a Property Deed in Riyadh', id: 'section-8' },
+            {
+              number: '9',
+              text: 'Updating Deeds for Lands Located Outside the Urban Boundary',
+              id: 'section-9',
+            },
+            {
+              number: '10',
+              text: 'Important Tips Before Submitting the Request',
+              id: 'section-10',
+            },
+            { number: '11', text: 'Conclusion and Call to Action', id: 'section-11' },
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-1',
+          text: '1. What is a Property Title Deed and Why Should It Be Updated?',
+        },
+        {
+          type: 'paragraph',
+          text: 'A property title deed is an official document proving property ownership, issued by the Ministry of Justice. The deed may be old (paper-based) or not updated on the unified electronic system, which may cause problems in selling, dividing, or developing real estate.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Updating the deed ensures:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Including the property in the digital system',
+            'Accurately determining its location',
+            'Showing the actual area',
+            'Facilitating property transfer procedures or obtaining financing',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-2',
+          text: '2. Authorities Responsible for Updating Title Deeds in Riyadh',
+        },
+        {
+          type: 'paragraph',
+          text: 'The official authorities responsible for the update include:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'The State Properties General Authority (through the Ehkam platform)',
+            'The Saudi Ministry of Justice',
+            'Riyadh Municipality',
+            'Accredited engineering consultancy offices for providing surveying and technical reports',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-3',
+          text: '3. Conditions and Requirements for Updating the Deed',
+        },
+        {
+          type: 'paragraph',
+          text: 'To submit a deed update request, the following requirements must be met:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Copy of the old deed',
+            "Owner's ID proof",
+            'Regulatory plan or site sketch',
+            'Recent and approved surveying report',
+            'Aerial photos if available',
+            'Payment of administrative fees via the Ehkam portal',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-4',
+          text: '4. Steps to Submit an Update Request via the "Ehkam" Platform',
+        },
+        {
+          type: 'numbered-list',
+          items: [
+            'Register on the Ehkam electronic platform',
+            'Select "Request to modify or update a deed"',
+            'Fill out the electronic form',
+            'Attach the required documents',
+            'Upload the approved surveying report',
+            'Track the request status through the platform',
+          ],
+        },
+        {
+          type: 'callout',
+          icon: '🔍',
+          text: 'Important Point: The surveying report must be issued by an approved engineering office registered with the Saudi Council of Engineers.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-5',
+          text: '5. The Importance of Land Surveying in Updating Deeds',
+        },
+        {
+          type: 'paragraph',
+          text: 'Land surveying is the decisive factor in accepting or rejecting an update request. The report must:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Accurately determine the property coordinates',
+            'Show the actual area compared to the deed',
+            'Include the signature of an approved engineer',
+            "Comply with Riyadh's regulatory plan",
+          ],
+        },
+        {
+          type: 'callout',
+          icon: '📌',
+          text: 'Tip: Using a trusted engineering consultancy saves you a lot of time and administrative rejection.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-6',
+          text: '6. The Role of Engineering Consultancy Offices in the Process',
+        },
+        {
+          type: 'paragraph',
+          text: 'A professional engineering consultancy office in Riyadh provides you with:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Accurate land surveying',
+            'Preparing a report according to "Ehkam" requirements',
+            'Following up on the request until its approval',
+            'Addressing any technical observations from government agencies',
+            'Legal and engineering advice tailored to your case',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-7',
+          text: '7. Common Challenges and How to Overcome Them',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Unclear property boundaries: The solution is to conduct a new, more accurate land survey',
+            'Overlap with neighboring properties: Engineering and legal consultation is necessary',
+            'Request rejection for technical reasons: Often due to an incomplete or non-compliant report',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-8',
+          text: '8. Cost of Updating a Property Deed in Riyadh',
+        },
+        {
+          type: 'paragraph',
+          text: 'The cost varies according to the type and area of the property, but approximately:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Application submission fee: between 500 to 1000 SAR',
+            'Professional land surveying: between 1500 to 3000 SAR',
+            'Expected total: 2000 - 4000 SAR',
+          ],
+        },
+        {
+          type: 'callout',
+          icon: '💡',
+          text: 'Important Information: Prices vary according to the location within Riyadh and the complexity of the request.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-9',
+          text: '9. Updating Deeds for Lands Located Outside the Urban Boundary',
+        },
+        {
+          type: 'paragraph',
+          text: 'Requests outside the urban boundary are subject to additional requirements including:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Ownership evidence',
+            'Aerial photos',
+            'Environmental or regulatory reports sometimes',
+            'Approvals from higher authorities in some cases',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-10',
+          text: '10. Important Tips Before Submitting the Request',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Ensure that the information in the deed matches reality',
+            'Prepare all documents in advance',
+            'Choose an engineering consultancy office with experience in Riyadh',
+            'Regularly follow up on your status through the Ehkam platform',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-11',
+          text: '11. Conclusion and Call to Action',
+        },
+        {
+          type: 'paragraph',
+          text: 'Updating property deeds in Riyadh has become an urgent necessity for anyone seeking to develop their property or legally protect it. By following the regulatory steps and using a trusted engineering consultancy office, you can ensure the accuracy and speed of the update and avoid many complications.',
+        },
+        {
+          type: 'cta',
+          icon: '📞',
+          text: 'Need help updating your property deed? Call us now for a free consultation from our engineering experts in Riyadh.',
+        },
+      ],
     },
     {
       id: 3,
@@ -475,6 +1006,223 @@ Accurate surveying is fundamental to successful real estate development in Riyad
 Need professional surveying services in Riyadh?
 Contact us now for a free consultation and accurate surveying solutions.`,
       },
+      content: [
+        {
+          type: 'paragraph',
+          text: 'Land surveying in Riyadh has become one of the most important regulatory requirements that property owners and real estate developers must accurately implement, whether for updating property deeds, submitting land division applications, or obtaining building permits. According to the Ehkam system and the State Properties General Authority, any request to modify a deed or prove ownership requires an approved surveying report from a licensed engineering consultancy office.',
+        },
+        {
+          type: 'paragraph',
+          text: 'In this detailed guide, we review the importance of land surveying, its steps, the standards that must be available in the engineering office, and the cost of this service in Riyadh.',
+        },
+        {
+          type: 'toc',
+          title: 'Table of Contents:',
+          items: [
+            { number: '1', text: 'What is Land Surveying?', id: 'section-1' },
+            { number: '2', text: 'When Do You Need Land Surveying?', id: 'section-2' },
+            {
+              number: '3',
+              text: "What's the Difference Between Land Surveying and Topographic Survey?",
+              id: 'section-3',
+            },
+            { number: '4', text: 'Steps to Conduct Land Surveying in Riyadh', id: 'section-4' },
+            {
+              number: '5',
+              text: 'Approved Report Conditions According to the Ehkam Platform',
+              id: 'section-5',
+            },
+            { number: '6', text: 'Cost of Land Surveying in Riyadh', id: 'section-6' },
+            { number: '7', text: 'Common Problems Leading to Report Rejection', id: 'section-7' },
+            {
+              number: '8',
+              text: 'The Importance of Using an Approved Engineering Office',
+              id: 'section-8',
+            },
+            { number: '9', text: 'What Does a Land Surveying Report Include?', id: 'section-9' },
+            {
+              number: '10',
+              text: 'Tips to Ensure Your Report is Accepted the First Time',
+              id: 'section-10',
+            },
+            { number: '11', text: 'Conclusion and Call to Action', id: 'section-11' },
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-1',
+          text: '1. What is Land Surveying?',
+        },
+        {
+          type: 'paragraph',
+          text: 'Land surveying is the process of accurately measuring property using modern techniques and devices to determine its boundaries, dimensions, and actual area, and preparing a plan showing the coordinates and geographical location.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-2',
+          text: '2. When Do You Need Land Surveying?',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Updating or modifying a property deed',
+            'Submitting through the Ehkam platform to prove ownership',
+            'Obtaining a building permit',
+            'Land division',
+            'Real estate feasibility studies',
+            'Settling a boundary dispute',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-3',
+          text: "3. What's the Difference Between Land Surveying and Topographic Survey?",
+        },
+        {
+          type: 'table',
+          headers: ['Type', 'Use', 'Details'],
+          rows: [
+            ['Land Surveying', 'Legal and regulatory', 'Shows property boundaries and dimensions'],
+            [
+              'Topographic Survey',
+              'Engineering and design',
+              'Shows terrain and elevations within the land',
+            ],
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-4',
+          text: '4. Steps to Conduct Land Surveying in Riyadh',
+        },
+        {
+          type: 'numbered-list',
+          items: [
+            'Contract with an approved engineering consultancy office',
+            'Visit the property site and photograph it using accurate GPS devices',
+            'Compare information with the deed and regulatory plan',
+            'Prepare the survey plan and a comprehensive technical report',
+            'Export the file in approved formats (PDF + CAD + SHP)',
+            'Signature of the approved engineer and office stamp',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-5',
+          text: '5. Approved Report Conditions According to the Ehkam Platform',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Determining coordinates using the WGS 84 system',
+            'Matching the location with the property deed',
+            'Using a GPS RTK or Total Station device',
+            'Attaching photos from the site',
+            'Signature of an engineer approved by the Saudi Council of Engineers',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-6',
+          text: '6. Cost of Land Surveying in Riyadh',
+        },
+        {
+          type: 'paragraph',
+          text: 'The cost varies according to the property location and area, but generally:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Small properties within the urban boundary: 1500 -- 2500 SAR',
+            'Medium-sized lands: 2500 -- 4000 SAR',
+            'Large lands or outside the urban boundary: 5000 SAR or more',
+          ],
+        },
+        {
+          type: 'callout',
+          icon: '💡',
+          text: 'Tip: Make sure the cost includes photography, plan preparation, and the technical report.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-7',
+          text: '7. Common Problems Leading to Report Rejection',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Inaccurate coordinates',
+            'Difference between reality and the deed',
+            'Submitting the report from a non-approved office',
+            'Neglecting to mention adjacent facilities or natural boundaries',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-8',
+          text: '8. The Importance of Using an Approved Engineering Office',
+        },
+        {
+          type: 'paragraph',
+          text: 'The professional office guarantees you:',
+        },
+        {
+          type: 'checklist',
+          items: [
+            '100% surveying accuracy',
+            'Report approval from official authorities',
+            'Speed of completion and follow-up with the Ehkam platform',
+            'Reducing chances of rejection or delay',
+            'Providing a CAD plan that can be used in future design and implementation',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-9',
+          text: '9. What Does a Land Surveying Report Include?',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Owner information',
+            'Deed number and location',
+            'Geographic coordinates',
+            'Actual area',
+            'Map showing boundaries and land marks',
+            'Field photos',
+            'Signature of the approved engineer',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-10',
+          text: '10. Tips to Ensure Your Report is Accepted the First Time',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Prepare all property documents before requesting the service',
+            'Make sure the office is officially registered',
+            'Discuss with the office the surveying method and devices used',
+            'Review the report thoroughly before uploading it to Ehkam',
+            'Follow up on municipality or authority observations quickly if any',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-11',
+          text: '11. Conclusion and Call to Action',
+        },
+        {
+          type: 'paragraph',
+          text: 'Land surveying in Riyadh is not just a technical procedure, but the cornerstone of any regulatory real estate transaction, whether you are an individual owner or a real estate developer. By choosing a reliable engineering consultancy office, you ensure the accuracy and speed of the process, and avoid many obstacles.',
+        },
+        {
+          type: 'cta',
+          icon: '📞',
+          text: 'Looking for an approved engineering consultancy office in Riyadh to provide land surveying service? Contact us now for a price quote within minutes and comprehensive service from design to permit issuance within days.',
+        },
+      ],
     },
     {
       id: 4,
@@ -498,7 +1246,8 @@ Contact us now for a free consultation and accurate surveying solutions.`,
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        headline: 'Engineering Supervision in Saudi Arabia: Complete Guide to Project Quality Control',
+        headline:
+          'Engineering Supervision in Saudi Arabia: Complete Guide to Project Quality Control',
         description:
           'Discover the importance of engineering supervision in Saudi construction projects, its stages, and how to choose the right supervision company to ensure project quality and compliance with regulations.',
         image: '/assets/images/blog/4.webp',
@@ -648,6 +1397,111 @@ Our certified engineering team in Riyadh offers comprehensive supervision servic
 
 Contact us today for a free consultation and quote for your project.`,
       },
+      content: [
+        {
+          type: 'paragraph',
+          text: "If you're planning to build a residential or commercial property in Riyadh, obtaining a building permit is the first and most important official procedure you should start with. In line with Saudi Vision 2030, the building permit issuance system has become more advanced and faster through the Balady platform, provided that all conditions and approved land surveying are met.",
+        },
+        {
+          type: 'toc',
+          title: 'Table of Contents:',
+          items: [
+            { number: '1', text: 'What is a Building Permit?', id: 'section-1' },
+            { number: '2', text: 'Frequently Asked Questions', id: 'section-2' },
+            { number: '3', text: 'Conclusion and Contact Invitation', id: 'section-3' },
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-1',
+          text: '1. What is a Building Permit?',
+        },
+        {
+          type: 'paragraph',
+          text: 'A building permit is an official document issued by the municipality that authorizes you to start construction work on a specific plot of land. It is necessary to ensure:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Compliance with regulations and engineering specifications',
+            "Protection of neighbors' and community rights",
+            'Ensuring building and user safety',
+            'Avoiding violations and financial penalties',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-2',
+          text: '2. Frequently Asked Questions',
+        },
+        {
+          type: 'qa',
+          question: 'What are the basic requirements for obtaining a building permit in Riyadh?',
+          answer:
+            "Basic requirements include: an updated title deed, an approved engineering plan from a licensed engineering office, a geotechnical study of the site, a certificate from the electricity company, a certificate from the water company, proof of owner's identity, and land ownership document.",
+        },
+        {
+          type: 'qa',
+          question: 'What are the steps to obtain a building permit?',
+          answer:
+            'The steps are as follows: 1. Update the real estate deed through the Ehkam platform, 2. Prepare engineering plans from an approved engineering office, 3. Submit the application through the Balady platform, 4. Application review by the municipality, 5. Pay the required fees, 6. Receive the permit.',
+        },
+        {
+          type: 'qa',
+          question: 'What is the cost of a building permit in Riyadh?',
+          answer:
+            "The cost varies according to: land area, project type (residential/commercial), number of floors, geographical location, engineering office fees, and municipality and other authorities' fees.",
+        },
+        {
+          type: 'qa',
+          question: 'What is the expected time to obtain a building permit?',
+          answer:
+            'Approximate duration: Deed update: 2-4 weeks, Plans preparation: 1-2 weeks, Municipality review: 2-4 weeks, Total duration: 5-10 weeks.',
+        },
+        {
+          type: 'qa',
+          question: 'Can an engineering office be used to help issue the permit?',
+          answer:
+            'Yes, and it is recommended because the approved engineering office: ensures compliance with regulations, saves time and effort, deals with the municipality and other authorities, and provides specialized technical consultations.',
+        },
+        {
+          type: 'qa',
+          question: 'What are the penalties for building without a permit?',
+          answer:
+            'Penalties include: significant financial fines, work stoppage, demolition of the building in some cases, and delay in issuing permits in the future.',
+        },
+        {
+          type: 'qa',
+          question: 'Are there exceptions from obtaining a building permit?',
+          answer:
+            'Yes, some cases like: simple renovations, internal additions, some temporary facilities (with the need to check with the municipality in each case).',
+        },
+        {
+          type: 'qa',
+          question: 'What are the important tips before starting permit procedures?',
+          answer:
+            'Main tips: ensuring the deed is updated, selecting an approved engineering office, preparing all documents in advance, continuous follow-up of the application, and compliance with engineering specifications.',
+        },
+        {
+          type: 'qa',
+          question: 'How can I avoid having my building permit application rejected?',
+          answer:
+            'To avoid rejection: ensure the completeness of documents, comply with regulations and specifications, choose an experienced engineering office, regularly follow up on the application status, and address any observations immediately.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-3',
+          text: '3. Conclusion and Contact Invitation',
+        },
+        {
+          type: 'paragraph',
+          text: 'Obtaining a building permit in Riyadh represents an essential step to start your real estate project legally and safely. By adhering to proper procedures and using a reliable engineering office, you can expedite the process and avoid many problems.',
+        },
+        {
+          type: 'cta',
+          text: 'Contact us today for a comprehensive service to issue your building permit in Riyadh, from architectural design to receiving the final permit.',
+        },
+      ],
     },
     {
       id: 5,
@@ -805,6 +1659,275 @@ All at competitive prices, with guaranteed municipal acceptance.
 
 📞 Book now or contact us directly for a free consultation.`,
       },
+      content: [
+        {
+          type: 'paragraph',
+          text: "Are you planning to build a house or commercial building in Riyadh? Before any step, you'll need an approved land surveying service.",
+        },
+        {
+          type: 'paragraph',
+          text: 'Land surveying is the backbone of any successful construction project in Saudi Arabia. It determines the exact dimensions, coordinates, and specifications upon which all subsequent phases will be built.',
+        },
+        {
+          type: 'paragraph',
+          text: "In this comprehensive guide, we'll learn about everything related to land surveying in Riyadh, from its types, through implementation steps, to the expected cost in 2025.",
+        },
+        {
+          type: 'toc',
+          title: 'Table of Contents:',
+          items: [
+            { number: '1', text: 'What is Land Surveying?', id: 'section-1' },
+            {
+              number: '2',
+              text: 'The Importance of Land Surveying for Construction Projects',
+              id: 'section-2',
+            },
+            { number: '3', text: 'When Do You Need Land Surveying Service?', id: 'section-3' },
+            { number: '4', text: 'What are the Types of Land Surveying?', id: 'section-4' },
+            {
+              number: '5',
+              text: 'What Documents are Required for Land Surveying?',
+              id: 'section-5',
+            },
+            {
+              number: '6',
+              text: 'What are the Steps to Implement Land Surveying?',
+              id: 'section-6',
+            },
+            {
+              number: '7',
+              text: 'What is the Relationship Between Land Surveying and Building Permits?',
+              id: 'section-7',
+            },
+            { number: '8', text: 'What is the Cost of Land Surveying in Riyadh?', id: 'section-8' },
+            {
+              number: '9',
+              text: 'What are the Specifications Required by Riyadh Municipality for Land Surveying?',
+              id: 'section-9',
+            },
+            {
+              number: '10',
+              text: 'What is the Role of the Engineering Office in Conducting the Survey?',
+              id: 'section-10',
+            },
+            {
+              number: '11',
+              text: 'Frequently Asked Questions About Land Surveying',
+              id: 'section-11',
+            },
+            {
+              number: '12',
+              text: 'How We Can Get You an Approved Land Survey Within 24 Hours?',
+              id: 'section-12',
+            },
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-1',
+          text: '1. What is Land Surveying?',
+        },
+        {
+          type: 'paragraph',
+          text: 'Land surveying is the process of measuring and documenting the boundaries and dimensions of a plot of land, including:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Determining the exact coordinates of the land',
+            'Measuring lengths and angles',
+            'Determining elevations and depressions',
+            'Documenting surrounding features and services',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'This process is carried out using specialized surveying equipment such as Total Station and precise GPS devices.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-2',
+          text: '2. The Importance of Land Surveying for Construction Projects',
+        },
+        {
+          type: 'paragraph',
+          text: 'The importance of land surveying cannot be overstated, as it:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Ensures accuracy in determining ownership boundaries',
+            'Prevents encroachments and real estate disputes',
+            'Is a basic requirement for obtaining a building permit',
+            'Helps engineers and designers in accurate planning',
+            'Provides essential information about the nature of the site',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-3',
+          text: '3. When Do You Need Land Surveying Service?',
+        },
+        {
+          type: 'paragraph',
+          text: 'You need land surveying in the following cases:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Before starting any construction project',
+            'When buying a new land to verify the area and boundaries',
+            'When applying for a building permit',
+            'When updating an old deed',
+            'In cases of boundary disputes between neighbors',
+            'When submitting requests for municipal or electricity services',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-4',
+          text: '4. What are the Types of Land Surveying?',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Preliminary land surveying: to determine the area and boundaries',
+            'Municipal land surveying (for permit items): includes coordinates + land boundaries + proposed building location',
+            'Land surveying for agricultural or industrial land deeds',
+            'Land surveying for electronic submission via the Balady platform',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-5',
+          text: '5. What Documents are Required for Land Surveying?',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Copy of the title deed',
+            'Regulatory sketch (if any)',
+            "Owner's ID",
+            'Land and plan number',
+            'Engineering office authorization (if submitting through it)',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-6',
+          text: '6. What are the Steps to Implement Land Surveying?',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Site visit by an approved surveying engineer',
+            'Measuring the land using a Total Station or GPS device',
+            'Creating the survey plan in DWG and PDF formats',
+            'Reviewing the data and matching it with the deed and regulatory plan',
+            'Uploading the land survey to the Balady platform or delivering it to the owner',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-7',
+          text: '7. What is the Relationship Between Land Surveying and Building Permits?',
+        },
+        {
+          type: 'paragraph',
+          text: 'Any building permit application in Riyadh is not accepted without an accurate and approved land survey, where the survey is directly linked to the Balady platform to verify coordinates and building location.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-8',
+          text: '8. What is the Cost of Land Surveying in Riyadh?',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Starting from 1500 Saudi Riyals for small residential lands',
+            'Up to 4000 Riyals or more depending on the land area and site nature',
+            'Prices vary according to location (inside or outside the urban boundary) and the level of details required',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-9',
+          text: '9. What are the Specifications Required by Riyadh Municipality for Land Surveying?',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Accuracy of the device used (GPS or Total Station)',
+            'Land coordinates in WGS84 system',
+            'Clarification of adjacent streets and actual lengths',
+            'Statement of overlaps if found',
+            'Submitting the plan in both PDF and DWG formats with the engineering office name',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-10',
+          text: '10. What is the Role of the Engineering Office in Conducting the Survey?',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Accurate determination of land points',
+            'Verifying compatibility between the deed and the site',
+            'Submitting the survey through the Balady platform',
+            'Preparing all municipal requirements in a systematic manner',
+            'Responding to any observations received from the municipality',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-11',
+          text: '11. Frequently Asked Questions About Land Surveying',
+        },
+        {
+          type: 'qa',
+          question: 'Does the surveying office have to be approved by the municipality?',
+          answer:
+            'Yes, only work executed by licensed engineering offices registered in the Balady platform is accepted.',
+        },
+        {
+          type: 'qa',
+          question: 'Do I need land surveying if I have an old sketch?',
+          answer: 'Yes, because municipalities only approve new surveys linked to coordinates.',
+        },
+        {
+          type: 'qa',
+          question: 'How long does it take to conduct the survey?',
+          answer: 'From 1 to 3 working days, depending on site readiness and land size.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-12',
+          text: '12. How We Can Get You an Approved Land Survey Within 24 Hours?',
+        },
+        {
+          type: 'paragraph',
+          text: 'In our approved office in Riyadh, we provide an urgent land surveying service within 24 hours, including:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'Immediate field visit',
+            'Issuing an official survey plan',
+            'Uploading data to the Balady platform',
+            'Delivering files in PDF + DWG format',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'All at competitive prices, and with a guarantee of municipality acceptance.',
+        },
+        {
+          type: 'cta',
+          icon: '📞',
+          text: 'Book now or contact us directly for a free consultation.',
+        },
+      ],
     },
     {
       id: 6,
@@ -995,6 +2118,76 @@ Successful construction project management in Saudi Arabia requires a balance of
 Need expert project management services?
 Contact us for professional project management solutions tailored to your construction needs.`,
       },
+      content: [
+        {
+          type: 'qa',
+          question: 'What is a building permit and why do we need it in Riyadh?',
+          answer:
+            "A building permit is an official document issued by Riyadh Municipality allowing construction work to begin on a specific plot of land. It is necessary to ensure: compliance with regulations and engineering specifications, protection of neighbors' and community rights, building and user safety, and avoiding violations and financial penalties.",
+        },
+        {
+          type: 'qa',
+          question: 'What are the basic requirements for obtaining a building permit in Riyadh?',
+          answer:
+            "Basic requirements include: an updated title deed, an approved engineering plan from a licensed engineering office, a geotechnical study of the site, a certificate from the electricity company, a certificate from the water company, proof of owner's identity, and land ownership document.",
+        },
+        {
+          type: 'qa',
+          question: 'What are the steps to obtain a building permit?',
+          answer:
+            'The steps are as follows: 1. Update the real estate deed through the Ehkam platform, 2. Prepare engineering plans from an approved engineering office, 3. Submit the application through the Balady platform, 4. Application review by the municipality, 5. Pay the required fees, 6. Receive the permit.',
+        },
+        {
+          type: 'qa',
+          question: 'What is the cost of a building permit in Riyadh?',
+          answer:
+            "The cost varies according to: land area, project type (residential/commercial), number of floors, geographical location, engineering office fees, and municipality and other authorities' fees.",
+        },
+        {
+          type: 'qa',
+          question: 'What is the expected time to obtain a building permit?',
+          answer:
+            'Approximate duration: Deed update: 2-4 weeks, Plans preparation: 1-2 weeks, Municipality review: 2-4 weeks, Total duration: 5-10 weeks.',
+        },
+        {
+          type: 'qa',
+          question: 'Can an engineering office be used to help issue the permit?',
+          answer:
+            'Yes, and it is recommended because the approved engineering office: ensures compliance with regulations, saves time and effort, deals with the municipality and other authorities, and provides specialized technical consultations.',
+        },
+        {
+          type: 'qa',
+          question: 'What are the penalties for building without a permit?',
+          answer:
+            'Penalties include: significant financial fines, work stoppage, demolition of the building in some cases, and delay in issuing permits in the future.',
+        },
+        {
+          type: 'qa',
+          question: 'Are there exceptions from obtaining a building permit?',
+          answer:
+            'Yes, some cases like: simple renovations, internal additions, some temporary facilities (with the need to check with the municipality in each case).',
+        },
+        {
+          type: 'qa',
+          question: 'What are the important tips before starting permit procedures?',
+          answer:
+            'Main tips: ensuring the deed is updated, selecting an approved engineering office, preparing all documents in advance, continuous follow-up of the application, and compliance with engineering specifications.',
+        },
+        {
+          type: 'qa',
+          question: 'How can I avoid having my building permit application rejected?',
+          answer:
+            'To avoid rejection: ensure the completeness of documents, comply with regulations and specifications, choose an experienced engineering office, regularly follow up on the application status, and address any observations immediately.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Obtaining a building permit in Riyadh is an organized process that requires following the correct procedures and submitting all required documents. An approved engineering office can help you expedite the process and ensure that you get the permit with minimal time and effort.',
+        },
+        {
+          type: 'cta',
+          text: 'Contact us today for a comprehensive service to issue your building permit in Riyadh efficiently and quickly.',
+        },
+      ],
     },
   ],
 };
