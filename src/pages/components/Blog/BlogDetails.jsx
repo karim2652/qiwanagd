@@ -186,7 +186,7 @@ const BlogDetails = () => {
         return (
           <ul className='mb-6' style={{ fontFamily }}>
             {block.items.map((item, idx) => (
-              <li key={idx} className={`flex items-start gap-2 mb-2 ${isArabic ? 'justify-end' : ''}`}>
+              <li key={idx} className='flex items-start gap-2 mb-2 justify-start'>
                 <span className='text-[#FF5E3A]'>✔</span>
                 <span>{item}</span>
               </li>
