@@ -148,7 +148,7 @@ const BlogDetails = () => {
         );
       case 'bullet-list':
         return (
-          <ul className={`list-disc list-inside mb-6 ${isArabic ? 'text-right' : 'text-left'}`} style={{ fontFamily }}>
+          <ul className={`list-disc list-inside marker:text-[#FF5E3A] mb-6 ${isArabic ? 'text-right' : 'text-left'}`} style={{ fontFamily }}>
             {block.items.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
