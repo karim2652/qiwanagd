@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import SEO from '../components/SEO/SEO';
 import ContactUsSection from './components/ContactUs/ContactUsCards';
 import { ContactForm } from './components/ContactUs';
 import Location from './components/ContactUs/Location';
@@ -12,6 +13,13 @@ const Contact = () => {
 
   return (
     <>
+      <SEO
+        title={t('contact.meta.title')}
+        description={t('contact.meta.description')}
+        keywords={t('contact.meta.keywords')}
+        url='/contact'
+        type='website'
+      />
       <div className='m-4'>
         <HeroSection
           backgroundImage='/images/contact/contact.webp'
@@ -50,7 +58,7 @@ const Contact = () => {
                   {/* Placeholder for image */}
                   <LazyLoadImage
                     src='images/contact/contactform.webp'
-                    effect="blur"
+                    effect='blur'
                     className='w-full h-full object-cover rounded-2xl'
                     alt='contact'
                     wrapperClassName='w-full h-full'

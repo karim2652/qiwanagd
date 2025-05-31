@@ -285,36 +285,37 @@ const Footer = () => {
             </h3>
             {isRTL ? (
               <div className='w-full'>
-                <div className=' w-full rounded-lg p-4 flex flex-col gap-4'>
+                <div className='w-full rounded-lg p-4 flex flex-col gap-4'>
                   <div className='flex flex-col gap-1'>
-                    <div className='text-gray-400 text-right'>من السبت إلى الجمعة :</div>
-                    <div className='text-white font-medium text-center'>08am - 04pm</div>
+                    <div className='text-gray-400 text-right'>من الأحد إلى الخميس :</div>
+                    <div className='text-white font-medium text-center'>
+                      8:00 ص - 1:00 م<br />
+                      4:00 م - 8:00 م
+                    </div>
                   </div>
-
                   <div className='flex flex-col gap-1 border-t border-gray-800 pt-4'>
                     <div className='text-gray-400 text-right'>السبت :</div>
-                    <div className='text-white font-medium text-center'>08am - 01pm</div>
+                    <div className='text-white font-medium text-center'>8:00 ص - 1:00 م</div>
                   </div>
-
                   <div className='flex flex-col gap-1 border-t border-gray-800 pt-4'>
                     <div className='text-gray-400 text-right'>الجمعة :</div>
-                    <div className='text-white font-medium text-center'>مغلق</div>
+                    <div className='text-white font-medium text-center'>إجازة</div>
                   </div>
                 </div>
               </div>
             ) : (
               <div className='flex flex-col gap-4 bg-[#111] p-5 rounded-lg border border-gray-800 w-full'>
                 <div className='flex justify-between text-base text-gray-400'>
-                  <span className='font-light'>{t('footer.monToFri')} :</span>
-                  <span className='font-medium text-white'>08am - 04pm</span>
+                  <span className='font-light'>Sunday to Thursday :</span>
+                  <span className='font-medium text-white'>8:00am - 1:00pm, 4:00pm - 8:00pm</span>
                 </div>
                 <div className='flex justify-between text-base text-gray-400 border-t border-gray-800 pt-4'>
-                  <span className='font-light'>{t('footer.saturday')} :</span>
+                  <span className='font-light'>Saturday :</span>
                   <span className='font-medium text-white'>08am - 01pm</span>
                 </div>
                 <div className='flex justify-between text-base text-gray-400 border-t border-gray-800 pt-4'>
-                  <span className='font-light'>{t('footer.sunday')} :</span>
-                  <span className='font-medium text-white'>{t('footer.closed')}</span>
+                  <span className='font-light'>Friday :</span>
+                  <span className='font-medium text-white'>Closed</span>
                 </div>
               </div>
             )}

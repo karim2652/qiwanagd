@@ -180,7 +180,6 @@ export const blogData = {
             { number: '4', text: 'إدارة المشاريع: التخطيط والتنفيذ الذكي', id: 'section-4' },
             { number: '5', text: 'الإشراف الهندسي: ضمان الجودة في كل مرحلة', id: 'section-5' },
 
-        
             { number: '6', text: 'أسئلة شائعة', id: 'section-6' },
             { number: '7', text: 'قائمة مراجعة لاختيار شركة الاستشارات', id: 'section-7' },
           ],

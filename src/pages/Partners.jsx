@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import SEO from '../components/SEO/SEO';
 import HeroSection from './HeroSection';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
@@ -23,19 +24,22 @@ const Partners = () => {
 
   return (
     <>
+      <SEO
+        title={t('partners.meta.title')}
+        description={t('partners.meta.description')}
+        keywords={t('partners.meta.keywords')}
+        url='/partners'
+        type='website'
+      />
       <div className='m-4'>
         <HeroSection
-          backgroundImage='/images/partners/partners-hero.webp'
-          title={t('partners.title', 'شركاؤنا')}
-          subtitle={t(
-            'partners.subtitle',
-            'نحن نفخر بشراكتنا مع أفضل الشركات في مجال الهندسة والتصميم'
-          )}
+          backgroundImage='/images/partners/partenrsbg.webp'
+          title={t('partners.title')}
+          subtitle={t('partners.subtitle')}
         />
       </div>
-
-      <div className='relative w-full py-12'>
-        <div className='m-5 px-4 bg-black py-16'>
+      <div className='relative w-full pb-5'>
+        <div className='mx-5 px-4 bg-black py-16'>
           {/* العنوان */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -56,7 +60,7 @@ const Partners = () => {
           </motion.div>
 
           {/* شبكة الشركاء */}
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto px-4'>
+          <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-8 max-w-7xl mx-auto px-4'>
             {partnerData.map((partner, idx) => (
               <motion.div
                 key={partner.id}
@@ -73,7 +77,7 @@ const Partners = () => {
                   scale: 1.03,
                   transition: { duration: 0.2 },
                 }}
-                className='group relative bg-white rounded-2xl h-64 flex items-center justify-center shadow-lg border border-[#232428] hover:border-[#ff3e33]/40 cursor-pointer overflow-hidden transition-all duration-500'
+                className='group relative bg-white rounded-2xl h-auto  flex items-center justify-center shadow-lg border border-[#232428] hover:border-[#ff3e33]/40 cursor-pointer overflow-hidden transition-all duration-500'
                 onClick={() => {
                   setLightboxIndex(idx);
                   setLightboxOpen(true);
@@ -85,7 +89,7 @@ const Partners = () => {
                     src={partner.image}
                     alt={partner.name}
                     effect='blur'
-                    className='object-contain max-h-[70%] max-w-[70%] mx-auto my-auto drop-shadow-lg transition-all duration-500 group-hover:scale-105'
+                    className='object-cover   mx-auto my-auto drop-shadow-lg transition-all duration-500 group-hover:scale-105'
                     wrapperClassName='w-full h-full flex items-center justify-center'
                     style={{
                       filter: 'drop-shadow(0 6px 16px rgba(0,0,0,0.18))',

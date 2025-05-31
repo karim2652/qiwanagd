@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://qiwanagd.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10 

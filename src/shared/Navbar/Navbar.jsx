@@ -141,7 +141,7 @@ export default function Navbar() {
                     <LazyLoadImage
                       src={lang === 'ar' ? logoAr : logoEn}
                       alt='Qiwa Najd Logo'
-                      effect="blur"
+                      effect='blur'
                       className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto object-contain'
                       wrapperClassName='w-full h-full'
                       onError={(e) => {
@@ -269,12 +269,12 @@ export default function Navbar() {
 
               {/* Mobile menu button */}
               <motion.div className='flex lg:hidden' whileTap={{ scale: 0.95 }}>
-                <Disclosure.Button className='inline-flex items-center justify-center rounded-lg p-1.5 text-gray-700 hover:bg-blue-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500'>
+                <Disclosure.Button className='inline-flex items-center justify-center rounded-lg p-3 text-gray-700 hover:bg-blue-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500'>
                   <span className='sr-only'>Open main menu</span>
                   {open ? (
-                    <XMarkIcon className='block h-5 w-5' aria-hidden='true' />
+                    <XMarkIcon className='block h-7 w-7' aria-hidden='true' />
                   ) : (
-                    <Bars3Icon className='block h-5 w-5' aria-hidden='true' />
+                    <Bars3Icon className='block h-7 w-7' aria-hidden='true' />
                   )}
                 </Disclosure.Button>
               </motion.div>

@@ -179,7 +179,7 @@ const AboutOverview = () => {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
           {/* يسار: صورة/مربع كبير مع إحصائية */}
           <div className='flex flex-col gap-6 items-center'>
-            <div className='bg-white rounded-2xl w-full max-w-[500px] p-8 shadow-sm border border-gray-100'>
+            <div className='bg-white rounded-2xl w-full  p-8 shadow-sm border border-gray-100'>
               <div className='flex flex-col gap-6'>
                 <div className='flex items-center gap-3'>
                   <span className='inline-block bg-[#fff0ed] text-[#f03e2f] px-4 py-1 rounded-full text-md font-bold'>
@@ -259,7 +259,7 @@ const AboutOverview = () => {
 
         {/* قسم التصنيفات */}
         <div className='my-8'>
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 max-w-7xl mx-auto'>
+          <div className='grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-6 gap-6 max-w-7xl mx-auto'>
             {categories.map((cat, i) => (
               <div
                 key={i}
@@ -289,7 +289,6 @@ const AboutOverview = () => {
         variants={containerVariants}
         className='my-8 relative'
       >
-        
         <div className='max-w-7xl mx-auto px-4'>
           <motion.div
             variants={itemVariants}

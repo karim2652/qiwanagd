@@ -18,49 +18,45 @@ const FloatingButtons = () => {
   // ثابت على اليمين دائمًا بغض النظر عن اللغة
   const buttons = (
     <div
-      className='fixed bottom-5 right-4 z-[9999]'
+      className='fixed bottom-7 right-6 z-[9999] animate-fadeIn'
       dir='ltr'
       style={{
         isolation: 'isolate',
-        animation: 'float 4s cubic-bezier(0.4, 0, 0.2, 1) infinite',
         willChange: 'transform',
       }}
     >
       <style>
         {`
           @keyframes float {
-            0% {
-              transform: translateY(0px);
-            }
-            25% {
-              transform: translateY(-6px);
-            }
-            50% {
-              transform: translateY(-8px);
-            }
-            75% {
-              transform: translateY(-6px);
-            }
-            100% {
-              transform: translateY(0px);
-            }
+            0% { transform: translateY(0px); }
+            25% { transform: translateY(-6px); }
+            50% { transform: translateY(-8px); }
+            75% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fadeIn {
+            animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
           }
         `}
       </style>
 
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-4'>
         {/* Call Button */}
         <div className='group relative'>
           <a
             href='tel:+966548240556'
-            className='w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300'
+            className='w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform duration-300'
             dir='ltr'
           >
-            <FaPhone size={16} color='white' />
+            <FaPhone size={20} color='white' />
           </a>
-          <div className='absolute right-12 top-1/2  bg-gradient-to-b from-white to-blue-50 text-gray-800 px-4 py-2.5 rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.1)] text-sm font-medium opacity-0 scale-95 -translate-y-2 translate-x-3 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-400 ease-out border border-blue-100 whitespace-nowrap pointer-events-none'>
-            <span className='block text-blue-600 font-bold tracking-wide'>{messages.call}</span>
-            <div className='absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 transform rotate-45 w-2.5 h-2.5 bg-white border-r border-b border-blue-100'></div>
+          <div className='absolute right-14 top-1/2 bg-white/95 text-blue-700 px-5 py-3 rounded-xl shadow-md text-base font-semibold opacity-0 scale-95 -translate-y-2 translate-x-3 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-400 ease-out border border-blue-200 whitespace-nowrap pointer-events-none'>
+            <span className='block tracking-wide'>{messages.call}</span>
+            <div className='absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 transform rotate-45 w-3 h-3 bg-white border-r border-b border-blue-200'></div>
           </div>
         </div>
 
@@ -70,15 +66,13 @@ const FloatingButtons = () => {
             href='https://wa.me/966548240556'
             target='_blank'
             rel='noopener noreferrer'
-            className='w-10 h-10 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300'
+            className='w-12 h-12 bg-green-600 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform duration-300'
           >
-            <FaWhatsapp size={16} color='white' />
+            <FaWhatsapp size={20} color='white' />
           </a>
-          <div className='absolute right-12 top-1/2  bg-gradient-to-b from-white to-green-50 text-gray-800 px-4 py-2.5 rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.1)] text-sm font-medium opacity-0 scale-95 -translate-y-2 translate-x-3 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-400 ease-out border border-green-100 whitespace-nowrap pointer-events-none'>
-            <span className='block text-green-600 font-bold tracking-wide'>
-              {messages.whatsapp}
-            </span>
-            <div className='absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 transform rotate-45 w-2.5 h-2.5 bg-white border-r border-b border-green-100'></div>
+          <div className='absolute right-14 top-1/2 bg-white/95 text-green-700 px-5 py-3 rounded-xl shadow-md text-base font-semibold opacity-0 scale-95 -translate-y-2 translate-x-3 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-400 ease-out border border-green-200 whitespace-nowrap pointer-events-none'>
+            <span className='block tracking-wide'>{messages.whatsapp}</span>
+            <div className='absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 transform rotate-45 w-3 h-3 bg-white border-r border-b border-green-200'></div>
           </div>
         </div>
 
@@ -86,13 +80,13 @@ const FloatingButtons = () => {
         <div className='group relative'>
           <a
             href='mailto:info@qiwanagd.com'
-            className='w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300'
+            className='w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform duration-300'
           >
-            <FaEnvelope size={16} color='white' />
+            <FaEnvelope size={20} color='white' />
           </a>
-          <div className='absolute right-12 top-1/2 -translate-y-1/2 bg-gradient-to-b from-white to-yellow-50 text-gray-800 px-4 py-2.5 rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.1)] text-sm font-medium opacity-0 scale-95  translate-x-3 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-400 ease-out border border-yellow-100 whitespace-nowrap pointer-events-none'>
-            <span className='block text-yellow-600 font-bold tracking-wide'>{messages.email}</span>
-            <div className='absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 transform rotate-45 w-2.5 h-2.5 bg-white border-r border-b border-yellow-100'></div>
+          <div className='absolute right-14 top-1/2 bg-white/95 text-yellow-700 px-5 py-3 rounded-xl shadow-md text-base font-semibold opacity-0 scale-95 -translate-y-2 translate-x-3 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-400 ease-out border border-yellow-200 whitespace-nowrap pointer-events-none'>
+            <span className='block tracking-wide'>{messages.email}</span>
+            <div className='absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 transform rotate-45 w-3 h-3 bg-white border-r border-b border-yellow-200'></div>
           </div>
         </div>
       </div>

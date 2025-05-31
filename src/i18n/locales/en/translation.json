@@ -19,6 +19,11 @@
       "title": "Innovative Solutions",
       "description": "Turning visions into reality",
       "highlight": "Innovative"
+    },
+    "meta": {
+      "title": "Qawi Najd Engineering Consulting - Leading Design and Construction Company",
+      "description": "Qawi Najd Engineering Consulting Company - A leading company in design, construction, and engineering consulting in Saudi Arabia. We provide professional services in architectural design, interior design, and integrated engineering consulting.",
+      "keywords": "engineering consulting, architectural design, interior design, construction, contracting, engineering company, Qawi Najd, Saudi Arabia, Riyadh, Jeddah, Dammam, Makkah, Madinah, Al Kharj, Mulham, Al Aqiq, Al Baha, certified engineering office, certified engineering consulting, professional architectural design, distinguished interior design, project management, engineering surveying, building permit, municipal permit, deed update, surveying, quantity calculation, electrical design, mechanical design, site coordination, decorative design, residential projects, commercial projects, industrial projects, governmental projects, educational projects, tourism projects, hotel projects, corporate projects, free consultation, request consultation, engineering office in Riyadh, engineering office in Jeddah, engineering office in Dammam, engineering office in Makkah, engineering office in Madinah, engineering office in Al Kharj, engineering office in Mulham, engineering office in Al Aqiq, engineering office in Al Baha"
     }
   },
   "nav": {
@@ -101,6 +106,11 @@
     "vision": {
       "title": "Our Vision",
       "main": "We seek to achieve a leading position for our offices on the map of the Kingdom and the region as diverse consulting offices that invest their energies and resources for growth and create distinct value for their clients, employees, and all stakeholders, while playing their role in supporting the Kingdom's Vision 2030"
+    },
+    "meta": {
+      "title": "About Us - Qawi Najd Engineering Consulting",
+      "description": "Qawi Najd Engineering Consulting Company - A group of accredited engineering offices in the Kingdom. We comprise elite engineers specialized in providing integrated and innovative engineering solutions.",
+      "keywords": "about us, Qawi Najd, engineering company, engineering consulting, specialized engineers, Saudi Arabia, certified engineering office, certified engineering consulting, accredited engineering offices, professional engineers, engineering experience, successful projects, Vision 2030, leading company, integrated engineering services, innovative engineering solutions, specialized engineering team, engineering experts, professional engineering consulting, engineering offices in Riyadh, engineering offices in Jeddah, engineering offices in Dammam, engineering offices in Makkah, engineering offices in Madinah, engineering offices in Al Kharj, engineering offices in Mulham, engineering offices in Al Aqiq, engineering offices in Al Baha"
     }
   },
   "projects": {
@@ -116,7 +126,12 @@
       "educational": "Educational"
     },
     "view_more": "View More",
-    "view_details": "View Details"
+    "view_details": "View Details",
+    "meta": {
+      "title": "Our Distinguished Projects - Qawi Najd Engineering Consulting",
+      "description": "Explore our distinguished projects across various sectors. We deliver a diverse range of successful projects in residential, commercial, industrial, and governmental sectors.",
+      "keywords": "engineering projects, residential projects, commercial projects, industrial projects, governmental projects, Qawi Najd, Riyadh, Jeddah, Dammam, Makkah, Madinah, Al Kharj, Mulham, Al Aqiq, Al Baha, certified engineering office, certified engineering consulting, professional architectural design, distinguished interior design, integrated project management, precise engineering surveying, successful projects, distinguished projects, luxury residential projects, integrated commercial projects, advanced industrial projects, massive governmental projects, advanced educational projects, luxury tourism projects, five-star hotel projects, global corporate projects, projects in Riyadh, projects in Jeddah, projects in Dammam, projects in Makkah, projects in Madinah, projects in Al Kharj, projects in Mulham, projects in Al Aqiq, projects in Al Baha, residential projects in Riyadh, commercial projects in Jeddah, industrial projects in Dammam, governmental projects in Makkah, educational projects in Madinah, tourism projects in Al Kharj, hotel projects in Mulham, corporate projects in Al Aqiq, integrated projects in Al Baha"
+    }
   },
   "branches": {
     "title": "Our Branches",
@@ -154,7 +169,12 @@
       "author": "Author",
       "about_article": "About the Article"
     },
-    "suggested_articles": "Suggested Articles"
+    "suggested_articles": "Suggested Articles",
+    "meta": {
+      "title": "Blog - Latest Engineering Articles and News | Qawi Najd",
+      "description": "Read the latest articles and news in engineering and consulting. We provide valuable content about architectural design, engineering consulting, and project management.",
+      "keywords": "engineering blog, engineering articles, engineering news, architectural design, engineering consulting, Qawi Najd, Riyadh, Jeddah, Dammam, Makkah, Madinah, Al Kharj, Mulham, Al Aqiq, Al Baha, certified engineering office, certified engineering consulting, professional architectural design, distinguished interior design, integrated project management, precise engineering surveying, specialized engineering articles, latest engineering news, engineering tips, engineering information, engineering studies, engineering research, engineering reports, engineering analysis, free engineering consulting, free engineering tips, free engineering information, free engineering studies, free engineering research, free engineering reports, free engineering analysis, engineering articles in Riyadh, engineering articles in Jeddah, engineering articles in Dammam, engineering articles in Makkah, engineering articles in Madinah, engineering articles in Al Kharj, engineering articles in Mulham, engineering articles in Al Aqiq, engineering articles in Al Baha"
+    }
   },
   "blog_content": {
     "posts": {
@@ -204,7 +224,12 @@
   },
   "services": {
     "title": "Our Diverse Services",
-    "subtitle": "We provide the best diverse services to meet your various needs"
+    "subtitle": "We provide the best diverse services to meet your various needs",
+    "meta": {
+      "title": "Our Integrated Engineering Services - Qawi Najd Engineering Consulting",
+      "description": "We offer a comprehensive range of engineering services including architectural design, interior design, engineering consulting, project management, and engineering surveying. Experts in providing innovative engineering solutions.",
+      "keywords": "engineering services, architectural design, interior design, engineering consulting, project management, engineering surveying, Qawi Najd, Riyadh, Jeddah, Dammam, Makkah, Madinah, Al Kharj, Mulham, Al Aqiq, Al Baha, certified engineering office, certified engineering consulting, professional architectural design, distinguished interior design, integrated project management, precise engineering surveying, building permit, municipal permit, deed update, surveying, quantity calculation, electrical design, mechanical design, site coordination, decorative design, residential projects, commercial projects, industrial projects, governmental projects, educational projects, tourism projects, hotel projects, corporate projects, free consultation, request consultation, contact engineering office, contact engineer, contact engineering consultant, contact engineering office in Riyadh, contact engineering office in Jeddah, contact engineering office in Dammam, contact engineering office in Makkah, contact engineering office in Madinah, contact engineering office in Al Kharj, contact engineering office in Mulham, contact engineering office in Al Aqiq, contact engineering office in Al Baha"
+    }
   },
   "contact": {
     "title": "Contact Us",
@@ -242,7 +267,12 @@
       "location_text": "Qawi Najd Office – Riyadh, Al Malqa District, Anas Bin Malik Road, Kingdom of Saudi Arabia",
       "call_us": "Call Us 24/7",
       "working_days": "Working Days",
-      "working_days_text": "From Saturday to Friday:<br />08am - 04pm"
+      "working_days_text": "Sunday to Thursday:<br />8:00am - 1:00pm<br />4:00pm - 8:00pm<br />Friday: Closed<br />Saturday: 08am - 01pm"
+    },
+    "meta": {
+      "title": "Contact Us - Qawi Najd Engineering Consulting",
+      "description": "Contact us for the best engineering services. We are present in several strategic locations across Saudi Arabia. Contact us now for a free consultation.",
+      "keywords": "contact us, communication, free consultation, Qawi Najd offices, Riyadh, Jeddah, Dammam, Makkah, Madinah, Al Kharj, Mulham, Al Aqiq, Al Baha, certified engineering office, certified engineering consulting, professional architectural design, distinguished interior design, integrated project management, precise engineering surveying, building permit, municipal permit, deed update, surveying, quantity calculation, electrical design, mechanical design, site coordination, decorative design, residential projects, commercial projects, industrial projects, governmental projects, educational projects, tourism projects, hotel projects, corporate projects, free consultation, request consultation, contact engineering office, contact engineer, contact engineering consultant, contact engineering office in Riyadh, contact engineering office in Jeddah, contact engineering office in Dammam, contact engineering office in Makkah, contact engineering office in Madinah, contact engineering office in Al Kharj, contact engineering office in Mulham, contact engineering office in Al Aqiq, contact engineering office in Al Baha"
     }
   },
   "qrcode": {
@@ -301,10 +331,20 @@
       "architectural": "Architectural",
       "structural": "Structural"
     },
-    "know_about_us": "Know About Us"
+    "know_about_us": "Know About Us",
+    "meta": {
+      "title": "Request Free Consultation - Qawi Najd Engineering Consulting",
+      "description": "Request a free consultation from our experts at Qawi Najd. We provide comprehensive consulting services in architectural design, interior design, and engineering consulting.",
+      "keywords": "free consultation, request consultation, architectural design, interior design, engineering consulting, Qawi Najd, Riyadh, Jeddah, Dammam, Makkah, Madinah, Al Kharj, Mulham, Al Aqiq, Al Baha, certified engineering office, certified engineering consulting, professional architectural design, distinguished interior design, integrated project management, precise engineering surveying, building permit, municipal permit, deed update, surveying, quantity calculation, electrical design, mechanical design, site coordination, decorative design, residential projects, commercial projects, industrial projects, governmental projects, educational projects, tourism projects, hotel projects, corporate projects, free consultation in Riyadh, free consultation in Jeddah, free consultation in Dammam, free consultation in Makkah, free consultation in Madinah, free consultation in Al Kharj, free consultation in Mulham, free consultation in Al Aqiq, free consultation in Al Baha, request engineering consultation, request architectural consultation, request interior consultation, request structural consultation, request electrical consultation, request mechanical consultation, request surveying consultation, request municipal consultation, request permit consultation, request deed consultation"
+    }
   },
   "partners": {
     "title": "Success Partners",
-    "view_more": "View More"
+    "view_more": "View More",
+    "meta": {
+      "title": "Success Partners - Qawi Najd Engineering Consulting",
+      "description": "Meet our success partners at Qawi Najd. We collaborate with elite companies and institutions in engineering and construction.",
+      "keywords": "success partners, Qawi Najd partners, engineering companies, construction companies, contracting companies, design companies, consulting companies, surveying companies, permit companies, municipal companies, deed companies, surveying companies, quantity calculation companies, electrical design companies, mechanical design companies, site coordination companies, decorative design companies, residential project companies, commercial project companies, industrial project companies, governmental project companies, educational project companies, tourism project companies, hotel project companies, corporate project companies, partners in Riyadh, partners in Jeddah, partners in Dammam, partners in Makkah, partners in Madinah, partners in Al Kharj, partners in Mulham, partners in Al Aqiq, partners in Al Baha"
+    }
   }
 }
