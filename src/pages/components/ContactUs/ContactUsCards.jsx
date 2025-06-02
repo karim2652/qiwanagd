@@ -25,18 +25,18 @@ const ContactUsSection = () => {
       iconBg: 'bg-[#EFF3F6]',
       title: t('contact.cards.call_us'),
       text: (
-        <div>
+        <span className="block">
           <span dir='ltr'>+966 54 824 0556</span>
           <br />
           <span dir='ltr'>+966 55 777 0556</span>
-        </div>
+        </span>
       ),
     },
     {
       icon: <FaCalendarAlt size={18} className='text-red-500' />,
       iconBg: 'bg-[#EFF3F6]',
       title: t('contact.cards.working_days'),
-      text: <div dangerouslySetInnerHTML={{ __html: t('contact.cards.working_days_text') }} />,
+      text: <span dangerouslySetInnerHTML={{ __html: t('contact.cards.working_days_text') }} />,
     },
   ];
 
@@ -59,7 +59,7 @@ const ContactUsSection = () => {
                   <h3 className='ml-3.5 text-base font-medium mx-3 text-gray-800'>{item.title}</h3>
                 </div>
                 <div className='w-full h-px bg-gray-200 my-4'></div>
-                <p className='text-gray-500 text-sm leading-relaxed pb-5'>{item.text}</p>
+                <div className='text-gray-500 text-sm leading-relaxed pb-5'>{item.text}</div>
                 <div className=' my-6'>
                   {' '}
                   {index === 0 ? (

@@ -38,7 +38,7 @@ const Location = () => {
     albaha: {
       id: 'albaha',
       name: t('contact.locations.offices.albaha'),
-      address: isArabic ? 'الجرشي، المملكة العربية السعودية' : 'Al Garshi, Saudi Arabia',
+      address: isArabic ? 'بلجرشي، المملكة العربية السعودية' : 'Baljurashi, Saudi Arabia',
       phones: ['+966 54 824 0556', '+966 55 777 0557'],
       coordinates: [20.2887, 41.4647],
       mapUrl:

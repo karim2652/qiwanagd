@@ -30,11 +30,10 @@ const LoadingFallback = () => {
 const root = createRoot(document.getElementById('root'));
 
 // Register service worker for PWA
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', async () => {
     try {
       const registration = await navigator.serviceWorker.register('/sw.js', {
-        type: 'module',
         scope: '/',
       });
       console.log('ServiceWorker registration successful with scope:', registration.scope);

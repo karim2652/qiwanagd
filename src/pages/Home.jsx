@@ -8,6 +8,7 @@ import ProductsOverview from './components/Products/ProductsOverview';
 import Location from './components/ContactUs/Location';
 import QrCode from './components/home/QrCode';
 import PartnerOverview from './components/partners/PartnerOverview';
+import ContactForm from './components/ContactUs/ContactForm';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -27,7 +28,10 @@ const Home = () => {
       <ProductsOverview />
       <Location />
       <PartnerOverview />
-      <QrCode />
+      <div className='flex justify-center items-center gap-6 p-14'>
+        <QrCode />
+        <ContactForm />
+      </div>
     </>
   );
 };

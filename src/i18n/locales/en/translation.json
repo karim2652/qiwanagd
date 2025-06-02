@@ -258,7 +258,7 @@
         "alkharj": "Al Kharj Office",
         "mulham": "Mulham Office",
         "alaqiq": "Al Aqiq Office",
-        "albaha": "Al Garshi Office"
+        "albaha": "Baljurashi Office"
       }
     },
     "cards": {
@@ -273,6 +273,12 @@
       "title": "Contact Us - Qawi Najd Engineering Consulting",
       "description": "Contact us for the best engineering services. We are present in several strategic locations across Saudi Arabia. Contact us now for a free consultation.",
       "keywords": "contact us, communication, free consultation, Qawi Najd offices, Riyadh, Jeddah, Dammam, Makkah, Madinah, Al Kharj, Mulham, Al Aqiq, Al Baha, certified engineering office, certified engineering consulting, professional architectural design, distinguished interior design, integrated project management, precise engineering surveying, building permit, municipal permit, deed update, surveying, quantity calculation, electrical design, mechanical design, site coordination, decorative design, residential projects, commercial projects, industrial projects, governmental projects, educational projects, tourism projects, hotel projects, corporate projects, free consultation, request consultation, contact engineering office, contact engineer, contact engineering consultant, contact engineering office in Riyadh, contact engineering office in Jeddah, contact engineering office in Dammam, contact engineering office in Makkah, contact engineering office in Madinah, contact engineering office in Al Kharj, contact engineering office in Mulham, contact engineering office in Al Aqiq, contact engineering office in Al Baha"
+    },
+    "toast": {
+      "sending": "Sending your message...",
+      "success": "Thank you for contacting us. We will get back to you soon.",
+      "timeout_error": "Sorry, sending the message took too long. Please try again.",
+      "general_error": "Sorry, an error occurred while sending your message. Please try again."
     }
   },
   "qrcode": {
