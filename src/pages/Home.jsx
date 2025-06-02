@@ -28,7 +28,7 @@ const Home = () => {
       <ProductsOverview />
       <Location />
       <PartnerOverview />
-      <div className='flex justify-center items-center gap-6 p-14'>
+      <div className='flex flex-col md:flex-row justify-center items-center gap-6 p-4 md:p-14'>
         <QrCode />
         <ContactForm />
       </div>
