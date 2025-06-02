@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -14,20 +15,8 @@ import {
 } from '@/components/ui/select';
 import { Mail, Phone, User, MessageSquare, CheckCircle2, MapPin } from 'lucide-react';
 import { MdBusiness, MdHome, MdFactory, MdLocationCity } from 'react-icons/md';
-import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-
-// Zod schema for the quote form
-const quoteSchema = z.object({
-  name: z.string().min(1, 'name_required'),
-  email: z.string().min(1, 'email_required').email('email_invalid'),
-  phone: z.string().min(1, 'phone_required'),
-  location: z.string().min(1, 'location_required'),
-  howDidYouFind: z.string().min(1, 'how_did_you_find_required'),
-  requestType: z.string().min(1, 'request_type_required'),
-  requiredService: z.string().min(1, 'required_service_required'),
-  comment: z.string().optional(),
-});
+import { createQuoteSchema } from '@/schemas/quoteSchema';
 
 const QuoteForm = () => {
   const { t, i18n } = useTranslation();
@@ -36,42 +25,141 @@ const QuoteForm = () => {
   const [isSending, setIsSending] = React.useState(false);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
+  // Initialize EmailJS with the correct configuration
+  React.useEffect(() => {
+    try {
+      emailjs.init({
+        publicKey: 'yQ03ZUF1VMp4mz9rB',
+        limitRate: true,
+        blockHeadless: false,
+        blockList: {
+          list: [],
+          watchVariable: true,
+        },
+        accountId: 'account_id', // Add your account ID if you have one
+      });
+      console.log('EmailJS initialized successfully with config:', {
+        publicKey: 'yQ03ZUF1VMp4mz9rB',
+        serviceId: 'service_vh5fr15',
+        templateId: 'template_8akn5z5',
+      });
+    } catch (error) {
+      console.error('EmailJS initialization error:', error);
+    }
+  }, []);
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting: formIsSubmitting },
     setValue,
+    watch,
   } = useForm({
-    resolver: zodResolver(quoteSchema),
+    resolver: zodResolver(createQuoteSchema(i18n)),
+    mode: 'onChange', // Enable real-time validation
   });
 
   // Dynamic options from the translation file
   const HOW_DID_YOU_FIND_OPTIONS = t('quote.how_did_you_find_options', { returnObjects: true });
   const REQUEST_TYPES = t('quote.request_types', { returnObjects: true });
   const REQUIRED_SERVICES = t('quote.required_services', { returnObjects: true });
-
-  // أنواع الخدمات مع الترجمة
-  const SERVICE_TYPES = [
-    { key: 'commercial', label: t('quote.commercial'), icon: <MdLocationCity size={40} /> },
-    { key: 'industrial', label: t('quote.industrial'), icon: <MdFactory size={40} /> },
-    { key: 'residential', label: t('quote.residential'), icon: <MdHome size={40} /> },
-    { key: 'corporate', label: t('quote.corporate'), icon: <MdBusiness size={40} /> },
-  ];
-
   const handleTypeSelect = (key) => setSelectedType(key);
 
   const onSubmit = async (data) => {
     setIsSending(true);
     setIsSubmitting(true);
     try {
-      // Add your form submission logic here
-      console.log('Form data:', data);
-      toast.success('تم إرسال الطلب بنجاح! 🎉');
-      reset();
+      // Get current time in a formatted string
+      const now = new Date();
+      const timeString = now.toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
+      // Prepare template parameters to match EmailJS template variables exactly
+      const templateParams = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        location: data.location,
+        howDidYouFind: data.howDidYouFind,
+        requestType: data.requestType,
+        requiredService: data.requiredService,
+        comment: data.comment || t('quote.no_additional_notes'),
+        date: timeString,
+      };
+
+      // Log the full configuration before sending
+      console.log('EmailJS full configuration:', {
+        publicKey: 'yQ03ZUF1VMp4mz9rB',
+        serviceId: 'service_vh5fr15',
+        templateId: 'template_8akn5z5',
+        templateParams,
+        userAgent: navigator.userAgent,
+        timestamp: new Date().toISOString(),
+      });
+
+      // Send email using EmailJS with detailed error handling
+      try {
+        const response = await emailjs.send(
+          'service_vh5fr15',
+          'template_8akn5z5',
+          templateParams,
+          'yQ03ZUF1VMp4mz9rB'
+        );
+        console.log('EmailJS response:', response);
+
+        if (response.status === 200) {
+          toast.success(
+            i18n.language === 'ar' ? 'تم إرسال الطلب بنجاح! 🎉' : 'Request sent successfully! 🎉'
+          );
+          reset();
+        } else {
+          throw new Error(`Unexpected response status: ${response.status}`);
+        }
+      } catch (emailError) {
+        console.error('EmailJS specific error:', {
+          error: emailError,
+          status: emailError.status,
+          text: emailError.text,
+          details: emailError.details,
+        });
+        throw emailError;
+      }
     } catch (error) {
-      console.error('Failed to submit form:', error);
-      toast.error('حدث خطأ أثناء إرسال الطلب! 😞');
+      console.error('Failed to submit form:', {
+        error,
+        status: error.status,
+        text: error.text,
+        details: error.details,
+      });
+
+      let errorMessage =
+        i18n.language === 'ar' ? 'حدث خطأ أثناء إرسال الطلب! 😞' : 'Error sending request! 😞';
+
+      // More specific error messages
+      if (error.text?.includes('service ID not found')) {
+        errorMessage =
+          i18n.language === 'ar'
+            ? `خطأ في معرف الخدمة (${'service_vh5fr15'}). يرجى التحقق من الإعدادات في لوحة التحكم`
+            : `Service ID (${'service_vh5fr15'}) not found. Please check dashboard settings`;
+      } else if (error.text?.includes('template ID not found')) {
+        errorMessage =
+          i18n.language === 'ar'
+            ? `خطأ في معرف القالب (${'template_8akn5z5'}). يرجى التحقق من الإعدادات في لوحة التحكم`
+            : `Template ID (${'template_8akn5z5'}) not found. Please check dashboard settings`;
+      } else if (error.text?.includes('Invalid public key')) {
+        errorMessage =
+          i18n.language === 'ar'
+            ? 'مفتاح API غير صالح. يرجى التحقق من الإعدادات'
+            : 'Invalid API key. Please check settings';
+      }
+
+      toast.error(errorMessage);
     } finally {
       setIsSending(false);
       setIsSubmitting(false);
@@ -82,8 +170,9 @@ const QuoteForm = () => {
     <form
       onSubmit={handleSubmit(onSubmit)}
       className='w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10'
+      noValidate
     >
-      {/* مجموعة معلومات التواصل */}
+      {/* Contact Info Section */}
       <div className='col-span-1 flex flex-col gap-4 bg-[#181818] p-6 rounded-2xl border border-[#222]'>
         <h2 className='text-lg font-bold text-[#ff3e33] mb-2'>
           {t('quote.contact_info') || 'معلومات التواصل'}
@@ -94,10 +183,14 @@ const QuoteForm = () => {
             type='text'
             placeholder={t('quote.name')}
             className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'
-            {...register('name')}
+            {...register('name', { required: true })}
           />
           <User className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5' />
-          {errors.name && <p className='text-red-500 text-xs mt-1'>{errors.name.message}</p>}
+          {errors.name && (
+            <p className='text-red-500 text-xs mt-1'>
+              {i18n.language === 'ar' ? 'الاسم مطلوب' : 'Name is required'}
+            </p>
+          )}
         </div>
         {/* Email */}
         <div className='relative'>
@@ -105,10 +198,17 @@ const QuoteForm = () => {
             type='email'
             placeholder={t('quote.email')}
             className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'
-            {...register('email')}
+            {...register('email', {
+              required: true,
+              pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            })}
           />
           <Mail className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5' />
-          {errors.email && <p className='text-red-500 text-xs mt-1'>{errors.email.message}</p>}
+          {errors.email && (
+            <p className='text-red-500 text-xs mt-1'>
+              {i18n.language === 'ar' ? 'البريد الإلكتروني غير صالح' : 'Invalid email address'}
+            </p>
+          )}
         </div>
         {/* Phone */}
         <div className='relative'>
@@ -117,13 +217,17 @@ const QuoteForm = () => {
             placeholder={t('quote.phone')}
             className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'
             dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
-            {...register('phone')}
+            {...register('phone', { required: true })}
           />
           <Phone
             className='absolute left-3 top-1/2 transform -translate-y-1/2 text-[#777]'
             size={20}
           />
-          {errors.phone && <p className='text-red-500 text-xs mt-1'>{errors.phone.message}</p>}
+          {errors.phone && (
+            <p className='text-red-500 text-xs mt-1'>
+              {i18n.language === 'ar' ? 'رقم الهاتف مطلوب' : 'Phone number is required'}
+            </p>
+          )}
         </div>
         {/* Location */}
         <div className='relative'>
@@ -131,49 +235,41 @@ const QuoteForm = () => {
             type='text'
             placeholder={t('quote.location')}
             className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'
-            {...register('location')}
+            {...register('location', { required: true })}
           />
           <MapPin className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5' />
           {errors.location && (
-            <p className='text-red-500 text-xs mt-1'>{errors.location.message}</p>
+            <p className='text-red-500 text-xs mt-1'>
+              {i18n.language === 'ar' ? 'الموقع مطلوب' : 'Location is required'}
+            </p>
           )}
         </div>
       </div>
-      {/* مجموعة تفاصيل الطلب */}
+
+      {/* Request Details Section */}
       <div className='col-span-1 flex flex-col gap-4 bg-[#181818] p-6 rounded-2xl border border-[#222]'>
         <h2 className='text-lg font-bold text-[#ff3e33] mb-2'>
           {t('quote.request_details') || 'تفاصيل الطلب'}
         </h2>
-        {/* Service Types */}
-        <div className='flex flex-wrap gap-2 mb-2'>
-          {SERVICE_TYPES.map((type) => (
-            <button
-              key={type.key}
-              onClick={() => handleTypeSelect(type.key)}
-              type='button'
-              className={`flex flex-col items-center justify-center w-24 h-24 rounded-xl border transition-all duration-200 text-white text-sm font-medium gap-1 ${selectedType === type.key ? 'bg-[#ff3e33] border-[#ff3e33] shadow-lg' : 'bg-[#222] border-[#333] hover:border-[#ff3e33]'}`}
-            >
-              <span className='text-2xl'>{type.icon}</span>
-              <span>{type.label}</span>
-            </button>
-          ))}
-        </div>
+
         {/* How did you find us */}
         <div>
           <Select onValueChange={(value) => setValue('howDidYouFind', value)} defaultValue=''>
-            <SelectTrigger className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none '>
+            <SelectTrigger className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'>
               <SelectValue placeholder={t('quote.how_did_you_find')} />
             </SelectTrigger>
-            <SelectContent className='bg-[#222] border-[#333] text-white '>
+            <SelectContent className='bg-[#222] border-[#333] text-white'>
               {HOW_DID_YOU_FIND_OPTIONS.map((option) => (
-                <SelectItem className='hover:bg-[#ff3e33] ' key={option} value={option}>
+                <SelectItem className='hover:bg-[#ff3e33]' key={option} value={option}>
                   {option}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
           {errors.howDidYouFind && (
-            <p className='text-red-500 text-xs mt-1'>{errors.howDidYouFind.message}</p>
+            <p className='text-red-500 text-xs mt-1'>
+              {i18n.language === 'ar' ? 'كيف وجدتنا مطلوب' : 'How did you find us is required'}
+            </p>
           )}
         </div>
         {/* Request Type */}
@@ -182,16 +278,18 @@ const QuoteForm = () => {
             <SelectTrigger className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'>
               <SelectValue placeholder={t('quote.request_type')} />
             </SelectTrigger>
-            <SelectContent className='bg-[#222] border-[#333] text-white focus:border-[#ff3e33] focus:outline-none'>
+            <SelectContent className='bg-[#222] border-[#333] text-white'>
               {REQUEST_TYPES.map((type) => (
-                <SelectItem className='hover:bg-[#ff3e33] ' key={type} value={type}>
+                <SelectItem className='hover:bg-[#ff3e33]' key={type} value={type}>
                   {type}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
           {errors.requestType && (
-            <p className='text-red-500 text-xs mt-1'>{errors.requestType.message}</p>
+            <p className='text-red-500 text-xs mt-1'>
+              {i18n.language === 'ar' ? 'نوع الطلب مطلوب' : 'Request type is required'}
+            </p>
           )}
         </div>
         {/* Required Service */}
@@ -209,12 +307,15 @@ const QuoteForm = () => {
             </SelectContent>
           </Select>
           {errors.requiredService && (
-            <p className='text-red-500 text-xs mt-1'>{errors.requiredService.message}</p>
+            <p className='text-red-500 text-xs mt-1'>
+              {i18n.language === 'ar' ? 'الخدمة المطلوبة مطلوبة' : 'Required service is required'}
+            </p>
           )}
         </div>
       </div>
-      {/* مجموعة الملاحظات والملف وزر الإرسال */}
-      <div className='col-span-1 md:col-span-2 flex flex-col gap-4 bg-[#181818] p-6 rounded-2xl border border-[#222] mt-2'>
+
+      {/* Additional Notes Section */}
+      <div className='col-span-1 md:col-span-2 flex flex-col gap-4 bg-[#181818] p-6 rounded-2xl border border-[#222] '>
         <h2 className='text-lg font-bold text-[#ff3e33] mb-2'>
           {t('quote.additional_notes') || 'ملاحظات إضافية'}
         </h2>

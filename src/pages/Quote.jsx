@@ -7,7 +7,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import QuoteForm from './components/QuoteForm';
 import SEO from '../components/SEO/SEO';
-import HeroSection from './HeroSection';
 
 const Quote = () => {
   const { t, i18n } = useTranslation();
@@ -21,12 +20,12 @@ const Quote = () => {
         url='/quote'
         type='website'
       />
-      <div className='min-h-screen bg-[#111] flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 md:py-10 m-6 rounded-3xl'>
+      <div className='min-h-screen bg-[#111] flex flex-col items-center justify-center px-4  py-6 md:py-10 m-2 rounded-3xl'>
         <div className='flex flex-col gap-6 md:gap-8 w-full max-w-6xl'>
           {/* Logo & Title */}
           <div className='w-full'>
             <div
-              className={`flex flex-col w-full ${i18n.language === 'ar' ? 'items-end' : 'items-start'}`}
+              className={`flex flex-col w-full ${i18n.language === 'ar' ? 'items-start' : 'items-start'}`}
             >
               <LazyLoadImage
                 src={i18n.language === 'ar' ? logoAr : logoEn}
@@ -41,7 +40,7 @@ const Quote = () => {
             </div>
           </div>
           <div
-            className={`flex flex-col gap-2 -mt-4 w-full ${i18n.language === 'ar' ? 'items-end text-right' : 'items-start text-left'}`}
+            className={`flex flex-col gap-2 -mt-4 w-full ${i18n.language === 'ar' ? 'items-center text-right' : 'items-start text-left'}`}
           >
             <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold text-white'>
               {t('quote.main_title')}{' '}
