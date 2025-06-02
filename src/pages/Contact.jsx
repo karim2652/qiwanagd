@@ -32,7 +32,9 @@ const Contact = () => {
       <div className='min-h-screen bg-[#f8f9fa] py-12'>
         <div className='container mx-auto px-4'>
           <div className='text-center mb-12'>
-            <h1 className='text-4xl font-bold mb-2'>{t('navigation.contact')}</h1>
+            <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold mb-2'>
+              {t('navigation.contact')}
+            </h1>
             <div className='w-16 h-1 bg-[#ff3e33] mx-auto'></div>
           </div>
 
@@ -48,7 +50,7 @@ const Contact = () => {
                   </span>
                 </div>
 
-                <h2 className='text-4xl font-bold mb-4 text-gray-900'>
+                <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-gray-900'>
                   {t('contact.happy_to_answer')}
                 </h2>
 

@@ -182,10 +182,13 @@ const QuoteForm = () => {
           <Input
             type='text'
             placeholder={t('quote.name')}
-            className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'
+            className={`w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none ${i18n.language === 'ar' ? 'text-right pr-10 pl-3' : 'text-left pl-10 pr-3'}`}
+            dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
             {...register('name', { required: true })}
           />
-          <User className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5' />
+          <User
+            className={`absolute ${i18n.language === 'ar' ? 'left-3' : 'right-3'} top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5`}
+          />
           {errors.name && (
             <p className='text-red-500 text-xs mt-1'>
               {i18n.language === 'ar' ? 'الاسم مطلوب' : 'Name is required'}
@@ -197,13 +200,16 @@ const QuoteForm = () => {
           <Input
             type='email'
             placeholder={t('quote.email')}
-            className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'
+            className={`w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none ${i18n.language === 'ar' ? 'text-right pr-10 pl-3' : 'text-left pl-10 pr-3'}`}
+            dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
             {...register('email', {
               required: true,
               pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
             })}
           />
-          <Mail className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5' />
+          <Mail
+            className={`absolute ${i18n.language === 'ar' ? 'left-3' : 'right-3'} top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5`}
+          />
           {errors.email && (
             <p className='text-red-500 text-xs mt-1'>
               {i18n.language === 'ar' ? 'البريد الإلكتروني غير صالح' : 'Invalid email address'}
@@ -215,12 +221,12 @@ const QuoteForm = () => {
           <Input
             type='tel'
             placeholder={t('quote.phone')}
-            className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'
+            className={`w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none ${i18n.language === 'ar' ? 'text-right pr-10 pl-3' : 'text-left pl-10 pr-3'}`}
             dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
             {...register('phone', { required: true })}
           />
           <Phone
-            className='absolute left-3 top-1/2 transform -translate-y-1/2 text-[#777]'
+            className={`absolute ${i18n.language === 'ar' ? 'left-3' : 'right-3'} top-1/2 transform -translate-y-1/2 text-[#777]`}
             size={20}
           />
           {errors.phone && (
@@ -234,10 +240,13 @@ const QuoteForm = () => {
           <Input
             type='text'
             placeholder={t('quote.location')}
-            className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'
+            className={`w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none ${i18n.language === 'ar' ? 'text-right pr-10 pl-3' : 'text-left pl-10 pr-3'}`}
+            dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
             {...register('location', { required: true })}
           />
-          <MapPin className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5' />
+          <MapPin
+            className={`absolute ${i18n.language === 'ar' ? 'left-3' : 'right-3'} top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5`}
+          />
           {errors.location && (
             <p className='text-red-500 text-xs mt-1'>
               {i18n.language === 'ar' ? 'الموقع مطلوب' : 'Location is required'}
@@ -255,7 +264,9 @@ const QuoteForm = () => {
         {/* How did you find us */}
         <div>
           <Select onValueChange={(value) => setValue('howDidYouFind', value)} defaultValue=''>
-            <SelectTrigger className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'>
+            <SelectTrigger
+              className={`w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none ${i18n.language === 'ar' ? 'flex-row-reverse text-right' : ''}`}
+            >
               <SelectValue placeholder={t('quote.how_did_you_find')} />
             </SelectTrigger>
             <SelectContent className='bg-[#222] border-[#333] text-white'>
@@ -275,7 +286,9 @@ const QuoteForm = () => {
         {/* Request Type */}
         <div>
           <Select onValueChange={(value) => setValue('requestType', value)} defaultValue=''>
-            <SelectTrigger className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'>
+            <SelectTrigger
+              className={`w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none ${i18n.language === 'ar' ? 'flex-row-reverse text-right' : ''}`}
+            >
               <SelectValue placeholder={t('quote.request_type')} />
             </SelectTrigger>
             <SelectContent className='bg-[#222] border-[#333] text-white'>
@@ -295,7 +308,9 @@ const QuoteForm = () => {
         {/* Required Service */}
         <div>
           <Select onValueChange={(value) => setValue('requiredService', value)} defaultValue=''>
-            <SelectTrigger className='w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none'>
+            <SelectTrigger
+              className={`w-full rounded-full bg-[#222] border-[#333] text-white px-10 py-3 placeholder:text-[#aaa] text-sm focus:border-[#ff3e33] focus:outline-none ${i18n.language === 'ar' ? 'flex-row-reverse text-right' : ''}`}
+            >
               <SelectValue placeholder={t('quote.required_service')} />
             </SelectTrigger>
             <SelectContent className='bg-[#222] border-[#333] text-white'>
@@ -312,14 +327,46 @@ const QuoteForm = () => {
             </p>
           )}
         </div>
+        {/* Comment */}
+        <div className='relative'>
+          <Textarea
+            placeholder={t('quote.comment')}
+            className={`w-full rounded-2xl bg-[#222] border-[#333] text-white px-4 py-3 placeholder:text-[#aaa] min-h-[120px] h-[120px] resize-none focus:border-[#ff3e33] focus:outline-none ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}
+            dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
+            {...register('comment')}
+          />
+          <MessageSquare
+            className={`absolute top-3 ${i18n.language === 'ar' ? 'left-3' : 'right-3'} text-[#777]`}
+            size={20}
+          />
+        </div>
       </div>
-
+      {/* Submit Button */}
+      <div className='col-span-1 md:col-span-2 flex items-center justify-center mt-5'>
+        <Button
+          type='submit'
+          text={buttonText}
+          disabled={formIsSubmitting || isSending}
+          className='bg-[#ff3e33] text-white rounded-full px-8 py-6 text-base font-semibold shadow-lg hover:bg-[#e63a2e] flex items-center justify-center gap-2'
+        >
+          {isSending ? (
+            <>
+              <span className='animate-spin'>⚡</span>
+              {t('quote.sending')}
+            </>
+          ) : (
+            <>
+              <CheckCircle2 size={18} className='w-5 h-5' />
+              {t('quote.submit')}
+            </>
+          )}
+        </Button>
+      </div>
       {/* Additional Notes Section */}
-      <div className='col-span-1 md:col-span-2 flex flex-col gap-4 bg-[#181818] p-6 rounded-2xl border border-[#222] '>
+      {/* <div className='col-span-1 md:col-span-2 flex flex-col gap-4 bg-[#181818] p-6 rounded-2xl border border-[#222] '>
         <h2 className='text-lg font-bold text-[#ff3e33] mb-2'>
           {t('quote.additional_notes') || 'ملاحظات إضافية'}
         </h2>
-        {/* File Upload */}
         <div className='flex items-center justify-center w-full'>
           <label
             htmlFor='dropzone-file'
@@ -342,41 +389,7 @@ const QuoteForm = () => {
             />
           </label>
         </div>
-        {/* Comment */}
-        <div className='relative'>
-          <Textarea
-            placeholder={t('quote.comment')}
-            className='w-full rounded-2xl bg-[#222] border-[#333] text-white px-4 py-3 placeholder:text-[#aaa] min-h-[120px] h-[120px] resize-none focus:border-[#ff3e33] focus:outline-none'
-            dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
-            {...register('comment')}
-          />
-          <MessageSquare
-            className={`absolute top-3 ${i18n.language === 'ar' ? 'left-3' : 'right-3'} text-[#777]`}
-            size={20}
-          />
-        </div>
-        {/* Submit Button */}
-        <div className='flex items-center justify-center mt-5'>
-          <Button
-            type='submit'
-            text={buttonText}
-            disabled={formIsSubmitting || isSending}
-            className='bg-[#ff3e33] text-white rounded-full px-8 py-6 text-base font-semibold shadow-lg hover:bg-[#e63a2e] flex items-center justify-center gap-2'
-          >
-            {isSending ? (
-              <>
-                <span className='animate-spin'>⚡</span>
-                {t('quote.sending')}
-              </>
-            ) : (
-              <>
-                <CheckCircle2 size={18} className='w-5 h-5' />
-                {t('quote.submit')}
-              </>
-            )}
-          </Button>
-        </div>
-      </div>
+      </div> */}
     </form>
   );
 };

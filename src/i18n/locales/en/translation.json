@@ -279,6 +279,27 @@
       "success": "Thank you for contacting us. We will get back to you soon.",
       "timeout_error": "Sorry, sending the message took too long. Please try again.",
       "general_error": "Sorry, an error occurred while sending your message. Please try again."
+    },
+    "validation": {
+      "name": {
+        "min": "Name must be at least 2 characters",
+        "max": "Name must not exceed 50 characters",
+        "regex": "Name must contain only letters and spaces"
+      },
+      "phone": {
+        "min": "Phone number must be at least 10 digits",
+        "max": "Phone number must not exceed 15 digits",
+        "regex": "Please enter a valid phone number"
+      },
+      "email": "Please enter a valid email address",
+      "address": {
+        "min": "Address must be at least 5 characters",
+        "max": "Address must not exceed 200 characters"
+      },
+      "message": {
+        "min": "Message must be at least 10 characters",
+        "max": "Message must not exceed 1000 characters"
+      }
     }
   },
   "qrcode": {

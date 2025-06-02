@@ -18,7 +18,7 @@ const FloatingButtons = () => {
   // ثابت على اليمين دائمًا بغض النظر عن اللغة
   const buttons = (
     <div
-      className='fixed bottom-7 right-6 z-[9999] animate-fadeIn'
+      className='fixed bottom-7 right-2 z-[9999] animate-fadeIn'
       dir='ltr'
       style={{
         isolation: 'isolate',

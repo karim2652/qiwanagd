@@ -25,7 +25,7 @@ const ContactUsSection = () => {
       iconBg: 'bg-[#EFF3F6]',
       title: t('contact.cards.call_us'),
       text: (
-        <span className="block">
+        <span className='block'>
           <span dir='ltr'>+966 54 824 0556</span>
           <br />
           <span dir='ltr'>+966 55 777 0556</span>
@@ -56,7 +56,9 @@ const ContactUsSection = () => {
                   >
                     {item.icon}
                   </div>
-                  <h3 className='ml-3.5 text-base font-medium mx-3 text-gray-800'>{item.title}</h3>
+                  <h3 className='ml-3.5 text-sm sm:text-base font-medium mx-3 text-gray-800'>
+                    {item.title}
+                  </h3>
                 </div>
                 <div className='w-full h-px bg-gray-200 my-4'></div>
                 <div className='text-gray-500 text-sm leading-relaxed pb-5'>{item.text}</div>

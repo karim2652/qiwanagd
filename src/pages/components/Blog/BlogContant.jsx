@@ -1,6 +1,8 @@
 import { Card } from '../../../components/ui/card';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const BlogContant = ({ blogData }) => {
   const { t, i18n } = useTranslation();
@@ -19,20 +21,147 @@ const BlogContant = ({ blogData }) => {
 
   // Function to get translated category
   const getTranslatedCategory = (category) => {
-    switch (category) {
-      case 'مقال مميز':
-        return t('blog.categories.featured');
-      case 'الخدمات الهندسية':
-        return t('blog.categories.engineering_services');
-      case 'الأعمال المساحية':
-        return t('blog.categories.surveying');
-      case 'العمارة والتصميم':
-        return t('blog.categories.architecture');
-      case 'البناء والتشييد':
-        return t('blog.categories.construction');
-      default:
-        return category;
+    const categoryMap = {
+      'مقال مميز': {
+        ar: 'مقال مميز',
+        en: 'Featured Article',
+      },
+      'الخدمات الهندسية': {
+        ar: 'خدمات هندسية',
+        en: 'Engineering Services',
+      },
+      'خدمات هندسية': {
+        ar: 'خدمات هندسية',
+        en: 'Engineering Services',
+      },
+      'الأعمال المساحية': {
+        ar: 'أعمال مساحية',
+        en: 'Surveying',
+      },
+      'أعمال مساحية': {
+        ar: 'أعمال مساحية',
+        en: 'Surveying',
+      },
+      'العمارة والتصميم': {
+        ar: 'عمارة وتصميم',
+        en: 'Architecture & Design',
+      },
+      'عمارة وتصميم': {
+        ar: 'عمارة وتصميم',
+        en: 'Architecture & Design',
+      },
+      'البناء والتشييد': {
+        ar: 'بناء وتشييد',
+        en: 'Construction',
+      },
+      'بناء وتشييد': {
+        ar: 'بناء وتشييد',
+        en: 'Construction',
+      },
+    };
+    if (categoryMap[category]) {
+      return isArabic ? categoryMap[category].ar : categoryMap[category].en;
     }
+    return category;
+  };
+
+  // Helper function to format date based on language
+  const formatDate = (dateString) => {
+    // Try to parse dateString in both Arabic and English formats
+    // Expected formats: '28 مارس 2024' or '28 March 2024'
+    if (!dateString) return '';
+
+    // Arabic and English month names
+    const months = {
+      ar: [
+        'يناير',
+        'فبراير',
+        'مارس',
+        'أبريل',
+        'مايو',
+        'يونيو',
+        'يوليو',
+        'أغسطس',
+        'سبتمبر',
+        'أكتوبر',
+        'نوفمبر',
+        'ديسمبر',
+      ],
+      en: [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ],
+    };
+
+    // Detect if date is in Arabic (contains Arabic letters)
+    const isArabicDate = /[\u0600-\u06FF]/.test(dateString);
+
+    // Extract day, month, year
+    let day, month, year;
+    if (isArabicDate) {
+      // Example: '28 مارس 2024'
+      const match = dateString.match(/(\d{1,2})\s+(\S+)\s+(\d{4})/);
+      if (match) {
+        day = match[1];
+        month = match[2];
+        year = match[3];
+      }
+    } else {
+      // Example: '28 March 2024'
+      const match = dateString.match(/(\d{1,2})\s+(\S+)\s+(\d{4})/);
+      if (match) {
+        day = match[1];
+        month = match[2];
+        year = match[3];
+      }
+    }
+
+    if (!day || !month || !year) return dateString;
+
+    if (isArabic) {
+      // إذا الموقع عربي، أعرض التاريخ كما هو أو حول الشهر للغة العربية
+      // إذا الشهر إنجليزي، حوله للعربي
+      let monthAr = month;
+      if (!months.ar.includes(month)) {
+        const idx = months.en.findIndex((m) => m.toLowerCase() === month.toLowerCase());
+        if (idx !== -1) monthAr = months.ar[idx];
+      }
+      return `${day} ${monthAr} ${year}`;
+    } else {
+      // إذا الموقع إنجليزي، حول الشهر للإنجليزي
+      let monthEn = month;
+      if (!months.en.includes(month)) {
+        const idx = months.ar.findIndex((m) => m === month);
+        if (idx !== -1) monthEn = months.en[idx];
+      }
+      return `${day} ${monthEn} ${year}`;
+    }
+  };
+
+  const getTranslatedAuthor = (author) => {
+    // If no author provided, return default name in appropriate language
+    if (!author) {
+      return isArabic ? 'قوي نجد' : 'Qawi Najd';
+    }
+
+    // If author is provided in both languages (assuming format: "Arabic Name|English Name")
+    if (author.includes('|')) {
+      const [arabicName, englishName] = author.split('|');
+      return isArabic ? arabicName.trim() : englishName.trim();
+    }
+
+    // If author is provided in one language only, return as is
+    return author;
   };
 
   return (
@@ -62,10 +191,11 @@ const BlogContant = ({ blogData }) => {
               <Card className='bg-white rounded-[2rem] shadow-lg overflow-hidden flex flex-col border-0 p-0 h-full min-h-[50px] transition-all duration-500 ease-in-out hover:shadow-2xl hover:-translate-y-2'>
                 <div className='relative overflow-hidden'>
                   <div className='overflow-hidden'>
-                    <img
+                    <LazyLoadImage
                       src={post.image}
                       alt={post.title}
-                      loading='lazy'
+                      effect='blur'
+                      placeholderSrc='/assets/images/placeholder.png'
                       className='w-full h-[400px] md:h-[500px] object-cover transform transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform'
                       style={{
                         borderTopLeftRadius: '2rem',
@@ -109,7 +239,7 @@ const BlogContant = ({ blogData }) => {
                           d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'
                         />
                       </svg>
-                      {post.date}
+                      {formatDate(post.date)}
                     </span>
                     <span className='mx-2'>•</span>
                     <span className='flex items-center gap-1 transition-colors duration-300 group-hover:text-[#FF5E3A]'>
@@ -127,8 +257,8 @@ const BlogContant = ({ blogData }) => {
                         />
                       </svg>
                       {isArabic
-                        ? `بواسطة ${post.author || 'Qawi Najd'}`
-                        : `${t('blog.by')} ${post.author || 'Qawi Najd'}`}
+                        ? `بواسطة ${getTranslatedAuthor(post.author)}`
+                        : `${t('blog.by')} ${getTranslatedAuthor(post.author)}`}
                     </span>
                   </div>
                   <h3

@@ -51,17 +51,19 @@ const Location = () => {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         {/* Section Header */}
         <div className='text-center mb-12'>
-          <h2 className='text-4xl font-bold text-gray-900 mb-4'>{t('contact.locations.title')}</h2>
-          <p className='text-lg text-gray-600'>{t('contact.locations.subtitle')}</p>
+          <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4'>
+            {t('contact.locations.title')}
+          </h2>
+          <p className='text-base md:text-lg text-gray-600'>{t('contact.locations.subtitle')}</p>
         </div>
 
         {/* Location Tabs */}
-        <div className='flex flex-wrap justify-center gap-4 mb-8'>
+        <div className='flex flex-wrap justify-center gap-2 md:gap-4 mb-8'>
           {Object.values(locations).map((location) => (
             <button
               key={location.id}
               onClick={() => setActiveLocation(location.id)}
-              className={`px-6 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
+              className={`px-3 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-medium transition-all duration-300 ${
                 activeLocation === location.id
                   ? 'bg-[#F03E2F] text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -91,29 +93,31 @@ const Location = () => {
 
           {/* Location Info */}
           <div className='bg-white rounded-lg shadow-md p-6'>
-            <h3 className='text-2xl font-bold text-[#F03E2F] mb-6'>
+            <h3 className='text-xl md:text-2xl font-bold text-[#F03E2F] mb-6'>
               {locations[activeLocation].name}
             </h3>
 
             <div className='space-y-6'>
               <div className='flex items-start gap-4'>
                 <div className='p-2 bg-[#EFF3F6] rounded-lg'>
-                  <FaMapMarkerAlt className='text-[#F03E2F] text-xl' />
+                  <FaMapMarkerAlt className='text-[#F03E2F] text-lg md:text-xl' />
                 </div>
                 <div>
-                  <h4 className='text-base font-medium text-gray-900 mb-1'>
+                  <h4 className='text-sm md:text-base font-medium text-gray-900 mb-1'>
                     {t('contact.locations.address')}
                   </h4>
-                  <p className='text-gray-600'>{locations[activeLocation].address}</p>
+                  <p className='text-sm md:text-base text-gray-600'>
+                    {locations[activeLocation].address}
+                  </p>
                 </div>
               </div>
 
               <div className='flex items-start gap-4'>
                 <div className='p-2 bg-[#EFF3F6] rounded-lg'>
-                  <FaPhone className='text-[#F03E2F] text-xl' />
+                  <FaPhone className='text-[#F03E2F] text-lg md:text-xl' />
                 </div>
                 <div>
-                  <h4 className='text-base font-medium text-gray-900 mb-2'>
+                  <h4 className='text-sm md:text-base font-medium text-gray-900 mb-2'>
                     {t('contact.locations.phone_numbers')}
                   </h4>
                   <div className='space-y-2'>
@@ -121,7 +125,7 @@ const Location = () => {
                       <a
                         key={index}
                         href={`tel:${phone.replace(/\s/g, '')}`}
-                        className={`block font-medium text-black text-sm tracking-wide hover:text-[#F03E2F] transition-colors duration-300 ${isArabic ? 'font-arabic text-right' : 'font-english'}`}
+                        className={`block font-medium text-black text-xs md:text-sm tracking-wide hover:text-[#F03E2F] transition-colors duration-300 ${isArabic ? 'font-arabic text-right' : 'font-english'}`}
                         dir={isArabic ? 'ltr' : 'auto'}
                       >
                         {phone}
@@ -137,15 +141,16 @@ const Location = () => {
                 href={`https://www.google.com/maps?q=${locations[activeLocation].coordinates.join(',')}`}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center justify-center border border-black rounded-full px-5 py-2 text-black font-bold text-lg transition hover:bg-gray-50 w-fit mx-auto'
+                className='flex items-center justify-center border border-black rounded-full px-4 md:px-5 py-2 text-sm md:text-lg text-black font-bold transition hover:bg-gray-50 w-fit mx-auto'
                 style={{ gap: '0.75rem' }}
               >
                 <span>{t('contact.locations.view_on_google')}</span>
-                <span className='flex items-center justify-center bg-[#F03E2F] text-white rounded-full w-8 h-8 ml-2'>
+                <span className='flex items-center justify-center bg-[#F03E2F] text-white rounded-full w-6 h-6 md:w-8 md:h-8 ml-2'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    width='18'
-                    height='18'
+                    width='14'
+                    height='14'
+                    className='md:w-[18px] md:h-[18px]'
                     fill='none'
                     viewBox='0 0 24 24'
                   >

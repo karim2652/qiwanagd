@@ -151,7 +151,7 @@ const HomeCover = memo(() => {
       )}
 
       {/* Navigation Buttons */}
-      <button
+      {/* <button
         onClick={prevSlide}
         className={`absolute left-0 rounded-r-full top-1/2 -translate-y-1/2 w-4 sm:w-6 h-12 sm:h-20 bg-[#f7fafd] backdrop-blur-sm shadow-lg 
         transition-all duration-300 z-20 flex items-center justify-center cursor-pointer
@@ -189,7 +189,7 @@ const HomeCover = memo(() => {
             clipRule='evenodd'
           />
         </svg>
-      </button>
+      </button> */}
 
       {/* Gradient Overlay */}
       <div
