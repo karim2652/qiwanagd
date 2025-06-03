@@ -20,7 +20,7 @@ export const blogData = {
       ogDescription:
         'تعرف على خدمات الاستشارات الهندسية في السعودية من التصميم المعماري وحتى الإشراف وإدارة المشاريع. دليل مفصل للمطورين والملاك في 2025.',
       ogImage: '/assets/images/blog/1.webp',
-      canonicalUrl: 'https://qawinajd.com/blog/engineering-consulting-guide-saudi',
+      canonicalUrl: 'https://qiwanagd.com/blog/engineering-consulting-guide-saudi',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -33,19 +33,19 @@ export const blogData = {
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/blog/engineering-consulting-guide-saudi',
+          '@id': 'https://qiwanagd.com/blog/engineering-consulting-guide-saudi',
         },
         keywords:
           'استشارات هندسية السعودية, تصميم معماري, إشراف هندسي, إدارة مشاريع, شركات استشارات هندسية الرياض, مكتب هندسي جدة معتمد, تصميم مشاريع تجارية السعودية, إشراف هندسي مشاريع حكومية, إدارة مشاريع نيوم',
@@ -358,7 +358,7 @@ export const blogData = {
       ogDescription:
         'تعرّف على خطوات وشروط تحديث الصكوك العقارية في الرياض وفق الأنظمة السعودية، وأهمية الاستعانة بمكتب استشارات هندسية معتمد لضمان الدقة.',
       ogImage: '/assets/images/blog/2.webp',
-      canonicalUrl: 'https://qawinajd.com/blog/property-deed-update-riyadh',
+      canonicalUrl: 'https://qiwanagd.com/blog/property-deed-update-riyadh',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -371,19 +371,19 @@ export const blogData = {
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/blog/property-deed-update-riyadh',
+          '@id': 'https://qiwanagd.com/blog/property-deed-update-riyadh',
         },
         keywords: 'تحديث الصك العقاري, الرياض, منصة إحكام, رفع مساحي, صكوك عقارية السعودية',
         articleSection: 'الأعمال المساحية',
@@ -738,7 +738,7 @@ export const blogData = {
       ogDescription:
         'تعرّف على خطوات وأهمية الرفع المساحي في الرياض، والتكلفة التقديرية، ودور المكاتب الهندسية المعتمدة في تقديم تقارير دقيقة تلبي متطلبات الجهات الرسمية.',
       ogImage: '/assets/images/blog/3.webp',
-      canonicalUrl: 'https://qawinajd.com/blog/surveying-riyadh',
+      canonicalUrl: 'https://qiwanagd.com/blog/surveying-riyadh',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -751,19 +751,19 @@ export const blogData = {
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/blog/surveying-riyadh',
+          '@id': 'https://qiwanagd.com/blog/surveying-riyadh',
         },
         keywords: 'رفع مساحي الرياض, إحكام, تكلفة الرفع المساحي, مكتب هندسي, تقرير مساحي معتمد',
         articleSection: 'الأعمال المساحية',
@@ -1074,7 +1074,7 @@ export const blogData = {
       ogDescription:
         'هل تخطط للبناء في الرياض؟ تعرف على خطوات إصدار رخصة بناء، المتطلبات البلدية، وأهم المستندات والأسعار، مع خدمات إصدار فورية من مكتب هندسي معتمد.',
       ogImage: '/assets/images/blog/4.webp',
-      canonicalUrl: 'https://qawinajd.com/blog/building-permit-riyadh-2025',
+      canonicalUrl: 'https://qiwanagd.com/blog/building-permit-riyadh-2025',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -1087,19 +1087,19 @@ export const blogData = {
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/blog/building-permit-riyadh-2025',
+          '@id': 'https://qiwanagd.com/blog/building-permit-riyadh-2025',
         },
         keywords: 'رخصة بناء, إصدار رخصة, بلدي, مكتب هندسي, تصميم معماري',
         articleSection: 'الخدمات الهندسية',
@@ -1322,7 +1322,7 @@ export const blogData = {
       ogDescription:
         'دليلك الشامل للرفع المساحي في الرياض 2025. تعرف على أنواع الرفع المساحي، التكلفة، الخطوات، والمتطلبات الفنية مع مكتب مساحي معتمد.',
       ogImage: '/assets/images/blog/5.webp',
-      canonicalUrl: 'https://qawinajd.com/blog/surveying-services-riyadh',
+      canonicalUrl: 'https://qiwanagd.com/blog/surveying-services-riyadh',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -1335,19 +1335,19 @@ export const blogData = {
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/blog/surveying-services-riyadh',
+          '@id': 'https://qiwanagd.com/blog/surveying-services-riyadh',
         },
         keywords: 'رفع مساحي الرياض, تكلفة الرفع المساحي, مكتب رفع مساحي معتمد',
         articleSection: 'خدمات المساحة',
@@ -1723,7 +1723,7 @@ export const blogData = {
       ogDescription:
         'دليلك الشامل للحصول على رخصة بناء في الرياض 2025. تعرف على المتطلبات، الخطوات، التكلفة، والمستندات المطلوبة مع مكتب استشارات هندسية معتمد.',
       ogImage: '/assets/images/blog/6.webp',
-      canonicalUrl: 'https://qawinajd.com/blog/building-permit-riyadh',
+      canonicalUrl: 'https://qiwanagd.com/blog/building-permit-riyadh',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -1736,19 +1736,19 @@ export const blogData = {
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/blog/building-permit-riyadh',
+          '@id': 'https://qiwanagd.com/blog/building-permit-riyadh',
         },
         keywords:
           'رخصة بناء الرياض, متطلبات رخصة البناء, تكلفة رخصة البناء, مكتب هندسي معتمد الرياض',

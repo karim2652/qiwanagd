@@ -20,7 +20,7 @@ export const blogDataEn = {
       ogDescription:
         'Discover comprehensive engineering consulting services in Saudi Arabia, from architectural design to project supervision and management. A detailed guide for developers and property owners in 2025.',
       ogImage: '/assets/images/blog/1.webp',
-      canonicalUrl: 'https://qawinajd.com/en/blog/engineering-consulting-guide-saudi',
+      canonicalUrl: 'https://qiwanagd.com/en/blog/engineering-consulting-guide-saudi',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -33,19 +33,19 @@ export const blogDataEn = {
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/en/blog/engineering-consulting-guide-saudi',
+          '@id': 'https://qiwanagd.com/en/blog/engineering-consulting-guide-saudi',
         },
         keywords:
           'engineering consulting Saudi Arabia, architectural design, engineering supervision, project management, engineering consulting companies Riyadh, licensed engineering office Jeddah, commercial project design Saudi Arabia, engineering supervision government projects, project management NEOM',
@@ -437,7 +437,7 @@ Start now and request a free consultation from our experts to evaluate your proj
       ogDescription:
         'Learn about the steps and requirements for updating property deeds in Riyadh according to Saudi regulations, and the importance of using a licensed engineering consulting office for accuracy.',
       ogImage: '/assets/images/blog/2.webp',
-      canonicalUrl: 'https://qawinajd.com/en/blog/property-deed-update-riyadh',
+      canonicalUrl: 'https://qiwanagd.com/en/blog/property-deed-update-riyadh',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -451,19 +451,19 @@ Start now and request a free consultation from our experts to evaluate your proj
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/en/blog/property-deed-update-riyadh',
+          '@id': 'https://qiwanagd.com/en/blog/property-deed-update-riyadh',
         },
         keywords: 'property deed update, Riyadh, Ehkam platform, surveying, Saudi property deeds',
         articleSection: 'Surveying Services',
@@ -844,7 +844,7 @@ Contact us now for a free consultation from our engineering experts in Riyadh.`,
       ogDescription:
         'Learn about the steps and importance of surveying in Riyadh, estimated costs, and the role of licensed engineering offices in providing accurate reports that meet official requirements.',
       ogImage: '/assets/images/blog/3.webp',
-      canonicalUrl: 'https://qawinajd.com/en/blog/surveying-riyadh',
+      canonicalUrl: 'https://qiwanagd.com/en/blog/surveying-riyadh',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -857,19 +857,19 @@ Contact us now for a free consultation from our engineering experts in Riyadh.`,
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/en/blog/surveying-riyadh',
+          '@id': 'https://qiwanagd.com/en/blog/surveying-riyadh',
         },
         keywords:
           'surveying Riyadh, Ehkam, surveying cost, engineering office, approved surveying report',
@@ -1242,7 +1242,7 @@ Contact us now for a free consultation and accurate surveying solutions.`,
       ogDescription:
         'Discover the importance of engineering supervision in Saudi construction projects, its stages, and how to choose the right supervision company to ensure project quality and compliance with regulations.',
       ogImage: '/assets/images/blog/4.webp',
-      canonicalUrl: 'https://qawinajd.com/en/blog/engineering-supervision-saudi-guide',
+      canonicalUrl: 'https://qiwanagd.com/en/blog/engineering-supervision-saudi-guide',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -1256,19 +1256,19 @@ Contact us now for a free consultation and accurate surveying solutions.`,
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/en/blog/engineering-supervision-saudi-guide',
+          '@id': 'https://qiwanagd.com/en/blog/engineering-supervision-saudi-guide',
         },
         keywords:
           'engineering supervision saudi arabia, project quality control, construction supervision riyadh',
@@ -1521,7 +1521,7 @@ Contact us today for a free consultation and quote for your project.`,
       ogDescription:
         'Your comprehensive guide to surveying services in Riyadh. Learn about types of surveys, costs, requirements, and how to choose a certified surveying office for your construction project.',
       ogImage: '/assets/images/blog/5.webp',
-      canonicalUrl: 'https://qawinajd.com/en/blog/surveying-services-riyadh-guide',
+      canonicalUrl: 'https://qiwanagd.com/en/blog/surveying-services-riyadh-guide',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -1534,19 +1534,19 @@ Contact us today for a free consultation and quote for your project.`,
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/en/blog/surveying-services-riyadh-guide',
+          '@id': 'https://qiwanagd.com/en/blog/surveying-services-riyadh-guide',
         },
         keywords:
           'surveying services riyadh, land survey cost saudi arabia, certified survey office',
@@ -1947,7 +1947,7 @@ All at competitive prices, with guaranteed municipal acceptance.
       ogDescription:
         'Learn about effective construction project management in Saudi Arabia, including planning, execution, and compliance with local regulations. Essential guide for developers and contractors.',
       ogImage: '/assets/images/blog/6.webp',
-      canonicalUrl: 'https://qawinajd.com/en/blog/construction-management-saudi',
+      canonicalUrl: 'https://qiwanagd.com/en/blog/construction-management-saudi',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -1960,19 +1960,19 @@ All at competitive prices, with guaranteed municipal acceptance.
         author: {
           '@type': 'Organization',
           name: 'Qawi Najd',
-          url: 'https://qawinajd.com',
+          url: 'https://qiwanagd.com',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Qawi Najd',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://qawinajd.com/logo.png',
+            url: 'https://qiwanagd.com/logo.png',
           },
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://qawinajd.com/en/blog/construction-management-saudi',
+          '@id': 'https://qiwanagd.com/en/blog/construction-management-saudi',
         },
         keywords:
           'construction management, project planning, Saudi construction regulations, contractor management',
