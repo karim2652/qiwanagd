@@ -12,12 +12,39 @@ import SuggestedArticles from './SuggestedArticles';
 const BlogDetails = () => {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === 'ar';
-  const { id } = useParams();
+  const { title } = useParams();
   const navigate = useNavigate();
 
   // Select data source based on language
   const dataSource = isArabic ? blogData : blogDataEn;
-  const post = dataSource.posts.find((post) => post.id === parseInt(id));
+
+  // Create slug from title for comparison
+  const createSlug = (title) => {
+    // For Arabic titles
+    if (/[\u0600-\u06FF]/.test(title)) {
+      return title
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/[^\u0600-\u06FF\w-]/g, '')
+        .replace(/-+/g, '-')
+        .toLowerCase();
+    }
+
+    // For English titles
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  };
+
+  // Find post by matching slugs
+  const post = dataSource.posts.find((post) => {
+    const postSlug = createSlug(post.title);
+    return postSlug === title;
+  });
 
   useEffect(() => {
     const savedLang = localStorage.getItem('i18nextLng');

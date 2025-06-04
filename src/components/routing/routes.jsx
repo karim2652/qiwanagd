@@ -86,7 +86,7 @@ const router = createBrowserRouter([
         element: <LazyRoute component={Blog} />,
       },
       {
-        path: 'blog/:id',
+        path: 'blog/:title',
         element: <LazyRoute component={BlogDetails} />,
       },
       {

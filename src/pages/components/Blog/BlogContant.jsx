@@ -15,8 +15,37 @@ const BlogContant = ({ blogData }) => {
   // Center grid if less than 9 posts
   const gridJustify = blogData.posts.length < 9 ? 'justify-center' : '';
 
-  const handleReadMore = (postId) => {
-    navigate(`/blog/${postId}`);
+  const handleReadMore = (post) => {
+    // Convert title to URL-friendly format
+    const createSlug = (title) => {
+      // For Arabic titles
+      if (/[\u0600-\u06FF]/.test(title)) {
+        // Replace spaces with dashes and remove special characters
+        return title
+          .trim()
+          .replace(/\s+/g, '-')
+          .replace(/[^\u0600-\u06FF\w-]/g, '')
+          .replace(/-+/g, '-')
+          .toLowerCase();
+      }
+
+      // For English titles
+      return (
+        title
+          .toLowerCase()
+          .trim()
+          // Replace spaces and special characters with dashes
+          .replace(/[^a-z0-9\s-]/g, '')
+          .replace(/\s+/g, '-')
+          // Remove multiple consecutive dashes
+          .replace(/-+/g, '-')
+          // Remove dashes from start and end
+          .replace(/^-+|-+$/g, '')
+      );
+    };
+
+    const slug = createSlug(post.title);
+    navigate(`/blog/${slug}`);
   };
 
   // Function to get translated category
@@ -185,7 +214,7 @@ const BlogContant = ({ blogData }) => {
           {blogData.posts.map((post, index) => (
             <div
               key={post.id}
-              onClick={() => handleReadMore(post.id)}
+              onClick={() => handleReadMore(post)}
               className='cursor-pointer group'
             >
               <Card className='bg-white rounded-[2rem] shadow-lg overflow-hidden flex flex-col border-0 p-0 h-full min-h-[50px] transition-all duration-500 ease-in-out hover:shadow-2xl hover:-translate-y-2'>
