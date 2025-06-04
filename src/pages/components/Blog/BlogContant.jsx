@@ -194,8 +194,8 @@ const BlogContant = ({ blogData }) => {
                     <LazyLoadImage
                       src={post.image}
                       alt={post.title}
-                      effect='blur'
-                      placeholderSrc='/assets/images/placeholder.png'
+                      // effect='blur'
+                      // placeholderSrc='/assets/images/placeholder.png'
                       className='w-full h-[400px] md:h-[500px] object-cover transform transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform'
                       style={{
                         borderTopLeftRadius: '2rem',
@@ -208,9 +208,9 @@ const BlogContant = ({ blogData }) => {
                         backfaceVisibility: 'hidden',
                         WebkitBackfaceVisibility: 'hidden',
                       }}
-                      onError={(e) => {
-                        e.target.src = '/assets/images/placeholder.png';
-                      }}
+                      // onError={(e) => {
+                      //   e.target.src = '/assets/images/placeholder.png';
+                      // }}
                     />
                   </div>
                   <div
