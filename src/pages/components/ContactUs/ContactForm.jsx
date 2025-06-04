@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from '../../../components/ui/Button';
-import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Mail, User, Phone, MapPin } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -10,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { createContactSchema } from '@/schemas/contactSchema';
 
 emailjs.init('yQ03ZUF1VMp4mz9rB');
 
@@ -17,44 +17,13 @@ const ContactForm = () => {
   const [isSending, setIsSending] = useState(false);
   const { t, i18n } = useTranslation();
 
-  const contactSchema = useMemo(
-    () =>
-      z.object({
-        name: z
-          .string()
-          .min(2, t('contact.validation.name.min'))
-          .max(50, t('contact.validation.name.max'))
-          .regex(/^[a-zA-Z\u0600-\u06FF\s]+$/, t('contact.validation.name.regex')),
-        phone: z
-          .string()
-          .min(10, t('contact.validation.phone.min'))
-          .max(15, t('contact.validation.phone.max'))
-          .regex(
-            /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/,
-            t('contact.validation.phone.regex')
-          ),
-        email: z.string().email(t('contact.validation.email')).optional().or(z.literal('')),
-        address: z
-          .string()
-          .min(5, t('contact.validation.address.min'))
-          .max(200, t('contact.validation.address.max'))
-          .optional()
-          .or(z.literal('')),
-        message: z
-          .string()
-          .min(10, t('contact.validation.message.min'))
-          .max(1000, t('contact.validation.message.max'))
-          .optional()
-          .or(z.literal('')),
-      }),
-    [i18n.language, t]
-  );
+  const contactSchema = useMemo(() => createContactSchema(i18n, t), [i18n, t]);
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, touchedFields, isSubmitted },
+    formState: { errors, isSubmitted },
     trigger,
     getValues,
   } = useForm({
@@ -155,12 +124,12 @@ const ContactForm = () => {
             <Input
               type='text'
               placeholder={t('contact.form.name')}
-              className={`w-full px-12 py-4 rounded-full border ${errors.name && (touchedFields.name || isSubmitted) ? 'border-red-500' : 'border-gray-200'} bg-white text-black focus:outline-none focus:border-gray-400 placeholder:text-[#aaa]`}
+              className={`w-full px-12 py-4 rounded-full border ${errors.name && isSubmitted ? 'border-red-500' : 'border-gray-200'} bg-white text-black focus:outline-none focus:border-gray-400 placeholder:text-[#aaa]`}
               {...register('name')}
               aria-invalid={errors.name ? 'true' : 'false'}
             />
             <User className='absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5' />
-            {errors.name && (touchedFields.name || isSubmitted) && (
+            {errors.name && isSubmitted && (
               <p className='text-red-500 text-xs mt-1'>{errors.name.message}</p>
             )}
           </div>
@@ -169,13 +138,13 @@ const ContactForm = () => {
             <Input
               type='tel'
               placeholder={t('contact.form.phone')}
-              className={`w-full px-12 py-4 rounded-full border ${errors.phone && (touchedFields.phone || isSubmitted) ? 'border-red-500' : 'border-gray-200'} bg-white text-black focus:outline-none focus:border-gray-400 placeholder:text-[#aaa] ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}
+              className={`w-full px-12 py-4 rounded-full border ${errors.phone && isSubmitted ? 'border-red-500' : 'border-gray-200'} bg-white text-black focus:outline-none focus:border-gray-400 placeholder:text-[#aaa] ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}
               {...register('phone')}
               aria-invalid={errors.phone ? 'true' : 'false'}
               dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
             />
             <Phone className='absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5' />
-            {errors.phone && (touchedFields.phone || isSubmitted) && (
+            {errors.phone && isSubmitted && (
               <p className='text-red-500 text-xs mt-1'>{errors.phone.message}</p>
             )}
           </div>
@@ -184,12 +153,12 @@ const ContactForm = () => {
             <Input
               type='email'
               placeholder={t('contact.form.email')}
-              className={`w-full px-12 py-4 rounded-full border ${errors.email && (touchedFields.email || isSubmitted) ? 'border-red-500' : 'border-gray-200'} bg-white text-black focus:outline-none focus:border-gray-400 placeholder:text-[#aaa]`}
+              className={`w-full px-12 py-4 rounded-full border ${errors.email && isSubmitted ? 'border-red-500' : 'border-gray-200'} bg-white text-black focus:outline-none focus:border-gray-400 placeholder:text-[#aaa]`}
               {...register('email')}
               aria-invalid={errors.email ? 'true' : 'false'}
             />
             <Mail className='absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5' />
-            {errors.email && (touchedFields.email || isSubmitted) && (
+            {errors.email && isSubmitted && (
               <p className='text-red-500 text-xs mt-1'>{errors.email.message}</p>
             )}
           </div>
@@ -198,12 +167,12 @@ const ContactForm = () => {
             <Input
               type='text'
               placeholder={t('contact.form.address')}
-              className={`w-full px-12 py-4 rounded-full border ${errors.address && (touchedFields.address || isSubmitted) ? 'border-red-500' : 'border-gray-200'} bg-white text-black focus:outline-none focus:border-gray-400 placeholder:text-[#aaa]`}
+              className={`w-full px-12 py-4 rounded-full border ${errors.address && isSubmitted ? 'border-red-500' : 'border-gray-200'} bg-white text-black focus:outline-none focus:border-gray-400 placeholder:text-[#aaa]`}
               {...register('address')}
               aria-invalid={errors.address ? 'true' : 'false'}
             />
             <MapPin className='absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5' />
-            {errors.address && (touchedFields.address || isSubmitted) && (
+            {errors.address && isSubmitted && (
               <p className='text-red-500 text-xs mt-1'>{errors.address.message}</p>
             )}
           </div>
@@ -213,11 +182,11 @@ const ContactForm = () => {
           <Textarea
             placeholder={t('contact.form.message')}
             rows='5'
-            className={`w-full px-4 py-3 rounded-3xl border ${errors.message && (touchedFields.message || isSubmitted) ? 'border-red-500' : 'border-gray-200'} bg-white text-black placeholder:text-gray-500 resize-none focus:outline-none focus:border-gray-400`}
+            className={`w-full px-4 py-3 rounded-3xl border ${errors.message && isSubmitted ? 'border-red-500' : 'border-gray-200'} bg-white text-black placeholder:text-gray-500 resize-none focus:outline-none focus:border-gray-400`}
             {...register('message')}
             aria-invalid={errors.message ? 'true' : 'false'}
           />
-          {errors.message && (touchedFields.message || isSubmitted) && (
+          {errors.message && isSubmitted && (
             <p className='text-red-500 text-xs mt-1'>{errors.message.message}</p>
           )}
         </div>
