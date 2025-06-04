@@ -5,6 +5,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import './i18n'; // Import i18n configuration
 import App from './App.jsx';
 import './index.css';
+import GTMProvider from './components/GTMProvider';
 
 // Error fallback component
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
@@ -47,9 +48,11 @@ root.render(
   <StrictMode>
     <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => window.location.reload()}>
       <HelmetProvider>
-        <Suspense fallback={<LoadingFallback />}>
-          <App />
-        </Suspense>
+        <GTMProvider>
+          <Suspense fallback={<LoadingFallback />}>
+            <App />
+          </Suspense>
+        </GTMProvider>
       </HelmetProvider>
     </ErrorBoundary>
   </StrictMode>
