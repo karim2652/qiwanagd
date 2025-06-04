@@ -3,6 +3,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import HeroSection from './HeroSection';
 import BlogContant from './components/Blog/BlogContant';
 import { blogData } from '../data/blogData';
+import { blogDataEn } from '../data/blogDataEn';
 import { siteSEO } from '../data/seoData';
 import { Helmet } from 'react-helmet-async';
 
@@ -51,7 +52,7 @@ const Blog = () => {
         />
       </div>
 
-      <BlogContant blogData={blogData} />
+      <BlogContant blogData={blogData} blogDataEn={blogDataEn} />
     </>
   );
 };

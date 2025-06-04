@@ -12,6 +12,28 @@ const SuggestedArticles = ({ excludeId, isArabic }) => {
   // استثنِ المقال الحالي وخذ 4 مقالات
   const suggestions = dataSource.posts.filter((p) => p.id !== excludeId).slice(0, 5);
 
+  // دالة تحويل العنوان إلى صيغة URL-friendly
+  const createSlug = (title) => {
+    // For Arabic titles
+    if (/[\u0600-\u06FF]/.test(title)) {
+      return title
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/[^\u0600-\u06FF\w-]/g, '')
+        .replace(/-+/g, '-')
+        .toLowerCase();
+    }
+
+    // For English titles
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  };
+
   // دالة ترجمة التاريخ
   const getTranslatedDate = (dateStr) => {
     if (isArabic) return dateStr;
@@ -46,7 +68,7 @@ const SuggestedArticles = ({ excludeId, isArabic }) => {
         {suggestions.map((article) => (
           <li key={article.id}>
             <Link
-              to={`/blog/${article.id}`}
+              to={`/blog/${createSlug(article.title)}`}
               className='flex items-center bg-gray-50 rounded-xl p-4 gap-3 hover:bg-gray-100 transition-colors duration-300 cursor-pointer group'
             >
               <LazyLoadImage

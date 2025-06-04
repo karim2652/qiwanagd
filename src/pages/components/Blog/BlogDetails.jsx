@@ -8,15 +8,13 @@ import { blogData } from '../../../data/blogData';
 import { blogDataEn } from '../../../data/blogDataEn';
 import { Helmet } from 'react-helmet-async';
 import SuggestedArticles from './SuggestedArticles';
+import { Link } from 'react-router-dom';
 
 const BlogDetails = () => {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === 'ar';
   const { title } = useParams();
   const navigate = useNavigate();
-
-  // Select data source based on language
-  const dataSource = isArabic ? blogData : blogDataEn;
 
   // Create slug from title for comparison
   const createSlug = (title) => {
@@ -40,12 +38,26 @@ const BlogDetails = () => {
       .replace(/^-+|-+$/g, '');
   };
 
-  // Find post by matching slugs
-  const post = dataSource.posts.find((post) => {
-    const postSlug = createSlug(post.title);
-    return postSlug === title;
-  });
+  // Find post by ID in both languages
+  const findPostById = (id) => {
+    const arabicPost = blogData.posts.find((p) => p.id === id);
+    const englishPost = blogDataEn.posts.find((p) => p.id === id);
+    return isArabic ? arabicPost : englishPost;
+  };
 
+  // First try to find post by slug in current language
+  let post = (isArabic ? blogData : blogDataEn).posts.find((p) => createSlug(p.title) === title);
+
+  // If not found, try to find by slug in other language and get corresponding post
+  if (!post) {
+    const otherLanguagePosts = isArabic ? blogDataEn.posts : blogData.posts;
+    const otherLanguagePost = otherLanguagePosts.find((p) => createSlug(p.title) === title);
+    if (otherLanguagePost) {
+      post = findPostById(otherLanguagePost.id);
+    }
+  }
+
+  // Effect to handle language changes
   useEffect(() => {
     const savedLang = localStorage.getItem('i18nextLng');
     if (savedLang && savedLang !== i18n.language) {
@@ -53,22 +65,40 @@ const BlogDetails = () => {
     }
   }, [i18n]);
 
+  // Effect to update URL when language changes
+  useEffect(() => {
+    if (post) {
+      const newTitle = isArabic
+        ? blogData.posts.find((p) => p.id === post.id)?.title
+        : blogDataEn.posts.find((p) => p.id === post.id)?.title;
+
+      if (newTitle) {
+        const newSlug = createSlug(newTitle);
+        if (newSlug !== title) {
+          navigate(`/blog/${newSlug}`, { replace: true });
+        }
+      }
+    }
+  }, [isArabic, post, title, navigate]);
+
   const fontFamily = isArabic ? 'Tajawal, Cairo, Arial, sans-serif' : 'inherit';
 
   if (!post) {
     return (
-      <div className='min-h-screen flex items-center justify-center'>
-        <div className='text-center'>
-          <p className='text-2xl text-gray-600 mb-4'>
-            {isArabic ? 'المقال غير موجود' : 'Article not found'}
-          </p>
-          <button
-            onClick={() => navigate('/blog')}
-            className='px-6 py-3 bg-[#FF5E3A] text-white rounded-lg hover:bg-[#FF5E3A]/90 transition-colors duration-300'
-          >
-            {isArabic ? 'العودة إلى المدونة' : 'Back to Blog'}
-          </button>
-        </div>
+      <div className='container mx-auto px-4 py-8 text-center'>
+        <h1 className='text-2xl font-bold mb-4' style={{ fontFamily }}>
+          {t('blog.notFound')}
+        </h1>
+        <p className='mb-4' style={{ fontFamily }}>
+          {t('blog.notFoundMessage')}
+        </p>
+        <Link
+          to='/blog'
+          className='inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors'
+          style={{ fontFamily }}
+        >
+          {t('blog.backToBlog')}
+        </Link>
       </div>
     );
   }

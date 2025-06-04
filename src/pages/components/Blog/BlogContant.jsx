@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-const BlogContant = ({ blogData }) => {
+const BlogContant = ({ blogData, blogDataEn }) => {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === 'ar';
   const navigate = useNavigate();
@@ -16,6 +16,17 @@ const BlogContant = ({ blogData }) => {
   const gridJustify = blogData.posts.length < 9 ? 'justify-center' : '';
 
   const handleReadMore = (post) => {
+    // Get the appropriate title based on language
+    const getTitleForUrl = (post) => {
+      if (isArabic) {
+        return post.title; // Use Arabic title for Arabic site
+      }
+
+      // For English site, get the English title from blogDataEn
+      const englishPost = blogDataEn.posts.find((p) => p.id === post.id);
+      return englishPost ? englishPost.title : post.title;
+    };
+
     // Convert title to URL-friendly format
     const createSlug = (title) => {
       // For Arabic titles
@@ -44,7 +55,8 @@ const BlogContant = ({ blogData }) => {
       );
     };
 
-    const slug = createSlug(post.title);
+    const titleForUrl = getTitleForUrl(post);
+    const slug = createSlug(titleForUrl);
     navigate(`/blog/${slug}`);
   };
 
