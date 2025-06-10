@@ -34,6 +34,7 @@ const slides = [
     titleKey: 'home.slide2.title',
     descriptionKey: 'home.slide2.description',
     highlightKey: 'home.slide2.highlight',
+    priority: true,
   },
   {
     image: image3,
