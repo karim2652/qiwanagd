@@ -52,6 +52,7 @@ const preloadAllImages = () => {
   return Promise.all(slides.map(slide => preloadImage(slide.image)));
 };
 
+
 const HomeCover = memo(() => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -92,7 +93,7 @@ const HomeCover = memo(() => {
 
   useEffect(() => {
     if (isLoading || isTransitioning) return;
-    
+
     const interval = setInterval(() => {
       nextSlide();
     }, 5000);
@@ -154,24 +155,28 @@ const HomeCover = memo(() => {
   return (
     <section
       dir={isRTL ? 'rtl' : 'ltr'}
-      className={`${styles.homeCover} relative flex items-center justify-center m-4 overflow-hidden border border-red-500`}
+      className={`${styles.homeCover} relative flex items-center justify-center m-4 overflow-hidden`}
     >
       {/* Background Images with Synchronized Transitions */}
-      <div
-        className='w-full h-full absolute inset-0 transition-all duration-1000 ease-in-out'
-        style={{
-          backgroundImage: `url(${currentContent.image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          opacity: isTransitioning ? 0.9 : 1,
-          filter: isTransitioning ? 'brightness(0.95)' : 'brightness(1)',
-          willChange: 'transform, opacity',
-          transform: 'translateZ(0)',
-          loading: currentContent.priority ? 'eager' : 'lazy',
-          fetchPriority: currentContent.priority ? 'high' : 'auto',
-        }}
-      />
+      <div className='w-full h-full absolute inset-0 transition-all duration-1000 ease-in-out'>
+        <img
+          sizes="100vw"
+          src={currentContent.image}
+          alt=""
+          className="w-full h-full object-cover"
+          loading={currentContent.priority ? 'eager' : 'lazy'}
+          fetchpriority={currentContent.priority ? 'high' : 'auto'}
+          decoding="async"
+          style={{
+            opacity: isTransitioning ? 0.9 : 1,
+            filter: isTransitioning ? 'brightness(0.95)' : 'brightness(1)',
+            willChange: 'transform, opacity',
+            transform: 'translateZ(0)',
+            contentVisibility: 'auto'
+          }}
+        />
+      </div>
+
       {nextSlideIndex !== null && (
         <div
           className='w-full h-full absolute inset-0 transition-all duration-1000 ease-in-out'
