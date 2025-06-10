@@ -1,9 +1,8 @@
-import { memo, useState, useEffect, useCallback, useMemo } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import { Button } from '../../../components/ui/Button';
 import { useTranslation } from 'react-i18next';
 import styles from './HomeCover.module.css';
 import { useNavigate } from 'react-router-dom';
-import { flushSync } from 'react-dom';
 
 // Import images using Vite's import.meta.glob
 const images = import.meta.glob('../../../assets/images/home/*.webp', { eager: true, as: 'url' });
@@ -13,15 +12,11 @@ const image3 = images['../../../assets/images/home/3.webp'];
 
 // Preload images
 const preloadImage = (src) => {
-  if (!src) return Promise.resolve();
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = reject;
     img.src = src;
-    if (img.decode) {
-      return img.decode().then(resolve).catch(resolve);
-    }
-    img.onload = resolve;
-    img.onerror = resolve;
   });
 };
 
@@ -32,14 +27,12 @@ const slides = [
     titleKey: 'home.slide1.title',
     descriptionKey: 'home.slide1.description',
     highlightKey: 'home.slide1.highlight',
-    priority: true,
   },
   {
     image: image2,
     titleKey: 'home.slide2.title',
     descriptionKey: 'home.slide2.description',
     highlightKey: 'home.slide2.highlight',
-    priority: true,
   },
   {
     image: image3,
@@ -48,10 +41,6 @@ const slides = [
     highlightKey: 'home.slide3.highlight',
   },
 ];
-
-const preloadAllImages = () => {
-  return Promise.all(slides.map((slide) => preloadImage(slide.image)));
-};
 
 const HomeCover = memo(() => {
   const { t, i18n } = useTranslation();
@@ -63,145 +52,68 @@ const HomeCover = memo(() => {
   const [nextSlideIndex, setNextSlideIndex] = useState(null);
   const [currentContent, setCurrentContent] = useState(slides[0]);
   const [nextContent, setNextContent] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
-    // Preload first image immediately
-    const loadFirstImage = async () => {
-      await preloadImage(currentContent.image);
-      setLoadedImages((prev) => ({ ...prev, [0]: true }));
-      setIsLoading(false);
-    };
+    // Auto slide every 5 seconds
+    const interval = setInterval(() => {
+      if (!isTransitioning) {
+        nextSlide();
+      }
+    }, 5000);
 
-    loadFirstImage();
-  }, []);
+    return () => clearInterval(interval);
+  }, [isTransitioning]);
 
-  // Preload next slide image when current slide changes
-  useEffect(() => {
-    if (isLoading) return;
-
-    const nextIndex = (currentSlide + 1) % slides.length;
-    if (!loadedImages[nextIndex]) {
-      const nextImage = slides[nextIndex].image;
-      preloadImage(nextImage).then(() => {
-        setLoadedImages((prev) => ({ ...prev, [nextIndex]: true }));
-      });
-    }
-  }, [currentSlide, isLoading, loadedImages]);
-
-  const nextSlide = useCallback(() => {
-    if (isTransitioning || isLoading) return;
+  const nextSlide = () => {
+    if (isTransitioning) return;
     setIsTransitioning(true);
     const nextIndex = (currentSlide + 1) % slides.length;
     setNextSlideIndex(nextIndex);
     setNextContent(slides[nextIndex]);
 
-    requestAnimationFrame(() => {
+    // Synchronize content and image transitions
+    setTimeout(() => {
       setCurrentSlide(nextIndex);
       setCurrentContent(slides[nextIndex]);
       setNextSlideIndex(null);
       setNextContent(null);
-      setTimeout(() => setIsTransitioning(false), 300);
-    });
-  }, [currentSlide, isTransitioning, isLoading]);
+      setTimeout(() => setIsTransitioning(false), 600);
+    }, 600);
+  };
 
-  useEffect(() => {
-    if (isLoading || isTransitioning) return;
+  const prevSlide = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    setNextSlideIndex(prevIndex);
+    setNextContent(slides[prevIndex]);
 
-    const interval = setInterval(() => {
-      flushSync(() => {
-        nextSlide();
-      });
-    }, 5000);
+    // Synchronize content and image transitions
+    setTimeout(() => {
+      setCurrentSlide(prevIndex);
+      setCurrentContent(slides[prevIndex]);
+      setNextSlideIndex(null);
+      setNextContent(null);
+      setTimeout(() => setIsTransitioning(false), 600);
+    }, 600);
+  };
 
-    return () => clearInterval(interval);
-  }, [isTransitioning, isLoading, nextSlide]);
-
-  const handleQuoteClick = useCallback(() => {
+  const handleQuoteClick = () => {
     navigate('/quote');
-  }, [navigate]);
+  };
 
-  const currentSlideContent = useMemo(
-    () => (
-      <div
-        className='absolute inset-0 flex items-center justify-center z-20 transition-all duration-1000 ease-in-out'
-        style={{
-          opacity: isTransitioning ? 0.9 : 1,
-          transform: isTransitioning ? 'scale(0.995)' : 'scale(1)',
-        }}
-      >
-        <div className='w-[90%] max-w-[800px] flex flex-col items-center'>
-          <h1 className='text-4xl md:text-6xl font-bold text-white mb-8 leading-tight tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] text-center'>
-            {t(currentContent.titleKey)
-              .split(' ')
-              .map((word, wordIndex, words) => (
-                <span
-                  key={wordIndex}
-                  className={
-                    word === t(currentContent.highlightKey)
-                      ? 'text-[#F76F51] drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
-                      : undefined
-                  }
-                >
-                  {word}
-                  {wordIndex < words.length - 1 ? ' ' : ''}
-                </span>
-              ))}
-          </h1>
-          <p className='text-base md:text-lg text-white/90 mb-12 max-w-[600px] leading-relaxed font-bold drop-shadow-md text-center'>
-            {t(currentContent.descriptionKey)}
-          </p>
-
-          <div className='relative shadow-xl'>
-            <Button
-              text={t('home.request_quote')}
-              variant='primary'
-              size='medium'
-              bgColor='white'
-              circleColor='#ff3e33'
-              direction={isRTL ? 'rtl' : 'ltr'}
-              onClick={handleQuoteClick}
-            />
-          </div>
-        </div>
-      </div>
-    ),
-    [currentContent, t, isTransitioning, isRTL, handleQuoteClick]
-  );
-
-  // const prevSlide = () => {
-  //   if (isTransitioning) return;
-  //   setIsTransitioning(true);
-  //   const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-  //   setNextSlideIndex(prevIndex);
-  //   setNextContent(slides[prevIndex]);
-
-  //   // Synchronize content and image transitions
-  //   setTimeout(() => {
-  //     setCurrentSlide(prevIndex);
-  //     setCurrentContent(slides[prevIndex]);
-  //     setNextSlideIndex(null);
-  //     setNextContent(null);
-  //     setTimeout(() => setIsTransitioning(false), 600);
-  //   }, 600);
-  // };
-
+  // Preload next image
   useEffect(() => {
-    // Preload all images when component mounts
-    preloadAllImages().catch(console.error);
-  }, []);
+    if (nextSlideIndex !== null) {
+      preloadImage(nextContent.image);
+    }
+  }, [nextSlideIndex, nextContent]);
 
-  if (isLoading) {
-    return (
-      <div
-        className={`${styles.homeCover} flex items-center justify-center`}
-        style={{ height: '80vh' }}
-      >
-        <div className='animate-pulse bg-gray-200 w-full h-full'></div>
-      </div>
-    );
-  }
+  // Initial preload of first two images
+  useEffect(() => {
+    preloadImage(slides[0].image);
+    preloadImage(slides[1].image);
+  }, []);
 
   return (
     <section
@@ -210,29 +122,18 @@ const HomeCover = memo(() => {
     >
       {/* Background Images with Synchronized Transitions */}
       <div
-        className='w-full h-full absolute inset-0'
+        className='w-full h-full absolute inset-0 transition-all duration-1000 ease-in-out'
         style={{
-          transition: 'all 300ms ease-out',
+          backgroundImage: `url(${currentContent.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: isTransitioning ? 0.9 : 1,
+          filter: isTransitioning ? 'brightness(0.95)' : 'brightness(1)',
           willChange: 'transform, opacity',
-          contain: 'content',
+          transform: 'translateZ(0)',
         }}
-      >
-        <img
-          src={currentContent.image}
-          alt=''
-          className={`w-full h-full object-cover ${styles.slideImage}`}
-          loading={currentContent.priority ? 'eager' : 'lazy'}
-          fetchpriority={currentContent.priority ? 'high' : 'auto'}
-          decoding='async'
-          style={{
-            transition: 'opacity 300ms ease-out',
-            opacity: isTransitioning ? 0.9 : 1,
-            willChange: 'transform, opacity',
-            transform: 'translateZ(0)',
-          }}
-        />
-      </div>
-
+      />
       {nextSlideIndex !== null && (
         <div
           className='w-full h-full absolute inset-0 transition-all duration-1000 ease-in-out'
@@ -292,12 +193,58 @@ const HomeCover = memo(() => {
 
       {/* Gradient Overlay */}
       <div
-        className='absolute inset-0 bg-gradient-to-b from-black/50 to-black/50 rounded-[20px] z-10'
-        style={{ transition: 'opacity 300ms ease-out' }}
+        className='absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 rounded-[20px] z-10 
+        transition-all duration-1000 ease-in-out'
+        style={{
+          opacity: isTransitioning ? 0.9 : 1,
+          filter: isTransitioning ? 'blur(0.5px)' : 'blur(0)',
+        }}
       />
 
       {/* Content with Synchronized Transitions */}
-      {currentSlideContent}
+      <div
+        className='absolute inset-0 flex items-center justify-center z-20 transition-all duration-1000 ease-in-out'
+        style={{
+          opacity: isTransitioning ? 0.9 : 1,
+          transform: isTransitioning ? 'scale(0.995)' : 'scale(1)',
+        }}
+      >
+        <div className='w-[90%] max-w-[800px] flex flex-col items-center'>
+          <h1 className='text-4xl md:text-6xl font-bold text-white mb-8 leading-tight tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] text-center'>
+            {t(currentContent.titleKey)
+              .split(' ')
+              .map((word, wordIndex, words) => (
+                <span
+                  key={wordIndex}
+                  className={
+                    word === t(currentContent.highlightKey)
+                      ? 'text-[#F76F51] drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
+                      : undefined
+                  }
+                >
+                  {word}
+                  {wordIndex < words.length - 1 ? ' ' : ''}
+                </span>
+              ))}
+          </h1>
+
+          <p className='text-base md:text-lg text-white/90 mb-12 max-w-[600px] leading-relaxed font-bold drop-shadow-md text-center'>
+            {t(currentContent.descriptionKey)}
+          </p>
+
+          <div className='relative shadow-xl'>
+            <Button
+              text={t('home.request_quote')}
+              variant='primary'
+              size='medium'
+              bgColor='white'
+              circleColor='#ff3e33'
+              direction={isRTL ? 'rtl' : 'ltr'}
+              onClick={handleQuoteClick}
+            />
+          </div>
+        </div>
+      </div>
 
       {/* Next Content (Hidden during transition) */}
       {nextContent && (

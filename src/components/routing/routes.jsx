@@ -2,7 +2,6 @@ import { createBrowserRouter, Navigate, Link } from 'react-router-dom';
 import { Suspense, lazy, useEffect, createElement, memo } from 'react';
 import MasterLayout from './../../Layout/MasterLayout';
 import LoadingSpinner from '../../shared/LoadingSpinner';
-import Home from '../../pages/Home';
 
 // تحسين مكون تتبع التنقل باستخدام memo
 const NavigationTracker = memo(({ children }) => {
@@ -62,7 +61,7 @@ const ErrorPage = memo(() => (
 ErrorPage.displayName = 'ErrorPage';
 
 // تحميل الصفحات لاحقًا للحصول على أداء أفضل
-// const Home = lazy(() => import('../../pages/Home'));
+const Home = lazy(() => import('../../pages/Home'));
 const Blog = lazy(() => import('../../pages/Blog'));
 const BlogDetails = lazy(() => import('../../pages/components/Blog/BlogDetails'));
 const Services = lazy(() => import('../../pages/Services'));
@@ -80,7 +79,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <LazyRoute component={Home} />,
       },
       {
         path: 'blog',

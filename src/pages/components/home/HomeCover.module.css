@@ -8,15 +8,6 @@
   box-sizing: border-box;
   overflow: hidden;
   transition: all 0.8s ease-in-out;
-  contain: content;
-  content-visibility: auto;
-  contain-intrinsic-size: 600px;
-}
-
-.slideImage {
-  backface-visibility: hidden;
-  perspective: 1000px;
-  transform: translateZ(0);
 }
 
 @media (max-width: 992px) {
