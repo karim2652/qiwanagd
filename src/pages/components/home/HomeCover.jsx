@@ -44,6 +44,10 @@ const slides = [
   },
 ];
 
+const preloadAllImages = () => {
+  return Promise.all(slides.map(slide => preloadImage(slide.image)));
+};
+
 const HomeCover = memo(() => {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -83,38 +87,30 @@ const HomeCover = memo(() => {
     }, 600);
   };
 
-  const prevSlide = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-    setNextSlideIndex(prevIndex);
-    setNextContent(slides[prevIndex]);
+  // const prevSlide = () => {
+  //   if (isTransitioning) return;
+  //   setIsTransitioning(true);
+  //   const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+  //   setNextSlideIndex(prevIndex);
+  //   setNextContent(slides[prevIndex]);
 
-    // Synchronize content and image transitions
-    setTimeout(() => {
-      setCurrentSlide(prevIndex);
-      setCurrentContent(slides[prevIndex]);
-      setNextSlideIndex(null);
-      setNextContent(null);
-      setTimeout(() => setIsTransitioning(false), 600);
-    }, 600);
-  };
+  //   // Synchronize content and image transitions
+  //   setTimeout(() => {
+  //     setCurrentSlide(prevIndex);
+  //     setCurrentContent(slides[prevIndex]);
+  //     setNextSlideIndex(null);
+  //     setNextContent(null);
+  //     setTimeout(() => setIsTransitioning(false), 600);
+  //   }, 600);
+  // };
 
   const handleQuoteClick = () => {
     navigate('/quote');
   };
 
-  // Preload next image
   useEffect(() => {
-    if (nextSlideIndex !== null) {
-      preloadImage(nextContent.image);
-    }
-  }, [nextSlideIndex, nextContent]);
-
-  // Initial preload of first two images
-  useEffect(() => {
-    preloadImage(slides[0].image);
-    preloadImage(slides[1].image);
+    // Preload all images when component mounts
+    preloadAllImages().catch(console.error);
   }, []);
 
   return (
