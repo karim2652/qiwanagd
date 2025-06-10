@@ -12,11 +12,15 @@ const image3 = images['../../../assets/images/home/3.webp'];
 
 // Preload images
 const preloadImage = (src) => {
-  return new Promise((resolve, reject) => {
+  if (!src) return Promise.resolve();
+  return new Promise((resolve) => {
     const img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = reject;
     img.src = src;
+    if (img.decode) {
+      return img.decode().then(resolve).catch(resolve);
+    }
+    img.onload = resolve;
+    img.onerror = resolve;
   });
 };
 
@@ -58,20 +62,46 @@ const HomeCover = memo(() => {
   const [nextSlideIndex, setNextSlideIndex] = useState(null);
   const [currentContent, setCurrentContent] = useState(slides[0]);
   const [nextContent, setNextContent] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
-    // Auto slide every 5 seconds
+    // Preload first image immediately
+    const loadFirstImage = async () => {
+      await preloadImage(currentContent.image);
+      setLoadedImages(prev => ({ ...prev, [0]: true }));
+      setIsLoading(false);
+    };
+
+    loadFirstImage();
+  }, []);
+
+  // Preload next slide image when current slide changes
+  useEffect(() => {
+    if (isLoading) return;
+
+    const nextIndex = (currentSlide + 1) % slides.length;
+    if (!loadedImages[nextIndex]) {
+      const nextImage = slides[nextIndex].image;
+      preloadImage(nextImage)
+        .then(() => {
+          setLoadedImages(prev => ({ ...prev, [nextIndex]: true }));
+        });
+    }
+  }, [currentSlide, isLoading, loadedImages]);
+
+  useEffect(() => {
+    if (isLoading || isTransitioning) return;
+    
     const interval = setInterval(() => {
-      if (!isTransitioning) {
-        nextSlide();
-      }
+      nextSlide();
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isTransitioning]);
+  }, [isTransitioning, isLoading]);
 
   const nextSlide = () => {
-    if (isTransitioning) return;
+    if (isTransitioning || isLoading) return;
     setIsTransitioning(true);
     const nextIndex = (currentSlide + 1) % slides.length;
     setNextSlideIndex(nextIndex);
@@ -113,10 +143,18 @@ const HomeCover = memo(() => {
     preloadAllImages().catch(console.error);
   }, []);
 
+  if (isLoading) {
+    return (
+      <div className={`${styles.homeCover} flex items-center justify-center`} style={{ height: '80vh' }}>
+        <div className="animate-pulse bg-gray-200 w-full h-full"></div>
+      </div>
+    );
+  }
+
   return (
     <section
       dir={isRTL ? 'rtl' : 'ltr'}
-      className={`${styles.homeCover} relative flex items-center justify-center m-4 overflow-hidden`}
+      className={`${styles.homeCover} relative flex items-center justify-center m-4 overflow-hidden border border-red-500`}
     >
       {/* Background Images with Synchronized Transitions */}
       <div
