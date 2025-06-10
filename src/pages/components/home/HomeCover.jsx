@@ -27,6 +27,7 @@ const slides = [
     titleKey: 'home.slide1.title',
     descriptionKey: 'home.slide1.description',
     highlightKey: 'home.slide1.highlight',
+    priority: true,
   },
   {
     image: image2,
@@ -132,6 +133,8 @@ const HomeCover = memo(() => {
           filter: isTransitioning ? 'brightness(0.95)' : 'brightness(1)',
           willChange: 'transform, opacity',
           transform: 'translateZ(0)',
+          loading: currentContent.priority ? 'eager' : 'lazy',
+          fetchPriority: currentContent.priority ? 'high' : 'auto',
         }}
       />
       {nextSlideIndex !== null && (
