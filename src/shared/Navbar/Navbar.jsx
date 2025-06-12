@@ -89,6 +89,13 @@ export default function Navbar() {
     document.documentElement.lang = lang;
   }, [lang]);
 
+  // Check for dataLayer availability
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !window.dataLayer) {
+      console.warn('Google Tag Manager dataLayer is not available. Event tracking will not work.');
+    }
+  }, []);
+
   const handleLangSwitch = (code) => {
     try {
       setIsLoading(true);
@@ -110,6 +117,20 @@ export default function Navbar() {
       window.location.reload();
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  // Handle phone call click with tracking
+  const handlePhoneClick = (e) => {
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'phone_call_click',
+        button_text: t('navigation.call_us', 'اتصل بنا'),
+        page_path: window.location.pathname,
+        button_location: 'Navbar',
+        phone_number: '+966548240556',
+        language: lang,
+      });
     }
   };
 
@@ -205,7 +226,7 @@ export default function Navbar() {
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
                     <span className='flex items-center justify-center w-8 h-8 rounded-full bg-white shadow text-black'>
-                      <Phone size={16} />
+                      <Phone size={16} aria-hidden='true' />
                     </span>
                     <a
                       href='tel:+966548240556'
@@ -213,6 +234,8 @@ export default function Navbar() {
                         lang === 'ar' ? 'font-arabic text-right' : 'font-english'
                       }`}
                       dir={lang === 'ar' ? 'ltr' : 'auto'}
+                      onClick={handlePhoneClick}
+                      aria-label={t('navigation.call_us', 'اتصل بنا')}
                     >
                       +966548240556
                     </a>
@@ -336,7 +359,7 @@ export default function Navbar() {
                     >
                       <div className='flex items-center gap-2'>
                         <span className='flex items-center justify-center w-8 h-8 rounded-full bg-white shadow text-black'>
-                          <Phone size={16} />
+                          <Phone size={16} aria-hidden='true' />
                         </span>
                         <a
                           href='tel:+966548240556'
@@ -344,6 +367,8 @@ export default function Navbar() {
                             lang === 'ar' ? 'font-arabic text-right' : 'font-english'
                           }`}
                           dir={lang === 'ar' ? 'ltr' : 'auto'}
+                          onClick={handlePhoneClick}
+                          aria-label={t('navigation.call_us', 'اتصل بنا')}
                         >
                           +966548240556
                         </a>

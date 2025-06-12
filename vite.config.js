@@ -87,7 +87,7 @@ export default defineConfig(({ mode }) => {
           scope: '/',
           icons: [
             {
-              src: '/src/assets/images/logo/Capture.webp',
+              src: '/assets/images/logo/Capture.webp',
               sizes: '192x192 512x512',
               type: 'image/webp',
               purpose: 'any maskable',

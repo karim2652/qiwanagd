@@ -249,8 +249,9 @@
       "sending": "Sending..."
     },
     "locations": {
-      "title": "Our Branches",
-      "subtitle": "We are located in several strategic locations in Saudi Arabia",
+      "title": "Our Office Locations",
+      "subtitle": "Visit our offices across different cities in the Kingdom",
+      "map_error": "Sorry, there was an error loading the map. Please try again.",
       "address": "Address",
       "phone_numbers": "Phone Numbers",
       "view_on_google": "View on Google Maps",
@@ -380,5 +381,8 @@
       "description": "Meet our success partners at Qawi Najd. We collaborate with elite companies and institutions in engineering and construction.",
       "keywords": "success partners, Qawi Najd partners, engineering companies, construction companies, contracting companies, design companies, consulting companies, surveying companies, permit companies, municipal companies, deed companies, surveying companies, quantity calculation companies, electrical design companies, mechanical design companies, site coordination companies, decorative design companies, residential project companies, commercial project companies, industrial project companies, governmental project companies, educational project companies, tourism project companies, hotel project companies, corporate project companies, partners in Riyadh, partners in Jeddah, partners in Dammam, partners in Makkah, partners in Madinah, partners in Al Kharj, partners in Mulham, partners in Al Aqiq, partners in Al Baha"
     }
+  },
+  "common": {
+    "retry": "Retry"
   }
 }

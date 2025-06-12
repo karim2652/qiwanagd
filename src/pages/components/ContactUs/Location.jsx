@@ -1,11 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { FaMapMarkerAlt, FaPhone, FaDirections } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 const Location = () => {
   const [activeLocation, setActiveLocation] = useState('alkharj');
+  const [mapError, setMapError] = useState(null);
+  const [isMapLoading, setIsMapLoading] = useState(true);
   const { i18n, t } = useTranslation();
   const isArabic = i18n.language === 'ar';
+
+  const handleMapError = useCallback(
+    (error) => {
+      console.error('Map loading error:', error);
+      setMapError(t('contact.locations.map_error'));
+      setIsMapLoading(false);
+    },
+    [t]
+  );
+
+  const handleMapLoad = useCallback(() => {
+    setIsMapLoading(false);
+    setMapError(null);
+  }, []);
+
+  useEffect(() => {
+    setIsMapLoading(true);
+    setMapError(null);
+  }, [activeLocation]);
 
   const locations = {
     alkharj: {
@@ -62,7 +83,10 @@ const Location = () => {
           {Object.values(locations).map((location) => (
             <button
               key={location.id}
-              onClick={() => setActiveLocation(location.id)}
+              onClick={() => {
+                setActiveLocation(location.id);
+                setMapError(null);
+              }}
               className={`px-3 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-medium transition-all duration-300 ${
                 activeLocation === location.id
                   ? 'bg-[#F03E2F] text-white'
@@ -77,18 +101,39 @@ const Location = () => {
         {/* Active Location Details */}
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
           {/* Map */}
-          <div className='bg-white rounded-lg shadow-md overflow-hidden h-[400px]'>
-            <iframe
-              src={locations[activeLocation].mapUrl}
-              width='100%'
-              height='100%'
-              style={{ border: 0 }}
-              allowFullScreen=''
-              loading='lazy'
-              referrerPolicy='no-referrer-when-downgrade'
-              title={`Qiwanagd Location - ${locations[activeLocation].name}`}
-              importance='high'
-            />
+          <div className='bg-white rounded-lg shadow-md overflow-hidden h-[400px] relative'>
+            {isMapLoading && !mapError && (
+              <div className='absolute inset-0 flex items-center justify-center bg-gray-100'>
+                <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-[#F03E2F]'></div>
+              </div>
+            )}
+
+            {mapError ? (
+              <div className='absolute inset-0 flex flex-col items-center justify-center bg-gray-100 p-4 text-center'>
+                <p className='text-red-600 mb-4'>{mapError}</p>
+                <button
+                  onClick={() => {
+                    setIsMapLoading(true);
+                    setMapError(null);
+                  }}
+                  className='px-4 py-2 bg-[#F03E2F] text-white rounded-lg hover:bg-[#e7401c] transition-colors'
+                >
+                  {t('common.retry')}
+                </button>
+              </div>
+            ) : (
+              <iframe
+                src={locations[activeLocation].mapUrl}
+                className='w-full h-full'
+                style={{ border: 0 }}
+                allowFullScreen
+                loading='lazy'
+                referrerPolicy='no-referrer-when-downgrade'
+                onError={handleMapError}
+                onLoad={handleMapLoad}
+                title={locations[activeLocation].name}
+              />
+            )}
           </div>
 
           {/* Location Info */}
