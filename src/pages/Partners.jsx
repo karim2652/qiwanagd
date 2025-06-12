@@ -8,6 +8,7 @@ import HeroSection from './HeroSection';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import partnerData from '../data/partnerData';
+import { Link } from 'react-router-dom';
 
 const Partners = () => {
   const { t, i18n } = useTranslation();
@@ -142,14 +143,14 @@ const Partners = () => {
                 'نحن نبحث دائماً عن شركاء جدد لتعزيز خدماتنا وتوسيع نطاق عملنا. انضم إلينا في رحلة النجاح والتميز'
               )}
             </p>
-            <motion.a
-              href='/contact'
+            <Link
+              to='/contact'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className='inline-block bg-gradient-to-r from-[#ff3e33] to-[#ff6b33] text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300'
             >
               {t('partners.contact_us', 'تواصل معنا')}
-            </motion.a>
+            </Link>
           </motion.div>
         </div>
       </div>

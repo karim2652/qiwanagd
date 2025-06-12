@@ -1226,674 +1226,401 @@ Contact us now for a free consultation and accurate surveying solutions.`,
     },
     {
       id: 4,
-      title: 'Engineering Supervision in Saudi Arabia: Complete Guide to Project Quality Control',
+      title: 'Building Permit in Riyadh: Steps, Requirements, and Required Documents',
       category: 'Engineering Services',
-      date: 'April 25, 2024',
+      date: 'May 23, 2025',
       image: '/assets/images/blog/4.webp',
       description:
-        'Discover the importance of engineering supervision in Saudi construction projects, its stages, and how to choose the right supervision company to ensure project quality and compliance with regulations.',
+        'Learn about building permit issuance steps in Riyadh for 2025, requirements and documents, and important tips to avoid application rejection. A comprehensive guide from a certified engineering office.',
       featured: false,
-      metaTitle: 'Engineering Supervision in Saudi Arabia – Quality Control Guide',
+      metaTitle: 'How to Get a Building Permit in Riyadh 2025 – Requirements and Steps',
       metaDescription:
-        'Discover the importance of engineering supervision in Saudi construction projects, its stages, and how to choose the right supervision company to ensure project quality and compliance with regulations.',
+        'Learn about building permit issuance steps in Riyadh for 2025, requirements and documents, and important tips to avoid application rejection. A comprehensive guide from a certified engineering office.',
       metaKeywords:
-        'engineering supervision saudi arabia, project quality control, construction supervision riyadh, engineering inspection services, building supervision cost saudi',
-      ogTitle: 'Engineering Supervision in Saudi Arabia – Quality Control Guide',
+        'building permit Riyadh, building permit requirements 2025, Balady platform building permits, certified engineering office Riyadh, building permit issuance',
+      ogTitle: 'How to Get a Building Permit in Riyadh 2025 – Requirements and Steps',
       ogDescription:
-        'Discover the importance of engineering supervision in Saudi construction projects, its stages, and how to choose the right supervision company to ensure project quality and compliance with regulations.',
+        'Learn about building permit issuance steps in Riyadh for 2025, requirements and documents, and important tips to avoid application rejection. A comprehensive guide from a certified engineering office.',
       ogImage: '/assets/images/blog/4.webp',
-      canonicalUrl: 'https://qiwanagd.com/en/blog/engineering-supervision-saudi-guide',
+      canonicalUrl: 'https://qiwanagd.com/en/blog/building-permit-riyadh-2025',
       schema: {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        headline:
-          'Engineering Supervision in Saudi Arabia: Complete Guide to Project Quality Control',
-        description:
-          'Discover the importance of engineering supervision in Saudi construction projects, its stages, and how to choose the right supervision company to ensure project quality and compliance with regulations.',
-        image: '/assets/images/blog/4.webp',
-        datePublished: '2025-05-23',
-        dateModified: '2025-05-23',
+        headline: 'Building Permit in Riyadh: Steps, Requirements, and Required Documents',
         author: {
           '@type': 'Organization',
-          name: 'Qawi Najd',
-          url: 'https://qiwanagd.com',
+          name: 'Engineering Office in Riyadh',
         },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Qawi Najd',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://qiwanagd.com/logo.png',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': 'https://qiwanagd.com/en/blog/engineering-supervision-saudi-guide',
-        },
+        datePublished: '2025-05-23',
+        mainEntityOfPage: 'https://qiwanagd.com/en/blog/building-permit-riyadh',
         keywords:
-          'engineering supervision saudi arabia, project quality control, construction supervision riyadh',
-        articleSection: 'Engineering Services',
-        articleBody: `Are you planning a construction project in Saudi Arabia? Whether it's a residential villa in Riyadh or a commercial complex in Jeddah, one critical aspect often overlooked is engineering supervision.
-
-With over $1.1 trillion worth of construction projects planned or underway in Saudi Arabia as part of Vision 2030, ensuring proper engineering supervision has never been more important.
-
-In this comprehensive guide, we'll explore everything you need to know about engineering supervision in Saudi Arabia, from its importance and stages to selecting the right supervision company for your project.
-
-Table of Contents:
-1. What is Engineering Supervision?
-2. Why is Engineering Supervision Critical in Saudi Projects?
-3. Legal Requirements for Engineering Supervision in Saudi Arabia
-4. The Key Stages of Engineering Supervision
-5. Types of Engineering Supervision Services
-6. Selecting the Right Engineering Supervision Company
-7. Cost of Engineering Supervision in Saudi Projects
-8. Common Challenges and How to Overcome Them
-9. Frequently Asked Questions
-10. How to Get Started with Our Engineering Supervision Services
-
-1. What is Engineering Supervision?
-Engineering supervision is the process of overseeing construction activities to ensure they comply with approved plans, specifications, building codes, and quality standards. It involves:
-• Regular site visits and inspections
-• Verification of construction materials and methods
-• Documentation and reporting of construction progress
-• Identification and resolution of technical issues
-• Coordination between contractors, consultants, and project owners
-
-2. Why is Engineering Supervision Critical in Saudi Projects?
-The importance of proper engineering supervision cannot be overstated:
-• Quality Assurance: Ensures construction meets design specifications and quality standards
-• Regulatory Compliance: Verifies adherence to Saudi building codes and municipal requirements
-• Cost Control: Prevents expensive rework by catching issues early
-• Schedule Management: Helps maintain project timelines
-• Risk Mitigation: Identifies potential problems before they become critical
-• Documentation: Provides a record of construction activities for future reference
-
-3. Legal Requirements for Engineering Supervision in Saudi Arabia
-In Saudi Arabia, engineering supervision is not just recommended—it's mandatory for most construction projects:
-• Royal Decree No. M/23 and the Saudi Building Code require professional supervision
-• Municipalities require proof of engineering supervision for permit issuance
-• The Saudi Council of Engineers regulates supervision practices
-• Supervisors must be licensed professionals with appropriate qualifications
-• Periodic reports must be submitted to relevant authorities
-
-4. The Key Stages of Engineering Supervision
-Comprehensive engineering supervision spans the entire project lifecycle:
-
-• Pre-Construction Phase
-  - Review and validation of design documents
-  - Verification of permits and approvals
-  - Establishment of quality control procedures
-  - Coordination with contractors
-
-• Construction Phase
-  - Regular site inspections (daily, weekly, or monthly)
-  - Material testing and approval
-  - Workmanship evaluation
-  - Progress monitoring and reporting
-  - Resolution of technical issues
-
-• Post-Construction Phase
-  - Final inspections and punch lists
-  - System testing and commissioning
-  - Documentation and handover
-  - Warranty period monitoring
-
-5. Types of Engineering Supervision Services
-Engineering supervision services in Saudi Arabia typically include:
-• Full-Time Supervision: Resident engineers present on-site throughout construction
-• Part-Time Supervision: Periodic visits based on project complexity and phase
-• Specialized Supervision: Focus on specific aspects like structural, MEP, or architectural
-• Third-Party Inspection: Independent verification beyond primary supervision
-• Remote Monitoring: Using technology to supplement physical inspections
-
-6. Selecting the Right Engineering Supervision Company
-When choosing an engineering supervision firm in Saudi Arabia, consider:
-• SCE Registration: Verify Saudi Council of Engineers certification
-• Experience: Look for proven track record in similar projects
-• Local Knowledge: Familiarity with Saudi regulations and practices
-• Qualified Staff: Professional engineers with relevant expertise
-• Technical Capabilities: Access to testing equipment and technology
-• Communication: Clear reporting and issue resolution processes
-• Reputation: References and past project success stories
-
-7. Cost of Engineering Supervision in Saudi Projects
-Engineering supervision typically costs between 2-5% of the total construction budget, varying based on:
-• Project size and complexity
-• Duration of construction
-• Type of supervision (full-time vs. part-time)
-• Specialized requirements
-• Location and accessibility
-
-While this may seem like an additional expense, proper supervision often saves 10-15% in overall project costs by preventing errors, delays, and rework.
-
-8. Common Challenges and How to Overcome Them
-• Communication Barriers: Overcome through clear documentation and bilingual staff
-• Resistance to Oversight: Address by emphasizing shared goals of project quality
-• Design Changes: Manage through formal change control procedures
-• Documentation Overload: Implement digital systems for efficient record-keeping
-• Schedule Pressure: Balance quality control with realistic timeline expectations
-
-9. Frequently Asked Questions
-
-Q: How often should site visits occur?
-A: The frequency depends on the project phase and complexity. Critical phases like foundation work typically require daily supervision, while less critical phases might need weekly visits. Most commercial projects in Riyadh and Jeddah benefit from 2-3 visits per week.
-
-Q: Can the same company provide both design and supervision?
-A: Yes, many engineering firms in Saudi Arabia offer both services. This can streamline communication and ensure design intent is properly executed. However, for very large projects, independent supervision may provide valuable third-party verification.
-
-Q: What qualifications should supervisors have?
-A: Engineering supervisors should be licensed professionals registered with the Saudi Council of Engineers, with relevant experience in the project type. Senior supervisors typically have 10+ years of experience and specialized knowledge of Saudi building codes.
-
-Q: How is supervision documented?
-A: Through detailed site reports, photographs, material testing certificates, and conformance documents. Modern supervision often includes digital documentation systems that provide real-time updates to stakeholders.
-
-10. How to Get Started with Our Engineering Supervision Services
-Our certified engineering team in Riyadh offers comprehensive supervision services:
-• Initial consultation to understand your project needs
-• Customized supervision plan based on project scope
-• Experienced supervisors with SCE registration
-• Regular reporting and stakeholder updates
-• Digital documentation and quality control systems
-
-Contact us today for a free consultation and quote for your project.`,
+          'building permit Riyadh, building permit issuance, Balady platform, certified engineering office, Riyadh Municipality',
       },
       content: [
         {
           type: 'paragraph',
-          text: "If you're planning to build a residential or commercial property in Riyadh, obtaining a building permit is the first and most important official procedure you should start with. In line with Saudi Vision 2030, the building permit issuance system has become more advanced and faster through the Balady platform, provided that all conditions and approved land surveying are met.",
+          text: 'If you are planning to build a residential or commercial property in Riyadh, obtaining a building permit is the first and most important official procedure you must start with. In line with Saudi Vision 2030, the building permit issuance system has become more advanced and faster through the Balady platform, provided all requirements and certified land survey are met.',
+        },
+        {
+          type: 'paragraph',
+          text: 'In this article, we detail the steps for obtaining a building permit in Riyadh, the required conditions, necessary documents, and important recommendations to speed up the approval process and ensure your application is not rejected.',
         },
         {
           type: 'toc',
-          title: 'Table of Contents:',
+          title: 'Table of Contents',
           items: [
             { number: '1', text: 'What is a Building Permit?', id: 'section-1' },
-            { number: '2', text: 'Frequently Asked Questions', id: 'section-2' },
-            { number: '3', text: 'Conclusion and Contact Invitation', id: 'section-3' },
-          ],
-        },
-        {
-          type: 'section-header',
-          id: 'section-1',
-          text: '1. What is a Building Permit?',
-        },
-        {
-          type: 'paragraph',
-          text: 'A building permit is an official document issued by the municipality that authorizes you to start construction work on a specific plot of land. It is necessary to ensure:',
-        },
-        {
-          type: 'bullet-list',
-          items: [
-            'Compliance with regulations and engineering specifications',
-            "Protection of neighbors' and community rights",
-            'Ensuring building and user safety',
-            'Avoiding violations and financial penalties',
-          ],
-        },
-        {
-          type: 'section-header',
-          id: 'section-2',
-          text: '2. Frequently Asked Questions',
-        },
-        {
-          type: 'qa',
-          question: 'What are the basic requirements for obtaining a building permit in Riyadh?',
-          answer:
-            "Basic requirements include: an updated title deed, an approved engineering plan from a licensed engineering office, a geotechnical study of the site, a certificate from the electricity company, a certificate from the water company, proof of owner's identity, and land ownership document.",
-        },
-        {
-          type: 'qa',
-          question: 'What are the steps to obtain a building permit?',
-          answer:
-            'The steps are as follows: 1. Update the real estate deed through the Ehkam platform, 2. Prepare engineering plans from an approved engineering office, 3. Submit the application through the Balady platform, 4. Application review by the municipality, 5. Pay the required fees, 6. Receive the permit.',
-        },
-        {
-          type: 'qa',
-          question: 'What is the cost of a building permit in Riyadh?',
-          answer:
-            "The cost varies according to: land area, project type (residential/commercial), number of floors, geographical location, engineering office fees, and municipality and other authorities' fees.",
-        },
-        {
-          type: 'qa',
-          question: 'What is the expected time to obtain a building permit?',
-          answer:
-            'Approximate duration: Deed update: 2-4 weeks, Plans preparation: 1-2 weeks, Municipality review: 2-4 weeks, Total duration: 5-10 weeks.',
-        },
-        {
-          type: 'qa',
-          question: 'Can an engineering office be used to help issue the permit?',
-          answer:
-            'Yes, and it is recommended because the approved engineering office: ensures compliance with regulations, saves time and effort, deals with the municipality and other authorities, and provides specialized technical consultations.',
-        },
-        {
-          type: 'qa',
-          question: 'What are the penalties for building without a permit?',
-          answer:
-            'Penalties include: significant financial fines, work stoppage, demolition of the building in some cases, and delay in issuing permits in the future.',
-        },
-        {
-          type: 'qa',
-          question: 'Are there exceptions from obtaining a building permit?',
-          answer:
-            'Yes, some cases like: simple renovations, internal additions, some temporary facilities (with the need to check with the municipality in each case).',
-        },
-        {
-          type: 'qa',
-          question: 'What are the important tips before starting permit procedures?',
-          answer:
-            'Main tips: ensuring the deed is updated, selecting an approved engineering office, preparing all documents in advance, continuous follow-up of the application, and compliance with engineering specifications.',
-        },
-        {
-          type: 'qa',
-          question: 'How can I avoid having my building permit application rejected?',
-          answer:
-            'To avoid rejection: ensure the completeness of documents, comply with regulations and specifications, choose an experienced engineering office, regularly follow up on the application status, and address any observations immediately.',
-        },
-        {
-          type: 'section-header',
-          id: 'section-3',
-          text: '3. Conclusion and Contact Invitation',
-        },
-        {
-          type: 'paragraph',
-          text: 'Obtaining a building permit in Riyadh represents an essential step to start your real estate project legally and safely. By adhering to proper procedures and using a reliable engineering office, you can expedite the process and avoid many problems.',
-        },
-        {
-          type: 'cta',
-          text: 'Contact us today for a comprehensive service to issue your building permit in Riyadh, from architectural design to receiving the final permit.',
-        },
-      ],
-    },
-    {
-      id: 5,
-      title: 'Surveying Services in Riyadh: Complete Guide to Land Survey & Cost',
-      category: 'Surveying Services',
-      date: 'May 2, 2024',
-      image: '/assets/images/blog/5.webp',
-      description:
-        'Your comprehensive guide to surveying services in Riyadh. Learn about types of surveys, costs, requirements, and how to choose a certified surveying office for your construction project.',
-      featured: false,
-      metaTitle: 'Surveying Services in Riyadh 2025 – Complete Guide & Cost',
-      metaDescription:
-        'Your comprehensive guide to surveying services in Riyadh. Learn about types of surveys, costs, requirements, and how to choose a certified surveying office for your construction project.',
-      metaKeywords:
-        'surveying services riyadh, land survey cost saudi arabia, certified survey office riyadh, land surveying saudi, building permit survey, riyadh municipality survey, land surveyor riyadh',
-      ogTitle: 'Surveying Services in Riyadh 2025 – Complete Guide & Cost',
-      ogDescription:
-        'Your comprehensive guide to surveying services in Riyadh. Learn about types of surveys, costs, requirements, and how to choose a certified surveying office for your construction project.',
-      ogImage: '/assets/images/blog/5.webp',
-      canonicalUrl: 'https://qiwanagd.com/en/blog/surveying-services-riyadh-guide',
-      schema: {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: 'Surveying Services in Riyadh: Complete Guide to Land Survey & Cost',
-        description:
-          'Your comprehensive guide to surveying services in Riyadh. Learn about types of surveys, costs, requirements, and how to choose a certified surveying office for your construction project.',
-        image: '/assets/images/blog/5.webp',
-        datePublished: '2025-05-23',
-        dateModified: '2025-05-23',
-        author: {
-          '@type': 'Organization',
-          name: 'Qawi Najd',
-          url: 'https://qiwanagd.com',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Qawi Najd',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://qiwanagd.com/logo.png',
-          },
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': 'https://qiwanagd.com/en/blog/surveying-services-riyadh-guide',
-        },
-        keywords:
-          'surveying services riyadh, land survey cost saudi arabia, certified survey office',
-        articleSection: 'Surveying Services',
-        articleBody: `Planning to build in Riyadh? Before any construction project begins, professional land surveying is an essential first step.
-
-Land surveying in Saudi Arabia serves as the foundation for successful construction projects, providing accurate measurements, coordinates, and specifications that guide all subsequent phases.
-
-In this comprehensive guide, we'll explore everything you need to know about surveying services in Riyadh, from types and procedures to costs and requirements in 2025.
-
-Table of Contents:
-1. What is Land Surveying?
-2. Importance of Professional Surveying for Construction
-3. When Do You Need Surveying Services?
-4. Types of Land Surveys in Riyadh
-5. Required Documents for Land Surveying
-6. The Land Survey Process
-7. Relationship Between Surveying and Building Permits
-8. Cost of Land Surveying in Riyadh
-9. Municipality Requirements for Surveys
-10. Role of Engineering Offices in Surveying
-11. Frequently Asked Questions
-12. How to Get a Certified Survey Within 24 Hours
-
-1. What is Land Surveying?
-Land surveying is the process of measuring and documenting the boundaries and dimensions of a property, including:
-• Determining precise land coordinates
-• Measuring lengths and angles
-• Identifying elevations and depressions
-• Documenting surrounding features and utilities
-This process is conducted using specialized surveying equipment such as Total Stations and precise GPS devices.
-
-2. Importance of Professional Surveying for Construction
-The importance of professional surveying cannot be overstated:
-• Ensures accuracy in property boundary determination
-• Prevents encroachments and property disputes
-• Essential requirement for obtaining building permits
-• Helps engineers and designers in precise planning
-• Provides crucial information about site characteristics
-
-3. When Do You Need Surveying Services?
-You need surveying services in the following situations:
-• Before starting any construction project
-• When purchasing new land to verify dimensions and boundaries
-• When applying for a building permit
-• When updating an old property deed
-• In boundary dispute cases between neighbors
-• When applying for municipal services or utilities
-
-4. Types of Land Surveys in Riyadh
-• Preliminary Survey: To determine area and boundaries
-• Municipal Survey (for permit purposes): Includes coordinates, property boundaries, and proposed building location
-• Agricultural or Industrial Land Survey
-• Electronic Survey for the Baladi platform
-
-5. Required Documents for Land Surveying
-• Copy of property deed
-• Site plan (if available)
-• Owner's ID
-• Plot and subdivision numbers
-• Authorization for the engineering office (if applying through them)
-
-6. The Land Survey Process
-• Site visit by a certified survey engineer
-• Land measurement using Total Station or GPS equipment
-• Creation of survey plan in DWG and PDF formats
-• Data review and comparison with deed and regulatory plans
-• Uploading survey to the Baladi platform or delivering to the owner
-
-7. Relationship Between Surveying and Building Permits
-Any building permit application in Riyadh will not be accepted without an accurate and certified land survey, as the survey is directly linked to the Baladi platform to verify coordinates and building location.
-
-8. Cost of Land Surveying in Riyadh
-• Starting from 1,500 SAR for small residential plots
-• Up to 4,000 SAR or more depending on land area and site characteristics
-• Prices vary based on location (within or outside urban boundaries) and the level of detail required
-
-9. Municipality Requirements for Surveys
-• Accuracy of equipment used (GPS or Total Station)
-• Land coordinates in WGS84 system
-• Clear indication of adjacent streets and actual dimensions
-• Statement of overlaps if any
-• Submission of plans in both PDF and DWG formats with the name of the engineering office
-
-10. Role of Engineering Offices in Surveying
-• Precise determination of land points
-• Verification of deed and site consistency
-• Submission of survey through the Baladi platform
-• Preparation of all municipal requirements systematically
-• Responding to any observations from the municipality
-
-11. Frequently Asked Questions
-
-Q: How long does a typical surveying process take?
-A: From 1 to 3 working days, depending on site readiness and land size.
-
-Q: Must the surveying office be certified by the municipality?
-A: Yes, only work executed by licensed engineering offices registered on the Baladi platform is accepted.
-
-Q: Do I need a new survey if I have an old site plan?
-A: Yes, because municipalities only accept new surveys linked to coordinates.
-
-12. How to Get a Certified Survey Within 24 Hours
-At our certified office in Riyadh, we offer expedited surveying service within 24 hours, including:
-• Immediate field visit
-• Issuance of official survey plan
-• Data upload to the Baladi platform
-• Delivery of files in PDF + DWG formats
-All at competitive prices, with guaranteed municipal acceptance.
-
-📞 Book now or contact us directly for a free consultation.`,
-      },
-      content: [
-        {
-          type: 'paragraph',
-          text: "Are you planning to build a house or commercial building in Riyadh? Before any step, you'll need an approved land surveying service.",
-        },
-        {
-          type: 'paragraph',
-          text: 'Land surveying is the backbone of any successful construction project in Saudi Arabia. It determines the exact dimensions, coordinates, and specifications upon which all subsequent phases will be built.',
-        },
-        {
-          type: 'paragraph',
-          text: "In this comprehensive guide, we'll learn about everything related to land surveying in Riyadh, from its types, through implementation steps, to the expected cost in 2025.",
-        },
-        {
-          type: 'toc',
-          title: 'Table of Contents:',
-          items: [
-            { number: '1', text: 'What is Land Surveying?', id: 'section-1' },
-            {
-              number: '2',
-              text: 'The Importance of Land Surveying for Construction Projects',
-              id: 'section-2',
-            },
-            { number: '3', text: 'When Do You Need Land Surveying Service?', id: 'section-3' },
-            { number: '4', text: 'What are the Types of Land Surveying?', id: 'section-4' },
-            {
-              number: '5',
-              text: 'What Documents are Required for Land Surveying?',
-              id: 'section-5',
-            },
+            { number: '2', text: 'Who Issues the Permit in Riyadh?', id: 'section-2' },
+            { number: '3', text: 'Building Permit Requirements', id: 'section-3' },
+            { number: '4', text: 'Steps to Obtain a Building Permit in Riyadh', id: 'section-4' },
+            { number: '5', text: 'Required Documents', id: 'section-5' },
             {
               number: '6',
-              text: 'What are the Steps to Implement Land Surveying?',
+              text: 'Common Mistakes Leading to Application Rejection',
               id: 'section-6',
             },
             {
               number: '7',
-              text: 'What is the Relationship Between Land Surveying and Building Permits?',
+              text: 'Role of Engineering Office in Expediting Procedures',
               id: 'section-7',
             },
-            { number: '8', text: 'What is the Cost of Land Surveying in Riyadh?', id: 'section-8' },
-            {
-              number: '9',
-              text: 'What are the Specifications Required by Riyadh Municipality for Land Surveying?',
-              id: 'section-9',
-            },
-            {
-              number: '10',
-              text: 'What is the Role of the Engineering Office in Conducting the Survey?',
-              id: 'section-10',
-            },
-            {
-              number: '11',
-              text: 'Frequently Asked Questions About Land Surveying',
-              id: 'section-11',
-            },
-            {
-              number: '12',
-              text: 'How We Can Get You an Approved Land Survey Within 24 Hours?',
-              id: 'section-12',
-            },
+            { number: '8', text: 'After Permit Issuance: What to Do Next', id: 'section-8' },
+            { number: '9', text: 'Building Permit Cost in Riyadh', id: 'section-9' },
+            { number: '10', text: 'Frequently Asked Questions', id: 'section-10' },
+            { number: '11', text: 'Conclusion and Call to Action', id: 'section-11' },
           ],
         },
-        {
-          type: 'section-header',
-          id: 'section-1',
-          text: '1. What is Land Surveying?',
-        },
+        { type: 'section-header', id: 'section-1', text: '1. What is a Building Permit?' },
         {
           type: 'paragraph',
-          text: 'Land surveying is the process of measuring and documenting the boundaries and dimensions of a plot of land, including:',
+          text: 'A building permit is an official document issued by the municipality that authorizes you to begin construction work, according to approved engineering plans, within the regulatory conditions of the area where the property is located.',
         },
-        {
-          type: 'bullet-list',
-          items: [
-            'Determining the exact coordinates of the land',
-            'Measuring lengths and angles',
-            'Determining elevations and depressions',
-            'Documenting surrounding features and services',
-          ],
-        },
+        { type: 'section-header', id: 'section-2', text: '2. Who Issues the Permit in Riyadh?' },
         {
           type: 'paragraph',
-          text: 'This process is carried out using specialized surveying equipment such as Total Station and precise GPS devices.',
-        },
-        {
-          type: 'section-header',
-          id: 'section-2',
-          text: '2. The Importance of Land Surveying for Construction Projects',
-        },
-        {
-          type: 'paragraph',
-          text: 'The importance of land surveying cannot be overstated, as it:',
-        },
-        {
-          type: 'bullet-list',
-          items: [
-            'Ensures accuracy in determining ownership boundaries',
-            'Prevents encroachments and real estate disputes',
-            'Is a basic requirement for obtaining a building permit',
-            'Helps engineers and designers in accurate planning',
-            'Provides essential information about the nature of the site',
-          ],
+          text: 'Building permits are issued through the Balady platform under the Ministry of Municipal and Rural Affairs, with technical supervision through certified engineering offices.',
         },
         {
           type: 'section-header',
           id: 'section-3',
-          text: '3. When Do You Need Land Surveying Service?',
-        },
-        {
-          type: 'paragraph',
-          text: 'You need land surveying in the following cases:',
+          text: '3. Building Permit Requirements in Riyadh',
         },
         {
           type: 'bullet-list',
           items: [
-            'Before starting any construction project',
-            'When buying a new land to verify the area and boundaries',
-            'When applying for a building permit',
-            'When updating an old deed',
-            'In cases of boundary disputes between neighbors',
-            'When submitting requests for municipal or electricity services',
+            '✅ Valid and clear property deed',
+            '✅ Architectural plan approved by an engineering office',
+            '✅ Accurate land survey',
+            '✅ No violations on the land',
+            '✅ Compliance with setbacks and building requirements for the neighborhood',
           ],
         },
         {
           type: 'section-header',
           id: 'section-4',
-          text: '4. What are the Types of Land Surveying?',
+          text: '4. Steps to Obtain a Building Permit in Riyadh',
         },
         {
-          type: 'bullet-list',
+          type: 'numbered-list',
           items: [
-            'Preliminary land surveying: to determine the area and boundaries',
-            'Municipal land surveying (for permit items): includes coordinates + land boundaries + proposed building location',
-            'Land surveying for agricultural or industrial land deeds',
-            'Land surveying for electronic submission via the Balady platform',
+            'Contract with a certified engineering office in Riyadh',
+            'Prepare land survey and architectural plan',
+            'Submit through Balady platform using Absher account',
+            'Attach all documents and submit application',
+            'Municipality review and linking with early warning system (safety)',
+            'Obtain final approval and electronic permit issuance',
           ],
         },
-        {
-          type: 'section-header',
-          id: 'section-5',
-          text: '5. What Documents are Required for Land Surveying?',
-        },
+        { type: 'section-header', id: 'section-5', text: '5. Required Documents' },
         {
           type: 'bullet-list',
           items: [
-            'Copy of the title deed',
-            'Regulatory sketch (if any)',
-            "Owner's ID",
-            'Land and plan number',
-            'Engineering office authorization (if submitting through it)',
+            '📌 Property deed copy',
+            '📌 National ID',
+            '📌 Site plan',
+            '📌 Land survey',
+            '📌 Architectural building plan (DWG + PDF)',
+            '📌 Engineering supervision contract',
           ],
         },
         {
           type: 'section-header',
           id: 'section-6',
-          text: '6. What are the Steps to Implement Land Surveying?',
+          text: '6. Common Mistakes Leading to Application Rejection',
         },
         {
           type: 'bullet-list',
           items: [
-            'Site visit by an approved surveying engineer',
-            'Measuring the land using a Total Station or GPS device',
-            'Creating the survey plan in DWG and PDF formats',
-            'Reviewing the data and matching it with the deed and regulatory plan',
-            'Uploading the land survey to the Balady platform or delivering it to the owner',
+            '❌ Errors in land survey or coordinates',
+            '❌ Exceeding regulatory setbacks',
+            '❌ Unclear ownership',
+            '❌ Application from non-certified office',
+            '❌ Missing early warning system file or structural plans',
           ],
         },
         {
           type: 'section-header',
           id: 'section-7',
-          text: '7. What is the Relationship Between Land Surveying and Building Permits?',
+          text: '7. Role of Engineering Office in Expediting Procedures',
         },
         {
           type: 'paragraph',
-          text: 'Any building permit application in Riyadh is not accepted without an accurate and approved land survey, where the survey is directly linked to the Balady platform to verify coordinates and building location.',
-        },
-        {
-          type: 'section-header',
-          id: 'section-8',
-          text: '8. What is the Cost of Land Surveying in Riyadh?',
+          text: 'The certified office does not just prepare plans, but also:',
         },
         {
           type: 'bullet-list',
           items: [
-            'Starting from 1500 Saudi Riyals for small residential lands',
-            'Up to 4000 Riyals or more depending on the land area and site nature',
-            'Prices vary according to location (inside or outside the urban boundary) and the level of details required',
+            '• Prepares all documents in compliance with municipal requirements',
+            '• Communicates with Balady platform and municipality engineers',
+            '• Submits application and follows up on comments until permit issuance',
+            '• Ensures design compliance with approved regulations in Riyadh',
           ],
         },
         {
           type: 'section-header',
-          id: 'section-9',
-          text: '9. What are the Specifications Required by Riyadh Municipality for Land Surveying?',
+          id: 'section-8',
+          text: '8. After Permit Issuance: What to Do Next',
         },
         {
           type: 'bullet-list',
           items: [
-            'Accuracy of the device used (GPS or Total Station)',
-            'Land coordinates in WGS84 system',
-            'Clarification of adjacent streets and actual lengths',
-            'Statement of overlaps if found',
-            'Submitting the plan in both PDF and DWG formats with the engineering office name',
+            '✅ Apply for excavation permit',
+            '✅ Contract with licensed building contractor',
+            '✅ Obtain latent defects insurance',
+            '✅ Begin construction work under engineering office supervision',
+          ],
+        },
+        { type: 'section-header', id: 'section-9', text: '9. Building Permit Cost in Riyadh' },
+        {
+          type: 'paragraph',
+          text: 'The cost is divided into two parts:',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            '1. Municipality fees: Determined by the municipality based on property type and area. Usually starts from 2,000 SAR',
+            '2. Engineering office fees: Include design and supervision, ranging from 6,000 – 15,000 SAR depending on building type and number of floors',
+          ],
+        },
+        { type: 'section-header', id: 'section-10', text: '10. Frequently Asked Questions' },
+        {
+          type: 'qa',
+          question: 'Do I need a permit if I am only building a wall?',
+          answer: 'Yes, you must obtain a wall permit through Balady.',
+        },
+        {
+          type: 'qa',
+          question: 'Can I modify a building permit after issuance?',
+          answer: 'Yes, but through submitting a modification request with a new plan.',
+        },
+        {
+          type: 'qa',
+          question: 'What is the difference between old and new permits through Balady?',
+          answer:
+            'The new permit is digital and links between authorities (Civil Defense, Electricity, Water).',
+        },
+        { type: 'section-header', id: 'section-11', text: '11. Conclusion and Call to Action' },
+        {
+          type: 'paragraph',
+          text: 'Obtaining a building permit in Riyadh is no longer as complicated as before, but it requires adherence to regulatory steps and accuracy in submitting applications through the Balady platform. Working with a certified engineering office facilitates the process and ensures permit issuance without delay or rejection.',
+        },
+        {
+          type: 'cta',
+          icon: '📞',
+          text: 'Need help obtaining a building permit for your property in Riyadh? Contact us now for a free consultation and comprehensive service from design to permit issuance within days.',
+        },
+      ],
+    },
+    {
+      id: 5,
+      title: 'Surveying Services in Riyadh: Land Survey, Boundary Determination, and Deed Updates',
+      category: 'Surveying Services',
+      date: 'May 23, 2025',
+      image: '/assets/images/blog/5.webp',
+      description:
+        'Learn about surveying services in Riyadh, the importance of land surveys for buildings and deeds, municipal requirements, with a full explanation of prices and implementation steps.',
+      featured: false,
+      metaTitle: 'Best Land Surveying Services in Riyadh – 2025 | Municipality Certified',
+      metaDescription:
+        'Learn about surveying services in Riyadh, the importance of land surveys for buildings and deeds, municipal requirements, with a full explanation of prices and implementation steps.',
+      metaKeywords:
+        'surveying Riyadh, certified survey office, land survey cost Saudi Arabia, surveying services Riyadh, building permit land survey',
+      ogTitle: 'Best Land Surveying Services in Riyadh – 2025 | Municipality Certified',
+      ogDescription:
+        'Learn about surveying services in Riyadh, the importance of land surveys for buildings and deeds, municipal requirements, with a full explanation of prices and implementation steps.',
+      ogImage: '/assets/images/blog/5.webp',
+      canonicalUrl: 'https://qiwanagd.com/en/blog/surveying-services-riyadh-guide',
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline:
+          'Surveying Services in Riyadh: Land Survey, Boundary Determination, and Deed Updates',
+        author: {
+          '@type': 'Organization',
+          name: 'Engineering Office in Riyadh',
+        },
+        datePublished: '2025-05-23',
+        mainEntityOfPage: 'https://qiwanagd.com/en/blog/surveying-services-riyadh-guide',
+        keywords:
+          'surveying Riyadh, certified survey office, surveying services, Balady, building permit',
+      },
+      content: [
+        {
+          type: 'paragraph',
+          text: 'In the world of real estate and construction, surveying services are the cornerstone of every project. Whether you own land, are about to issue a building permit, or want to update deed data, land surveying in Riyadh is the first and most important step.',
+        },
+        {
+          type: 'paragraph',
+          text: 'In this article, we review everything you need to know about surveying services in the Saudi capital: their types, role in municipal transactions, practical steps, and best practices to ensure data acceptance by the municipality and the Balady platform.',
+        },
+        {
+          type: 'toc',
+          title: 'Table of Contents',
+          items: [
+            { number: '1', text: 'What is Land Surveying?', id: 'section-1' },
+            { number: '2', text: 'Importance of Land Surveying in Riyadh', id: 'section-2' },
+            { number: '3', text: 'When Do You Need Surveying Services?', id: 'section-3' },
+            { number: '4', text: 'Types of Land Surveying', id: 'section-4' },
+            { number: '5', text: 'Required Documents for Land Surveying', id: 'section-5' },
+            { number: '6', text: 'Steps to Conduct Land Surveying', id: 'section-6' },
+            {
+              number: '7',
+              text: 'Relationship Between Land Surveying and Building Permits',
+              id: 'section-7',
+            },
+            { number: '8', text: 'Cost of Land Surveying in Riyadh', id: 'section-8' },
+            { number: '9', text: 'Municipality Requirements', id: 'section-9' },
+            { number: '10', text: 'Role of the Engineering Office in Surveying', id: 'section-10' },
+            { number: '11', text: 'Frequently Asked Questions', id: 'section-11' },
+            {
+              number: '12',
+              text: 'How to Get a Certified Survey Within 24 Hours?',
+              id: 'section-12',
+            },
+          ],
+        },
+        { type: 'section-header', id: 'section-1', text: '1. What is Land Surveying?' },
+        {
+          type: 'paragraph',
+          text: 'Land surveying is the process of measuring and determining the dimensions and area of a plot using specialized equipment, to produce an accurate survey plan used for permits, deeds, and architectural plans.',
+        },
+        {
+          type: 'section-header',
+          id: 'section-2',
+          text: '2. Importance of Land Surveying in Riyadh',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            '✅ Essential requirement for building permits',
+            '✅ Used for modifying or updating deeds',
+            '✅ Proves land boundaries to official authorities',
+            '✅ Protects against property disputes',
+            '✅ Enhances the accuracy of architectural and structural design',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-3',
+          text: '3. When Do You Need Surveying Services?',
+        },
+        {
+          type: 'bullet-list',
+          items: [
+            'When buying or selling land',
+            'When issuing a new building permit',
+            'When updating an old deed',
+            'In cases of boundary disputes between neighbors',
+            'When applying for municipal or utility services',
+          ],
+        },
+        { type: 'section-header', id: 'section-4', text: '4. Types of Land Surveying' },
+        {
+          type: 'bullet-list',
+          items: [
+            'Preliminary survey: to determine area and boundaries',
+            'Municipal survey (for permit items): includes coordinates + land boundaries + proposed building location',
+            'Survey for agricultural or industrial land deeds',
+            'Electronic survey for submission via the Balady platform',
+          ],
+        },
+        { type: 'section-header', id: 'section-5', text: '5. Required Documents' },
+        {
+          type: 'bullet-list',
+          items: [
+            '📌 Copy of the title deed',
+            '📌 Regulatory sketch (if any)',
+            "📌 Owner's ID",
+            '📌 Plot and plan number',
+            '📌 Authorization for the engineering office (if applying through it)',
+          ],
+        },
+        { type: 'section-header', id: 'section-6', text: '6. Steps to Conduct Land Surveying' },
+        {
+          type: 'numbered-list',
+          items: [
+            'Site visit by a certified survey engineer',
+            'Measuring the land using Total Station or GPS equipment',
+            'Creating the survey plan in DWG and PDF formats',
+            'Reviewing the data and matching it with the deed and regulatory plan',
+            'Uploading the survey to the Balady platform or delivering it to the owner',
+          ],
+        },
+        {
+          type: 'section-header',
+          id: 'section-7',
+          text: '7. Relationship Between Land Surveying and Building Permits',
+        },
+        {
+          type: 'paragraph',
+          text: 'Any building permit application in Riyadh will not be accepted without an accurate and certified land survey, as the survey is directly linked to the Balady platform to verify coordinates and building location.',
+        },
+        { type: 'section-header', id: 'section-8', text: '8. Cost of Land Surveying in Riyadh' },
+        {
+          type: 'bullet-list',
+          items: [
+            'Starting from 1,500 SAR for small residential plots',
+            'Up to 4,000 SAR or more depending on land area and site characteristics',
+            'Prices vary based on location (within or outside urban boundaries) and the level of detail required',
+          ],
+        },
+        { type: 'section-header', id: 'section-9', text: '9. Municipality Requirements' },
+        {
+          type: 'bullet-list',
+          items: [
+            '✅ Accuracy of equipment used (GPS or Total Station)',
+            '✅ Land coordinates in WGS84 system',
+            '✅ Clear indication of adjacent streets and actual dimensions',
+            '✅ Statement of overlaps if any',
+            '✅ Submission of plans in both PDF and DWG formats with the name of the engineering office',
           ],
         },
         {
           type: 'section-header',
           id: 'section-10',
-          text: '10. What is the Role of the Engineering Office in Conducting the Survey?',
+          text: '10. Role of the Engineering Office in Surveying',
         },
         {
           type: 'bullet-list',
           items: [
-            'Accurate determination of land points',
-            'Verifying compatibility between the deed and the site',
-            'Submitting the survey through the Balady platform',
-            'Preparing all municipal requirements in a systematic manner',
-            'Responding to any observations received from the municipality',
+            '🔹 Accurate determination of land points',
+            '🔹 Verification of deed and site consistency',
+            '🔹 Submission of the survey through the Balady platform',
+            '🔹 Preparation of all municipal requirements systematically',
+            '🔹 Responding to any observations from the municipality',
           ],
         },
-        {
-          type: 'section-header',
-          id: 'section-11',
-          text: '11. Frequently Asked Questions About Land Surveying',
-        },
+        { type: 'section-header', id: 'section-11', text: '11. Frequently Asked Questions' },
         {
           type: 'qa',
-          question: 'Does the surveying office have to be approved by the municipality?',
+          question: 'Does the surveying office have to be certified by the municipality?',
           answer:
-            'Yes, only work executed by licensed engineering offices registered in the Balady platform is accepted.',
+            'Yes, only work executed by licensed engineering offices registered on the Balady platform is accepted.',
         },
         {
           type: 'qa',
-          question: 'Do I need land surveying if I have an old sketch?',
-          answer: 'Yes, because municipalities only approve new surveys linked to coordinates.',
+          question: 'Do I need a new survey if I have an old site plan?',
+          answer: 'Yes, because municipalities only accept new surveys linked to coordinates.',
         },
         {
           type: 'qa',
@@ -1903,24 +1630,24 @@ All at competitive prices, with guaranteed municipal acceptance.
         {
           type: 'section-header',
           id: 'section-12',
-          text: '12. How We Can Get You an Approved Land Survey Within 24 Hours?',
+          text: '12. How to Get a Certified Survey Within 24 Hours?',
         },
         {
           type: 'paragraph',
-          text: 'In our approved office in Riyadh, we provide an urgent land surveying service within 24 hours, including:',
+          text: 'At our certified office in Riyadh, we offer expedited surveying service within 24 hours, including:',
         },
         {
           type: 'bullet-list',
           items: [
-            'Immediate field visit',
-            'Issuing an official survey plan',
-            'Uploading data to the Balady platform',
-            'Delivering files in PDF + DWG format',
+            '✅ Immediate field visit',
+            '✅ Issuance of official survey plan',
+            '✅ Data upload to the Balady platform',
+            '✅ Delivery of files in PDF + DWG formats',
           ],
         },
         {
           type: 'paragraph',
-          text: 'All at competitive prices, and with a guarantee of municipality acceptance.',
+          text: 'All at competitive prices, with guaranteed municipal acceptance.',
         },
         {
           type: 'cta',
@@ -2185,7 +1912,7 @@ Contact us for professional project management solutions tailored to your constr
         },
         {
           type: 'cta',
-          text: 'Contact us today for a comprehensive service to issue your building permit in Riyadh efficiently and quickly.',
+          text: 'Contact us today for a comprehensive service to issue your building permit in Riyadh, from architectural design to receiving the final permit.',
         },
       ],
     },

@@ -352,6 +352,8 @@
     "additional_notes": "Additional Notes",
     "main_title": "Start Your Project Now Design",
     "subtitle": "Send the initial data and you will receive a response within 24 hours maximum",
+    "form.sending": "Sending...",
+    "form.submit": "Submit Request",
     "design_types": {
       "external": "External",
       "3d": "3D",
@@ -367,7 +369,12 @@
   },
   "partners": {
     "title": "Success Partners",
+    "subtitle": "We collaborate with elite companies and institutions in engineering and construction",
     "view_more": "View More",
+    "description": "We are proud to partner with elite companies and institutions in engineering and construction",
+    "become_partner": "Become a Partner",
+    "partner_cta": "We are always looking for new partners to enhance our services and expand our scope. Join us on the journey of success and excellence",
+    "contact_us": "Contact Us",
     "meta": {
       "title": "Success Partners - Qawi Najd Engineering Consulting",
       "description": "Meet our success partners at Qawi Najd. We collaborate with elite companies and institutions in engineering and construction.",
