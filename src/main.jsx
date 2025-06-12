@@ -6,6 +6,7 @@ import './i18n'; // Import i18n configuration
 import App from './App.jsx';
 import './index.css';
 import GTMProvider from './components/GTMProvider';
+import ContentProtection from './components/ContentProtection';
 
 // Error fallback component
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
@@ -49,9 +50,11 @@ root.render(
     <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => window.location.reload()}>
       <HelmetProvider>
         <GTMProvider>
-          <Suspense fallback={<LoadingFallback />}>
-            <App />
-          </Suspense>
+          <ContentProtection>
+            <Suspense fallback={<LoadingFallback />}>
+              <App />
+            </Suspense>
+          </ContentProtection>
         </GTMProvider>
       </HelmetProvider>
     </ErrorBoundary>
