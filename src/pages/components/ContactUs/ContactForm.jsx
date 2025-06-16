@@ -61,6 +61,17 @@ const ContactForm = () => {
       toast.dismiss();
 
       if (response.status === 200) {
+        // Push Google Ads conversion event
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'lead_form_submission',
+          form_location: 'contact-page',
+          // إضافة معلومات إضافية مفيدة للتتبع
+          lead_type: 'contact',
+          lead_service: 'general_inquiry',
+          lead_source: 'contact_form',
+        });
+
         toast.success(t('contact.toast.success'), {
           position: 'bottom-center',
           autoClose: 3000,

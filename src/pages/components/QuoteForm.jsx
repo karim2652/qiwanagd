@@ -114,6 +114,17 @@ const QuoteForm = () => {
       toast.dismiss();
 
       if (response.status === 200) {
+        // Push Google Ads conversion event
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'lead_form_submission',
+          form_location: 'quote-page',
+          // إضافة معلومات إضافية مفيدة للتتبع
+          lead_type: data.requestType,
+          lead_service: data.requiredService,
+          lead_source: data.howDidYouFind,
+        });
+
         toast.success(t('contact.toast.success'), {
           position: 'bottom-center',
           autoClose: 3000,
