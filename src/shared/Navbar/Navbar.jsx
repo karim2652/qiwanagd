@@ -5,7 +5,7 @@ import { Phone, ArrowUpRight, Globe2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import LoadingSpinner from '../../components/ui/LoadingSpinner';
+import { SkeletonBase, SkeletonNavbar } from '../../components/ui/skeleton';
 import logoAr from '../../assets/images/logo/2.svg';
 import logoEn from '../../assets/images/logo/4.svg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -135,11 +135,7 @@ export default function Navbar() {
   };
 
   if (isLoading) {
-    return (
-      <div className='bg-[#f5f9f9] h-20 flex items-center justify-center'>
-        <LoadingSpinner size='md' />
-      </div>
-    );
+    return <SkeletonNavbar />;
   }
 
   return (
@@ -169,7 +165,11 @@ export default function Navbar() {
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   <Link to='/'>
-                    <Suspense fallback={<LoadingSpinner size='sm' />}>
+                    <Suspense
+                      fallback={
+                        <SkeletonBase width='w-full' height='h-full' rounded='rounded-lg' />
+                      }
+                    >
                       <LazyLoadImage
                         src={lang === 'ar' ? logoAr : logoEn}
                         alt='Qiwa Najd Logo'

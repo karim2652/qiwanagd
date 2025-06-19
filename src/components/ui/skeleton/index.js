@@ -1,0 +1,9 @@
+export { default as SkeletonBase } from './SkeletonBase';
+export { default as SkeletonCard } from './SkeletonCard';
+export { default as SkeletonHome } from './SkeletonHome';
+export { default as SkeletonBlog } from './SkeletonBlog';
+export { default as SkeletonServices } from './SkeletonServices';
+export { default as SkeletonProjects } from './SkeletonProjects';
+export { default as SkeletonRouter } from './SkeletonRouter';
+export { default as SkeletonNavbar } from './SkeletonNavbar';
+export { default as SkeletonDemo } from './SkeletonDemo';

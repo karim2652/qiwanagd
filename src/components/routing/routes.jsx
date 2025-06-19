@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate, Link } from 'react-router-dom';
 import { Suspense, lazy, useEffect, createElement, memo } from 'react';
 import MasterLayout from './../../Layout/MasterLayout';
-import LoadingSpinner from '../../shared/LoadingSpinner';
+import { SkeletonRouter } from '../ui/skeleton';
 
 // تحسين مكون تتبع التنقل باستخدام memo
 const NavigationTracker = memo(({ children }) => {
@@ -34,7 +34,7 @@ NavigationTracker.displayName = 'NavigationTracker';
 // محسن لتغليف المسارات كسولة التحميل
 const LazyRoute = memo(({ component: Component }) => (
   <NavigationTracker>
-    <Suspense fallback={<LoadingSpinner />}>
+    <Suspense fallback={<SkeletonRouter />}>
       <Component />
     </Suspense>
   </NavigationTracker>

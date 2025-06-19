@@ -2,13 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Skeleton Loading Styles */
+@import './styles/skeleton.css';
+
 /* Language Transition Styles */
-[dir="rtl"] {
+[dir='rtl'] {
   direction: rtl;
   text-align: right;
 }
 
-[dir="ltr"] {
+[dir='ltr'] {
   direction: ltr;
   text-align: left;
 }
@@ -19,13 +22,13 @@
 }
 
 /* Font family for Arabic */
-[lang="ar"] {
-  font-family: "Cairo", sans-serif;
+[lang='ar'] {
+  font-family: 'Cairo', sans-serif;
 }
 
 /* Font family for English */
-[lang="en"] {
-  font-family: "Roboto", sans-serif;
+[lang='en'] {
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Font weight utilities */
@@ -59,7 +62,7 @@
 }
 body {
   background-color: #f7fafd;
-  font-family: "Cairo", sans-serif;
+  font-family: 'Cairo', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -100,7 +103,7 @@ body {
 }
 
 :root {
-  font-family: "Cairo", "Roboto", system-ui, sans-serif;
+  font-family: 'Cairo', 'Roboto', system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
