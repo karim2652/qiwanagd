@@ -33,7 +33,7 @@ const Location = () => {
       id: 'alkharj',
       name: t('contact.locations.offices.alkharj'),
       address: isArabic ? 'الخرج، المملكة العربية السعودية' : 'Al Kharj, Saudi Arabia',
-      phones: ['+966 54 824 0556', '+966 55 777 0556'],
+      phones: ['+966 54 824 0556', '+966 55 777 0557'],
       coordinates: [24.153167678397715, 47.31654357534841],
       mapUrl:
         'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3640.52917114754!2d47.31654357534841!3d24.153167678397715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDA5JzExLjQiTiA0N8KwMTknMDguOCJF!5e0!3m2!1sen!2seg!4v1747848669167!5m2!1sen!2seg',

@@ -28,7 +28,7 @@ const ContactUsSection = () => {
         <span className='block'>
           <span dir='ltr'>+966 54 824 0556</span>
           <br />
-          <span dir='ltr'>+966 55 777 0556</span>
+          <span dir='ltr'>+966 55 777 0557</span>
         </span>
       ),
     },
