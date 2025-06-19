@@ -40,6 +40,7 @@ const ServiceDetails = () => {
       });
     }
   };
+
   // Create slug from title for comparison
   const createSlug = (title) => {
     // For Arabic titles
@@ -285,6 +286,20 @@ const ServiceDetails = () => {
                           <p className='text-gray-600 leading-relaxed mr-11'>
                             {detail.description}
                           </p>
+                          {detail.keywords && detail.keywords.length > 0 && (
+                            <div className='mr-11 mt-3'>
+                              <div className='flex flex-wrap gap-1'>
+                                {detail.keywords.map((keyword, keywordIndex) => (
+                                  <span
+                                    key={keywordIndex}
+                                    className='inline-block bg-orange-50 text-orange-700 px-2 py-1 rounded text-xs font-medium'
+                                  >
+                                    {keyword}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -315,6 +330,29 @@ const ServiceDetails = () => {
                           </h3>
                           <p className='text-gray-600 leading-relaxed mr-11'>{item.answer}</p>
                         </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Keywords Section */}
+              {service.keywords && service.keywords.length > 0 && (
+                <div className='bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden'>
+                  <div className='p-6 border-b border-gray-100'>
+                    <h2 className='text-2xl font-bold text-gray-900'>
+                      {isArabic ? 'الكلمات المفتاحية' : 'Keywords'}
+                    </h2>
+                  </div>
+                  <div className='p-6'>
+                    <div className='flex flex-wrap gap-2'>
+                      {service.keywords.map((keyword, index) => (
+                        <span
+                          key={index}
+                          className='inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-[#FF5E3A] hover:text-white transition-colors duration-200'
+                        >
+                          {keyword}
+                        </span>
                       ))}
                     </div>
                   </div>

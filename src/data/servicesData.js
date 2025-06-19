@@ -5,6 +5,18 @@ export const servicesAr = [
   {
     title: 'خدمات التصميم الهندسي',
     icon: <FiHome className='w-8 h-8' />,
+    keywords: [
+      'تصميم معماري',
+      'مكتب هندسي الرياض',
+      'استشارات هندسية',
+      'تصميم مباني',
+      'مكتب استشارات هندسية',
+      'تصميم فلل',
+      'تصميم تجاري',
+      'هندسة معمارية',
+      'تصميم مستدام',
+      'تصميم ثلاثي الأبعاد',
+    ],
     metaDescription:
       'أفضل خدمات التصميم المعماري في الرياض لدى مكتب qiwa nagd الهندسي المعتمد. تصميمات حديثة ومستدامة تلبي رؤيتك، مع دعم فني كامل. احصل على استشارة مجانية الآن!',
     mainTitle: 'تصميم معماري حديث ومستدام في الرياض',
@@ -56,31 +68,49 @@ export const servicesAr = [
     detailedServices: [
       {
         name: 'التصميم المعماري السكني',
+        keywords: ['تصميم فلل', 'تصميم شاليهات', 'تصميم واجهات', 'الطابع النجدي', 'تصميم سكني'],
         description:
           'تخطيط فيلات وشاليهات بناءً على الاحتياجات الأسرية. تصميم واجهات خارجية تجمع بين الحداثة والطابع المحلي (Najdi Style).',
       },
       {
         name: 'التصميم المعماري التجاري',
+        keywords: ['مراكز تجارية', 'مكاتب إدارية', 'تصميم تجاري', 'توزيع المساحات', 'تدفق الحركة'],
         description:
           'مراكز تجارية ومكاتب إدارية بتصاميم عصرية مميزة. مراعاة تدفق الحركة (Circulation) وتوزيع المساحات بكفاءة عالية.',
       },
       {
         name: 'النمذجة ثلاثية الأبعاد (3D Modeling & Rendering)',
+        keywords: [
+          'نمذجة ثلاثية الأبعاد',
+          'عرض واقعي',
+          'جولة افتراضية',
+          '3D Rendering',
+          'Virtual Tour',
+        ],
         description:
           'عرض واقعي للتصميم قبل البدء بالأعمال التنفيذية. فيديو جولة افتراضية (Virtual Tour) لتعزيز تجربة العميل.',
       },
       {
         name: 'دراسات فيزيائية وبيئية',
+        keywords: [
+          'دراسات بيئية',
+          'تحليل الإضاءة',
+          'التهوية الطبيعية',
+          'توفير الطاقة',
+          'محاكاة بيئية',
+        ],
         description:
-          'تحليل ضوء الشمس والظل لتعظيم الإضاءة الطبيعية. نماذج محاكاة التهوية الطبيعية وتقليل استهلاك التكييف.',
+          'تحليل ضوء الشمس والظل لتعظيم الإضاءة الطبيعية. نماذج محاكاة التهوية الطبيعية تقليل استهلاك التكييف.',
       },
       {
         name: 'تسليم ملفات التنفيذ',
+        keywords: ['رسومات تنفيذية', 'مواصفات المواد', 'جداول كميات', 'BOQ', 'ملفات التنفيذ'],
         description:
           'رسومات تفصيلية (Construction Drawings) ومواصفات المواد. جداول كميات (BOQ) لتقدير التكلفة بدقة.',
       },
       {
         name: 'التنسيق مع الاستشاريين الآخرين',
+        keywords: ['تنسيق استشاري', 'تصميم داخلي', 'تصميم إنشائي', 'HVAC', 'تصميم كهربائي'],
         description:
           'إشراف ورش عمل متكاملة مع المصممين الداخليين والإنشائيين. تنسيق مع فريق التصميم الإلكتروني والميكانيكي (HVAC، كهرباء).',
       },
@@ -116,6 +146,18 @@ export const servicesAr = [
   {
     title: 'خدمات التراخيص الإنشائية',
     icon: <FiTool className='w-8 h-8' />,
+    keywords: [
+      'رخصة بناء',
+      'رخصة ترميم',
+      'رخصة تسوير',
+      'تراخيص إنشائية',
+      'مكتب هندسي معتمد',
+      'استخراج رخص',
+      'منصة بلدي',
+      'أمانة الرياض',
+      'شهادة امتثال',
+      'إجراءات بلدية',
+    ],
     metaDescription:
       'استخراج رخصة بناء، ترميم، أو تسوير في الرياض عبر مكتب هندسي معتمد. سرعة، دقة، وإشراف فني كامل. اتصل بنا الآن وابدأ إجراءاتك فورًا!',
     mainTitle: 'استخراج رخص البناء في الرياض – إجراءات أسرع بإشراف هندسي معتمد',
@@ -141,26 +183,37 @@ export const servicesAr = [
     detailedServices: [
       {
         name: 'إصدار رخصة بناء فورية',
+        keywords: ['رخصة بناء فورية', 'رخص سكنية', 'رخص تجارية', 'منصة بلدي', 'تنسيق بلديات'],
         description:
           'خدمة إصدار رخص البناء السكنية والتجارية بالتنسيق مع البلديات، ومعالجة الطلبات عبر منصة بلدي.',
       },
       {
         name: 'إصدار رخصة ترميم',
+        keywords: [
+          'رخصة ترميم منزل',
+          'ترميم محل تجاري',
+          'مخططات معتمدة',
+          'طلب إلكتروني',
+          'متطلبات هندسية',
+        ],
         description:
           'إعداد جميع المتطلبات الهندسية والفنية لاستخراج رخصة ترميم منزل أو محل تجاري، مع مخططات معتمدة وتقديم الطلب إلكترونيًا.',
       },
       {
         name: 'إصدار رخصة تسوير',
+        keywords: ['رخصة تسوير أرض', 'مخطط تسوير', 'تسوير عقار', 'إشراف فني', 'تسوير'],
         description:
           'إعداد مخطط التسوير وتقديمه للجهات المختصة مع الإشراف الفني اللازم لإصدار رخصة تسوير أرض أو عقار.',
       },
       {
         name: 'إصدار شهادة الامتثال',
+        keywords: ['شهادة امتثال', 'توثيق بناء', 'شهادة نهائية', 'امتثال رخصة', 'انتهاء بناء'],
         description:
           'توثيق تنفيذ البناء وفق الرخصة المعتمدة وإصدار شهادة الامتثال النهائية بعد الانتهاء من البناء.',
       },
       {
         name: 'استشارات هندسية للرخص',
+        keywords: ['استشارات ترخيص', 'تقييم حالة', 'نوع ترخيص', 'تسريع موافقات', 'استشارة هندسية'],
         description:
           'نوفر لك خدمة استشارية لتقييم حالتك، ومساعدتك في اختيار نوع الترخيص المناسب وتسريع الموافقات.',
       },
@@ -194,6 +247,18 @@ export const servicesAr = [
   {
     title: 'خدمات الأعمال المساحية',
     icon: <FiLayers className='w-8 h-8' />,
+    keywords: [
+      'أعمال مساحية',
+      'مساح معتمد',
+      'تجزئة أراضي',
+      'دمج قطع',
+      'فرز وحدات',
+      'رفع مساحي',
+      'تحديث صكوك',
+      'قياسات دقيقة',
+      'مساحة الرياض',
+      'خدمات مساحية',
+    ],
     metaDescription:
       'خدمات مساحية دقيقة ومعتمدة في الرياض من مكتب qiwa nagd. تجزئة ودمج الأراضي، فرز الوحدات، وتحديث الصكوك بأحدث التقنيات.',
     mainTitle: 'خدمات مساحية متقدمة ودقيقة في الرياض',
@@ -216,18 +281,28 @@ export const servicesAr = [
     detailedServices: [
       {
         name: 'تجزئة ودمج الأراضي',
+        keywords: ['تجزئة أراضي كبيرة', 'دمج قطع صغيرة', 'أنظمة تجزئة', 'دمج أراضي', 'تقسيم أرض'],
         description: 'خدمات تجزئة الأراضي الكبيرة ودمج القطع الصغيرة وفقاً للأنظمة المعمول بها',
       },
       {
         name: 'الرفع المساحي التفصيلي',
+        keywords: [
+          'رفع مساحي دقيق',
+          'أجهزة مساحة حديثة',
+          'قياس أراضي',
+          'رفع مباني',
+          'مساحة تفصيلية',
+        ],
         description: 'رفع مساحي دقيق للأراضي والمباني باستخدام أحدث الأجهزة',
       },
       {
         name: 'فرز الوحدات السكنية',
+        keywords: ['فرز وحدات سكنية', 'فرز وحدات تجارية', 'مخططات فرز', 'تقسيم وحدات', 'فرز عقاري'],
         description: 'فرز الوحدات السكنية والتجارية مع إعداد المخططات المطلوبة',
       },
       {
         name: 'تحديث الصكوك العقارية',
+        keywords: ['تحديث صكوك', 'تصحيح مساحات', 'تحديث حدود', 'بيانات صك', 'تعديل صك عقاري'],
         description: 'تحديث بيانات الصكوك وتصحيح المساحات والحدود',
       },
     ],
@@ -251,6 +326,18 @@ export const servicesAr = [
   {
     title: 'خدمات إدارة المشاريع الإنشائية',
     icon: <FiClipboard className='w-8 h-8' />,
+    keywords: [
+      'إدارة مشاريع إنشائية',
+      'مدير مشروع معتمد',
+      'PMP',
+      'تخطيط مشاريع',
+      'إدارة تكلفة',
+      'جدولة مشاريع',
+      'ضبط جودة',
+      'إدارة مخاطر',
+      'إشراف ميداني',
+      'مشاريع الرياض',
+    ],
     metaDescription:
       'خدمات إدارة المشاريع الإنشائية في الرياض من مكتب qiwa nagd الهندسي. تخطيط استراتيجي، إشراف متكامل، وضمان جودة التنفيذ. احصل على استشارة مجانية الآن!',
     mainTitle: 'إدارة المشاريع الإنشائية باحتراف في الرياض',
@@ -304,41 +391,67 @@ export const servicesAr = [
     detailedServices: [
       {
         name: 'تخطيط المشروع (Project Planning)',
+        keywords: [
+          'تخطيط مشروع',
+          'Work Breakdown Structure',
+          'Gantt Charts',
+          'معالم المشروع',
+          'Milestones',
+        ],
         description:
           'تحليل نطاق العمل وإعداد مخطط تفصيلي (Work Breakdown Structure). جداول زمنية مفصلة (Gantt Charts) مع تحديد المعالم الرئيسية (Milestones).',
       },
       {
         name: 'إدارة الجدول الزمني (Schedule Management)',
+        keywords: ['جدولة مشاريع', 'MS Project', 'Primavera', 'إدارة وقت', 'خطط تعافي'],
         description:
           'ضبط تقديرات مدة الأنشطة وربطها وفق علاقات الاعتماد. استخدام برامج إدارة المشاريع (MS Project, Primavera). رصد الانحرافات وتطبيق خطط التعافي.',
       },
       {
         name: 'إدارة التكلفة (Cost Management)',
+        keywords: ['إدارة تكلفة', 'تقدير أولي', 'تقارير VARIANCE', 'ضبط ميزانية', 'مراقبة إنفاق'],
         description:
           'إعداد تقدير أولي للمشروع ومتابعة التكاليف الحقيقية وصياغة تقارير VARIANCE. إعداد إنذارات عند تجاوز الإنفاق المسموح.',
       },
       {
         name: 'إدارة المخاطر (Risk Management)',
+        keywords: ['إدارة مخاطر', 'Risk Register', 'Risk Matrix', 'Mitigation', 'Contingency'],
         description:
           'ورش عمل لتحديد وتحليل المخاطر (Risk Register & Risk Matrix). خطط استجابة للمخاطر (Mitigation & Contingency). تحديث دوري لقائمة المخاطر.',
       },
       {
         name: 'إدارة الجودة (Quality Management)',
+        keywords: ['إدارة جودة', 'الكود السعودي', 'Audits', 'Inspections', 'KPIs'],
         description:
           'وضع معايير الجودة وفق الكود السعودي. تنفيذ تدقيقات داخلية وخارجية (Audits & Inspections). متابعة مؤشرات الأداء (KPIs).',
       },
       {
         name: 'إدارة التواصل (Communications Management)',
+        keywords: [
+          'إدارة تواصل',
+          'اجتماعات مراجعة',
+          'تقارير حالة',
+          'بوابة إلكترونية',
+          'إدارة مستندات',
+        ],
         description:
           'خطط تواصل دورية مع جميع الأطراف. اجتماعات مراجعة أسبوعية وتقارير حالة مفصلة. بوابة إلكترونية لمشاركة المستندات والتحديثات.',
       },
       {
         name: 'إدارة الموردين والعقود (Procurement & Contract Management)',
+        keywords: ['إدارة عقود', 'مناقصات', 'تقييم عروض', 'إدارة توريد', 'Change Orders'],
         description:
           'إعداد وثائق المناقصات وتقييم العروض. متابعة التوريد والتسليم وفق جدول المشروع. إدارة التعديلات على العقود (Change Orders).',
       },
       {
         name: 'الإشراف الميداني (Site Supervision)',
+        keywords: [
+          'إشراف ميداني',
+          'مهندسو متابعة',
+          'تقارير يومية',
+          'حلول هندسية',
+          'مشكلات ميدانية',
+        ],
         description:
           'مهندسو متابعة يتابعون التنفيذ وفق الجدول. تقارير يومية وأسبوعية حول تقدم الأعمال. توثيق الحلول الهندسية الفورية للمشكلات الميدانية.',
       },
@@ -376,6 +489,18 @@ export const servicesAr = [
   {
     title: 'خدمات الإشراف الهندسي',
     icon: <FiTool className='w-8 h-8' />,
+    keywords: [
+      'إشراف هندسي',
+      'مشرف مشروع',
+      'إشراف ميداني',
+      'تقارير إشراف',
+      'ضبط جودة',
+      'متابعة تنفيذ',
+      'إشراف بناء',
+      'مهندس إشراف',
+      'رقابة فنية',
+      'سلامة موقع',
+    ],
     metaDescription:
       'خدمات إشراف هندسي احترافية في الرياض من مكتب معتمد. إشراف دقيق، تقارير فنية، ومهندسون متخصصون. اتصل الآن لتحصل على استشارة مجانية!',
     mainTitle: 'الإشراف الهندسي في الرياض – إشراف هندسي دقيق يضمن لك الجودة والسلامة',
@@ -400,26 +525,31 @@ export const servicesAr = [
     detailedServices: [
       {
         name: 'إشراف شامل على مراحل التنفيذ',
+        keywords: ['إشراف شامل', 'متابعة يومية', 'مراحل مشروع', 'حفر وتشطيب', 'التزام مخططات'],
         description:
           'متابعة يومية دقيقة لجميع مراحل المشروع، بدءًا من الحفر وحتى التشطيب النهائي، والتأكد من الالتزام بالمخططات والمواصفات.',
       },
       {
         name: 'التحقق من جودة المواد',
+        keywords: ['جودة مواد', 'فحص مواد', 'اعتماد مواد', 'مواصفات قياسية', 'اشتراطات سعودية'],
         description:
           'فحص واعتماد المواد المستخدمة في المشروع للتأكد من مطابقتها للمواصفات القياسية والاشتراطات السعودية.',
       },
       {
         name: 'إدارة الجدول الزمني والتكلفة',
+        keywords: ['إدارة جدول زمني', 'ضبط ميزانية', 'تحكم تكلفة', 'منع تأخيرات', 'تكاليف إضافية'],
         description:
           'ضمان سير المشروع ضمن الإطار الزمني والميزانية المحددة، والحد من التأخيرات والتكاليف الإضافية.',
       },
       {
         name: 'إعداد تقارير فنية مفصلة',
+        keywords: ['تقارير فنية', 'توثيق مشروع', 'تقارير إشراف', 'صور تقدم', 'تحليلات فنية'],
         description:
           'توثيق تقدم المشروع من خلال تقارير إشراف دورية تشمل الصور والتحليلات الفنية لتكون على اطلاع دائم بكل التفاصيل.',
       },
       {
         name: 'حل المشكلات الفنية في الموقع',
+        keywords: ['حل مشكلات', 'حلول فورية', 'عوائق تنفيذ', 'تنسيق مقاول', 'مشاكل ميدانية'],
         description:
           'تقديم الحلول الفورية لأي عوائق أو مشاكل تظهر أثناء التنفيذ، بالتنسيق مع المقاول والمالك.',
       },
@@ -452,6 +582,18 @@ export const servicesAr = [
   {
     title: 'خدمات استشارية وهندسية إضافية',
     icon: <FiLayers className='w-8 h-8' />,
+    keywords: [
+      'استشارات هندسية',
+      'دراسات جدوى',
+      'تقييم مخاطر',
+      'حلول هندسية',
+      'استشاري هندسي',
+      'دراسات فنية',
+      'تحليل مشاريع',
+      'حلول مبتكرة',
+      'دعم فني',
+      'تطوير تصاميم',
+    ],
     metaDescription:
       'استشارات هندسية متخصصة في الرياض من مكتب qiwa nagd. دراسات جدوى، تقييم مخاطر، وحلول هندسية مبتكرة لمشاريعك.',
     mainTitle: 'استشارات هندسية متخصصة وحلول مبتكرة في الرياض',
@@ -473,18 +615,34 @@ export const servicesAr = [
     detailedServices: [
       {
         name: 'دراسات الجدوى الهندسية',
+        keywords: [
+          'دراسة جدوى هندسية',
+          'تحليل فني',
+          'تحليل اقتصادي',
+          'مشاريع مقترحة',
+          'جدوى مالية',
+        ],
         description: 'تحليل شامل للجوانب الفنية والاقتصادية للمشاريع المقترحة',
       },
       {
         name: 'تقييم وإدارة المخاطر',
+        keywords: ['تقييم مخاطر فنية', 'إدارة مخاطر', 'خطط مخاطر', 'تحديد مخاطر', 'تحليل مخاطر'],
         description: 'تحديد وتقييم المخاطر الفنية مع وضع خطط للتعامل معها',
       },
       {
         name: 'الاستشارات التقنية المتخصصة',
+        keywords: ['استشارات تقنية', 'تقنيات حديثة', 'حلول مبتكرة', 'استشارة متخصصة', 'تطوير تقني'],
         description: 'استشارات في التقنيات الحديثة والحلول الهندسية المبتكرة',
       },
       {
         name: 'مراجعة وتطوير التصاميم',
+        keywords: [
+          'مراجعة تصاميم',
+          'تطوير تصميم',
+          'تحسين تصاميم',
+          'مراجعة هندسية',
+          'اقتراحات تحسين',
+        ],
         description: 'مراجعة التصاميم الموجودة وتقديم اقتراحات للتحسين',
       },
     ],
@@ -509,6 +667,18 @@ export const servicesAr = [
   {
     title: 'خدمات التصميم الإنشائي',
     icon: <FiTool className='w-8 h-8' />,
+    keywords: [
+      'تصميم إنشائي',
+      'هندسة إنشائية',
+      'تصميم خرسانة',
+      'تصميم فولاذ',
+      'حسابات أحمال',
+      'رسومات تسليح',
+      'SAP2000',
+      'ETABS',
+      'هياكل إنشائية',
+      'مهندس إنشائي',
+    ],
     metaDescription:
       'خدمات التصميم الإنشائي في الرياض بمواصفات عالمية من مكتب qiwa nagd الهندسي. حسابات وتوثيق دقيق، رسومات تنفيذية جاهزة، ودعم فني متواصل. احصل على استشارة مجانية اليوم!',
     mainTitle: 'التصميم الإنشائي المتقن في الرياض',
@@ -562,36 +732,77 @@ export const servicesAr = [
     detailedServices: [
       {
         name: 'تحليل الأحمال والقوى',
+        keywords: [
+          'تحليل أحمال',
+          'أحمال ميتة',
+          'أحمال حية',
+          'أحمال رياح',
+          'أحمال زلازل',
+          'الكود السعودي',
+        ],
         description:
           'حساب الأحمال الميتة والحية والرياح والزلازل وفقاً للكود السعودي. نمذجة ثلاثية الأبعاد لتحليل القوى الداخلية والتشوهات.',
       },
       {
         name: 'تصميم العناصر الخرسانية',
+        keywords: [
+          'تصميم خرسانة',
+          'أعمدة خرسانية',
+          'كمرات',
+          'بلاطات',
+          'قواعد',
+          'Flat Slab',
+          'Waffle Slab',
+        ],
         description:
           'أعمدة، كمرات، بلاطات، وقواعد بأساليب حديثة لضمان الكفاءة والاقتصاد. تصميم طبق نظام الكمرات المسطحة (Flat Slab) والبلاطات المدعمة (Waffle Slab) عند الحاجة.',
       },
       {
         name: 'تصميم الهياكل الفولاذية',
+        keywords: [
+          'هياكل فولاذية',
+          'أعمدة فولاذ',
+          'كمرات فولاذية',
+          'توصيلات فولاذ',
+          'Welded Connections',
+          'Bolted Connections',
+        ],
         description:
           'حساب ومعايرة الأعمدة والكمرات الفولاذية مع مراعاة الارتدادات والزلازل. توصيات بشأن التفاصيل الإنشائية للتوصيلات (Welded & Bolted Connections).',
       },
       {
         name: 'إعداد رسومات التسليح (Rebar Detailing)',
+        keywords: ['رسومات تسليح', 'Rebar Detailing', 'جداول حديد', 'أقطار حديد', 'تسليح خرسانة'],
         description:
           'جداول تفصيلية للحديد، تشمل الأقطار والأعداد والطول. تنسيق مع المشرفين الميدانيين لضمان تركيب مطابق للرسم.',
       },
       {
         name: 'جداول الكميات وتقدير التكلفة',
+        keywords: ['جداول كميات', 'BOQ', 'تقدير تكلفة', 'خرسانة وفولاذ', 'شدات', 'عروض أسعار'],
         description:
           'احتساب دقيق لمواد الخرسانة والفولاذ والشدات. تنسيق مع مكتب الكميات لتقديم عروض أسعار واضحة للمقاولين.',
       },
       {
         name: 'المراجعة والتحقق',
+        keywords: [
+          'مراجعة إنشائية',
+          'Peer Review',
+          'تدقيق تصميم',
+          'تقارير تحليلية',
+          'اختبارات ميدانية',
+        ],
         description:
           'تدقيق مستقل للتصميم الإنشائي (Peer Review) لضمان أعلى درجات الأمان. تقارير تحليلية وتقارير نتائج الاختبارات الميدانية إن وجدت.',
       },
       {
         name: 'الإشراف والمتابعة الميدانية',
+        keywords: [
+          'إشراف إنشائي',
+          'متابعة ميدانية',
+          'زيارات دورية',
+          'تنسيق مقاولين',
+          'استفسارات فنية',
+        ],
         description:
           'زيارات دورية لموقع التنفيذ للتأكد من الالتزام بالتصميم. تنسيق مع مقاولين البناء والإجابة على الاستفسارات الفنية الفورية.',
       },
@@ -632,6 +843,18 @@ export const servicesAr = [
   {
     title: 'خدمات التصميم الداخلي',
     icon: <FiHome className='w-8 h-8' />,
+    keywords: [
+      'تصميم داخلي',
+      'ديكور داخلي',
+      'مصمم داخلي',
+      'تصميم فلل داخلي',
+      'ديكور منازل',
+      'تصميم مكاتب',
+      'تصميم ثلاثي أبعاد',
+      'اختيار أثاث',
+      'تنسيق ألوان',
+      'إضاءة داخلية',
+    ],
     metaDescription:
       'احصل على أفضل خدمات التصميم الداخلي في الرياض من مكتب qiwa nagd الهندسي. تصميم داخلي راقٍ ومخصص للمساحات السكنية والتجارية بأسعار تنافسية. استشارة مجانية الآن!',
     mainTitle: 'خدمات التصميم الداخلي في الرياض – أناقة، راحة، وظيفة',
@@ -681,26 +904,58 @@ export const servicesAr = [
     detailedServices: [
       {
         name: 'التصميم الداخلي السكني',
+        keywords: [
+          'تصميم فلل داخلي',
+          'ديكور شقق',
+          'غرف النوم',
+          'ديكور مطابخ',
+          'ديكور دورات مياه',
+          'ألوان جدران',
+        ],
         description:
           'تصميم الفلل والشقق والاستراحات. ديكورات غرف النوم، المعيشة، المطابخ، ودورات المياه. اختيار ألوان الجدران، الأرضيات، الأسقف والإنارة.',
       },
       {
         name: 'التصميم الداخلي التجاري',
+        keywords: [
+          'ديكور مكاتب',
+          'تصميم معارض',
+          'ديكور مطاعم',
+          'ديكور كافيهات',
+          'هوية تجارية',
+          'توزيع أثاث',
+        ],
         description:
           'ديكورات مكاتب، معارض، مطاعم، وكافيهات. تصاميم تلائم الهوية التجارية وتزيد من راحة العملاء والموظفين. حلول توزيع أثاث ومساحات لتعزيز الإنتاجية.',
       },
       {
         name: 'التصميم ثلاثي الأبعاد (3D Rendering)',
+        keywords: ['تصميم ثلاثي أبعاد', '3D Rendering', 'تصور واقعي', 'عرض تفاعلي', 'نمذجة داخلية'],
         description:
           'تقديم تصور واقعي للمساحة قبل التنفيذ. تعديل مباشر على التصاميم حسب ملاحظات العميل.',
       },
       {
         name: 'اختيار المواد والتشطيبات',
+        keywords: [
+          'اختيار مواد',
+          'تشطيبات داخلية',
+          'اختيار أثاث',
+          'ستائر',
+          'إضاءة داخلية',
+          'خامات داخلية',
+        ],
         description:
           'اقتراح المواد الأفضل من حيث الجودة والسعر. تحديد عناصر الأثاث، الستائر، الإضاءة، والخامات الداخلية.',
       },
       {
         name: 'تنفيذ وإشراف',
+        keywords: [
+          'تنفيذ تصميم داخلي',
+          'إشراف ديكور',
+          'مهندس ديكور',
+          'تشطيبات نهائية',
+          'جودة تنفيذ',
+        ],
         description:
           'إشراف كامل على التنفيذ من مهندس ديكور داخلي بالرياض. ضمان جودة التشطيبات النهائية.',
       },
@@ -737,6 +992,18 @@ export const servicesAr = [
   {
     title: 'خدمات تصميم أنظمة الإلكتروميكانيك',
     icon: <FiTool className='w-8 h-8' />,
+    keywords: [
+      'تصميم MEP',
+      'أنظمة كهربائية',
+      'أنظمة تكييف',
+      'HVAC',
+      'أنظمة سباكة',
+      'تصميم إنارة',
+      'حساب أحمال كهربائية',
+      'Revit MEP',
+      'AutoCAD MEP',
+      'BIM',
+    ],
     metaDescription:
       'خدمة تصميم أنظمة الإلكتروميكانيك (الكهرباء والتكييف والسباكة) في الرياض باحترافية عالية وفق الكود السعودي. احصل على استشارة مجانية من مكتب هندسي معتمد.',
     mainTitle: 'تصميم أنظمة الإلكتروميكانيك في الرياض – احترافية هندسية وفق المعايير السعودية',
@@ -789,26 +1056,38 @@ export const servicesAr = [
     detailedServices: [
       {
         name: 'التصميم الكهربائي',
+        keywords: [
+          'مخططات إنارة',
+          'توزيع كهرباء',
+          'أحمال طاقة',
+          'لوحات كهربائية',
+          'جهد منخفض',
+          'أنظمة أمان كهربائية',
+        ],
         description:
           'مخططات إنارة داخلية وخارجية، تصميم أنظمة توزيع الكهرباء، أحمال الطاقة والتوزيع العام، لوحات الجهد المنخفض والمتوسط، أنظمة الجهد المنخفض والأمان.',
       },
       {
         name: 'التصميم الميكانيكي (HVAC & Plumbing)',
+        keywords: ['HVAC', 'أحمال حرارية', 'تكييف مركزي', 'توزيع هواء', 'شبكات سباكة', 'صرف صحي'],
         description:
           'حساب الأحمال الحرارية وتحديد قدرات التكييف، تصميم أنظمة التكييف المركزية والمنفصلة، مخططات توزيع الهواء، تصميم شبكات التغذية والصرف الصحي.',
       },
       {
         name: 'التكامل بين الأنظمة',
+        keywords: ['تكامل أنظمة', 'Clash Detection', 'نمذجة BIM', 'تنسيق MEP', 'تقارير تقنية'],
         description:
           'التنسيق الكامل بين الأنظمة الميكانيكية والكهربائية والمعمارية، مراجعة الاصطدامات (Clash Detection) عبر نمذجة BIM، إعداد تقارير تقنية وتوصيات فنية.',
       },
       {
         name: 'أنظمة التهوية والضغط',
+        keywords: ['أنظمة تهوية', 'ضغط إيجابي', 'ضغط سلبي', 'UPS', 'طاقة بديلة', 'حسابات ضغط'],
         description:
           'أنظمة التهوية والضغط الإيجابي والسلبي، حسابات الاستهلاك والضغوط المطلوبة، تصميم UPS وأنظمة الطاقة البديلة.',
       },
       {
         name: 'أنظمة الأمان والحماية',
+        keywords: ['إنذار حريق', 'أنظمة سرقة', 'كاميرات مراقبة', 'حماية كهربائية', 'أنظمة حماية'],
         description:
           'تصميم أنظمة إنذار الحريق والسرقة، أنظمة كاميرات المراقبة، أنظمة الحماية الكهربائية والميكانيكية.',
       },
@@ -850,6 +1129,18 @@ export const servicesEn = [
   {
     title: 'Engineering Design Services',
     icon: <FiHome className='w-8 h-8' />,
+    keywords: [
+      'architectural design',
+      'engineering office riyadh',
+      'engineering consultancy',
+      'building design',
+      'villa design',
+      'commercial design',
+      'architectural engineering',
+      'sustainable design',
+      '3d design',
+      'modern architecture',
+    ],
     metaDescription:
       'Best architectural and engineering design services in Riyadh by certified qiwa nagd office. Modern and sustainable designs that meet your vision with full technical support.',
     mainTitle: 'Modern and Sustainable Engineering & Architectural Design in Riyadh',
@@ -871,21 +1162,49 @@ export const servicesEn = [
     detailedServices: [
       {
         name: 'Residential Architectural Design',
+        keywords: [
+          'villa design',
+          'chalet design',
+          'facade design',
+          'najdi style',
+          'residential planning',
+        ],
         description:
           'Villa and chalet planning based on family needs with facade designs combining modernity and local character',
       },
       {
         name: 'Commercial Architectural Design',
+        keywords: [
+          'commercial design',
+          'shopping centers',
+          'office design',
+          'circulation flow',
+          'space planning',
+        ],
         description:
           'Shopping centers and administrative offices with modern designs considering circulation flow and efficient space distribution',
       },
       {
         name: '3D Modeling and Rendering',
+        keywords: [
+          '3d modeling',
+          '3d rendering',
+          'virtual tour',
+          'realistic visualization',
+          'architectural visualization',
+        ],
         description:
           'Realistic design presentation with virtual tour videos to enhance client experience',
       },
       {
         name: 'Physical and Environmental Studies',
+        keywords: [
+          'environmental studies',
+          'sunlight analysis',
+          'natural ventilation',
+          'energy efficiency',
+          'building simulation',
+        ],
         description: 'Sunlight and shadow analysis and natural ventilation simulation models',
       },
     ],
@@ -910,6 +1229,18 @@ export const servicesEn = [
   {
     title: 'Construction Licensing Services',
     icon: <FiTool className='w-8 h-8' />,
+    keywords: [
+      'building permit',
+      'renovation permit',
+      'fencing permit',
+      'construction license',
+      'certified engineering office',
+      'balady platform',
+      'riyadh municipality',
+      'compliance certificate',
+      'municipal procedures',
+      'construction permits',
+    ],
     metaDescription:
       'Obtain building, renovation, or fencing permits in Riyadh through certified engineering office. Speed, accuracy, and complete technical supervision. Contact us now and start your procedures immediately!',
     mainTitle:
@@ -936,26 +1267,61 @@ export const servicesEn = [
     detailedServices: [
       {
         name: 'Instant Building Permit Issuance',
+        keywords: [
+          'instant building permit',
+          'residential permits',
+          'commercial permits',
+          'balady platform',
+          'municipality coordination',
+        ],
         description:
           'Service for issuing residential and commercial building permits in coordination with municipalities, and processing applications through Balady platform.',
       },
       {
         name: 'Renovation Permit Issuance',
+        keywords: [
+          'renovation permit',
+          'house renovation',
+          'commercial renovation',
+          'approved plans',
+          'electronic application',
+        ],
         description:
           'Preparing all engineering and technical requirements for obtaining a house or commercial shop renovation permit, with approved plans and electronic application submission.',
       },
       {
         name: 'Fencing Permit Issuance',
+        keywords: [
+          'fencing permit',
+          'fencing plan',
+          'land fencing',
+          'property fencing',
+          'technical supervision',
+        ],
         description:
           'Preparing fencing plan and submitting it to relevant authorities with necessary technical supervision for issuing land or property fencing permit.',
       },
       {
         name: 'Compliance Certificate Issuance',
+        keywords: [
+          'compliance certificate',
+          'construction documentation',
+          'final certificate',
+          'permit compliance',
+          'construction completion',
+        ],
         description:
           'Documenting construction implementation according to approved permit and issuing final compliance certificate after construction completion.',
       },
       {
         name: 'Engineering Consultations for Permits',
+        keywords: [
+          'permit consultation',
+          'situation assessment',
+          'permit type',
+          'approval acceleration',
+          'engineering advice',
+        ],
         description:
           'We provide advisory service to assess your situation, help you choose the appropriate permit type and expedite approvals.',
       },
@@ -991,6 +1357,18 @@ export const servicesEn = [
   {
     title: 'Surveying Services',
     icon: <FiLayers className='w-8 h-8' />,
+    keywords: [
+      'surveying services',
+      'certified surveyor',
+      'land subdivision',
+      'plot merging',
+      'unit segregation',
+      'topographic survey',
+      'deed updates',
+      'accurate measurements',
+      'riyadh surveying',
+      'surveying consultancy',
+    ],
     metaDescription:
       'Accurate and certified surveying services in Riyadh by qiwa nagd office. Land subdivision and merging, unit segregation, and deed updates with latest technologies.',
     mainTitle: 'Advanced and Accurate Surveying Services in Riyadh',
@@ -1013,20 +1391,48 @@ export const servicesEn = [
     detailedServices: [
       {
         name: 'Land Subdivision and Merging',
+        keywords: [
+          'land subdivision',
+          'plot merging',
+          'large plots',
+          'subdivision regulations',
+          'land parcel',
+        ],
         description:
           'Large land subdivision and small plot merging services according to applicable regulations',
       },
       {
         name: 'Detailed Topographic Survey',
+        keywords: [
+          'topographic survey',
+          'precise surveying',
+          'modern equipment',
+          'land measurement',
+          'building survey',
+        ],
         description: 'Accurate surveying of lands and buildings using latest equipment',
       },
       {
         name: 'Residential Unit Segregation',
+        keywords: [
+          'unit segregation',
+          'residential units',
+          'commercial units',
+          'segregation drawings',
+          'unit division',
+        ],
         description:
           'Segregation of residential and commercial units with preparation of required drawings',
       },
       {
         name: 'Real Estate Deed Updates',
+        keywords: [
+          'deed updates',
+          'area correction',
+          'boundary correction',
+          'deed data',
+          'property documentation',
+        ],
         description: 'Updating deed data and correcting areas and boundaries',
       },
     ],
@@ -1051,6 +1457,18 @@ export const servicesEn = [
   {
     title: 'Construction Project Management Services',
     icon: <FiClipboard className='w-8 h-8' />,
+    keywords: [
+      'construction project management',
+      'certified project manager',
+      'PMP',
+      'project planning',
+      'cost management',
+      'project scheduling',
+      'quality control',
+      'risk management',
+      'field supervision',
+      'riyadh projects',
+    ],
     metaDescription:
       'Construction project management services in Riyadh by qiwa nagd engineering office. Strategic planning, comprehensive supervision, and quality execution assurance. Get a free consultation now!',
     mainTitle: 'Professional Construction Project Management in Riyadh',
@@ -1104,41 +1522,97 @@ export const servicesEn = [
     detailedServices: [
       {
         name: 'Project Planning',
+        keywords: [
+          'project planning',
+          'work breakdown structure',
+          'gantt charts',
+          'milestones',
+          'project scope',
+        ],
         description:
           'Work scope analysis and detailed Work Breakdown Structure preparation. Detailed Gantt Charts with key milestones identification.',
       },
       {
         name: 'Schedule Management',
+        keywords: [
+          'schedule management',
+          'ms project',
+          'primavera',
+          'time management',
+          'recovery plans',
+        ],
         description:
           'Activity duration estimates control and precedence relationships. Using project management software (MS Project, Primavera). Deviation monitoring and recovery plans application.',
       },
       {
         name: 'Cost Management',
+        keywords: [
+          'cost management',
+          'budget control',
+          'variance reports',
+          'cost estimation',
+          'budget monitoring',
+        ],
         description:
           'Initial project estimate preparation and actual costs monitoring with VARIANCE reports. Budget alerts when allowed spending is exceeded.',
       },
       {
         name: 'Risk Management',
+        keywords: [
+          'risk management',
+          'risk register',
+          'risk matrix',
+          'mitigation',
+          'contingency planning',
+        ],
         description:
           'Risk identification and analysis workshops (Risk Register & Risk Matrix). Risk response plans (Mitigation & Contingency). Periodic risk list updates during project lifecycle.',
       },
       {
         name: 'Quality Management',
+        keywords: [
+          'quality management',
+          'saudi building code',
+          'quality audits',
+          'inspections',
+          'kpis',
+        ],
         description:
           'Quality standards establishment according to Saudi Code. Internal and external audits implementation (Audits & Inspections). Key Performance Indicators (KPIs) monitoring.',
       },
       {
         name: 'Communications Management',
+        keywords: [
+          'communications management',
+          'stakeholder communication',
+          'status reports',
+          'project portal',
+          'documentation',
+        ],
         description:
           'Periodic communication plans with all stakeholders. Weekly review meetings and detailed status reports. Electronic portal for document sharing and instant updates.',
       },
       {
         name: 'Procurement & Contract Management',
+        keywords: [
+          'procurement management',
+          'contract management',
+          'tender documents',
+          'bid evaluation',
+          'change orders',
+        ],
         description:
           'Tender documents preparation and bid evaluation. Supply and delivery monitoring according to project schedule. Contract modifications management (Change Orders).',
       },
       {
         name: 'Site Supervision',
+        keywords: [
+          'site supervision',
+          'field monitoring',
+          'progress reports',
+          'engineering solutions',
+          'onsite management',
+        ],
         description:
           'Monitoring engineers follow execution according to schedule. Daily and weekly reports on work progress. Immediate engineering solutions documentation for field problems.',
       },
@@ -1180,6 +1654,18 @@ export const servicesEn = [
   {
     title: 'Engineering Supervision Services',
     icon: <FiTool className='w-8 h-8' />,
+    keywords: [
+      'engineering supervision',
+      'project supervisor',
+      'field supervision',
+      'supervision reports',
+      'quality control',
+      'execution monitoring',
+      'construction supervision',
+      'supervision engineer',
+      'technical supervision',
+      'riyadh supervision',
+    ],
     metaDescription:
       'Professional engineering supervision services in Riyadh by certified office. Accurate supervision, technical reports, and specialized engineers. Call now for free consultation!',
     mainTitle:
@@ -1205,26 +1691,61 @@ export const servicesEn = [
     detailedServices: [
       {
         name: 'Comprehensive Supervision of Execution Phases',
+        keywords: [
+          'execution supervision',
+          'daily monitoring',
+          'construction phases',
+          'plan adherence',
+          'project oversight',
+        ],
         description:
           'Precise daily monitoring of all project phases, from excavation to final finishing, ensuring adherence to plans and specifications.',
       },
       {
         name: 'Material Quality Verification',
+        keywords: [
+          'material inspection',
+          'quality verification',
+          'material approval',
+          'standard compliance',
+          'quality assurance',
+        ],
         description:
           'Inspection and approval of materials used in the project to ensure compliance with standard specifications and Saudi requirements.',
       },
       {
         name: 'Schedule and Cost Management',
+        keywords: [
+          'schedule monitoring',
+          'cost control',
+          'timeline management',
+          'budget control',
+          'delay prevention',
+        ],
         description:
           'Ensuring project progress within specified timeframe and budget, minimizing delays and additional costs.',
       },
       {
         name: 'Detailed Technical Reports Preparation',
+        keywords: [
+          'technical reports',
+          'progress documentation',
+          'supervision reports',
+          'photo documentation',
+          'project updates',
+        ],
         description:
           'Documenting project progress through periodic supervision reports including photos and technical analyses to keep you constantly updated.',
       },
       {
         name: 'On-site Technical Problem Solving',
+        keywords: [
+          'problem solving',
+          'technical solutions',
+          'onsite issues',
+          'immediate response',
+          'engineering solutions',
+        ],
         description:
           'Providing immediate solutions to any obstacles or problems arising during execution, in coordination with contractor and owner.',
       },
@@ -1261,6 +1782,18 @@ export const servicesEn = [
   {
     title: 'Additional Consulting & Engineering Services',
     icon: <FiLayers className='w-8 h-8' />,
+    keywords: [
+      'engineering consultancy',
+      'technical consulting',
+      'feasibility studies',
+      'risk assessment',
+      'engineering solutions',
+      'technical analysis',
+      'project consulting',
+      'specialized consultancy',
+      'engineering expertise',
+      'riyadh consultancy',
+    ],
     metaDescription:
       'Specialized engineering consultations in Riyadh by qiwa nagd office. Feasibility studies, risk assessment, and innovative engineering solutions for your projects.',
     mainTitle: 'Specialized Engineering Consultations and Innovative Solutions in Riyadh',
@@ -1282,16 +1815,37 @@ export const servicesEn = [
     detailedServices: [
       {
         name: 'Engineering Feasibility Studies',
+        keywords: [
+          'feasibility study',
+          'technical analysis',
+          'economic analysis',
+          'project viability',
+          'investment analysis',
+        ],
         description:
           'Comprehensive analysis of technical and economic aspects of proposed projects',
       },
       {
         name: 'Risk Assessment and Management',
+        keywords: [
+          'risk assessment',
+          'risk analysis',
+          'technical risks',
+          'risk mitigation',
+          'risk planning',
+        ],
         description:
           'Identifying and assessing technical risks with developing plans to deal with them',
       },
       {
         name: 'Specialized Technical Consultations',
+        keywords: [
+          'technical consultation',
+          'modern technologies',
+          'innovative solutions',
+          'engineering expertise',
+          'specialized advice',
+        ],
         description: 'Consultations in modern technologies and innovative engineering solutions',
       },
       {
@@ -1321,6 +1875,18 @@ export const servicesEn = [
   {
     title: 'Structural Design Services',
     icon: <FiTool className='w-8 h-8' />,
+    keywords: [
+      'structural design',
+      'structural engineer',
+      'concrete design',
+      'steel design',
+      'structural analysis',
+      'structural calculations',
+      'foundation design',
+      'load analysis',
+      'structural drawings',
+      'building structure',
+    ],
     metaDescription:
       'World-class structural design services in Riyadh by qiwa nagd engineering office. Accurate calculations and documentation, ready construction drawings, and continuous technical support.',
     mainTitle: 'Professional Structural Design in Riyadh',
@@ -1374,36 +1940,85 @@ export const servicesEn = [
     detailedServices: [
       {
         name: 'Load and Force Analysis',
+        keywords: [
+          'load analysis',
+          'force calculation',
+          'wind loads',
+          'seismic analysis',
+          '3d modeling',
+        ],
         description:
           'Calculation of dead, live, wind, and seismic loads according to Saudi Code. 3D modeling for internal force and deformation analysis.',
       },
       {
         name: 'Concrete Element Design',
+        keywords: [
+          'concrete design',
+          'columns design',
+          'beams design',
+          'slabs design',
+          'foundation design',
+        ],
         description:
           'Columns, beams, slabs, and foundations with modern methods ensuring efficiency and economy. Flat slab and waffle slab system design when needed.',
       },
       {
         name: 'Steel Structure Design',
+        keywords: [
+          'steel design',
+          'steel columns',
+          'steel beams',
+          'structural connections',
+          'steel detailing',
+        ],
         description:
           'Calculation and calibration of steel columns and beams considering deflections and earthquakes. Recommendations for structural connection details (Welded & Bolted Connections).',
       },
       {
         name: 'Rebar Detailing',
+        keywords: [
+          'rebar detailing',
+          'reinforcement design',
+          'steel schedules',
+          'rebar installation',
+          'structural drawings',
+        ],
         description:
           'Detailed steel schedules including diameters, quantities, and lengths. Coordination with field supervisors to ensure installation matches drawings.',
       },
       {
         name: 'Quantity Schedules and Cost Estimation',
+        keywords: [
+          'quantity estimation',
+          'material calculation',
+          'cost estimation',
+          'BOQ preparation',
+          'structural quantities',
+        ],
         description:
           'Accurate calculation of concrete, steel, and formwork materials. Coordination with quantity office to provide clear price quotes to contractors.',
       },
       {
         name: 'Review and Verification',
+        keywords: [
+          'design review',
+          'peer review',
+          'structural verification',
+          'safety standards',
+          'technical analysis',
+        ],
         description:
           'Independent structural design peer review to ensure highest safety standards. Analytical reports and field test results when available.',
       },
       {
         name: 'Field Supervision and Monitoring',
+        keywords: [
+          'field supervision',
+          'construction monitoring',
+          'site visits',
+          'contractor coordination',
+          'technical support',
+        ],
         description:
           'Regular site visits to ensure compliance with design. Coordination with construction contractors and immediate technical inquiry responses.',
       },
@@ -1445,6 +2060,18 @@ export const servicesEn = [
   {
     title: 'Interior Design Services',
     icon: <FiHome className='w-8 h-8' />,
+    keywords: [
+      'interior design',
+      'interior decorator',
+      'interior designer',
+      'villa interior design',
+      'home decoration',
+      'office design',
+      '3d interior design',
+      'furniture selection',
+      'color coordination',
+      'interior lighting',
+    ],
     metaDescription:
       'Get the best interior design services in Riyadh from qiwa nagd engineering office. Elegant and customized interior design for residential and commercial spaces at competitive prices. Free consultation now!',
     mainTitle: 'Interior Design Services in Riyadh – Elegance, Comfort, Function',
@@ -1494,26 +2121,64 @@ export const servicesEn = [
     detailedServices: [
       {
         name: 'Residential Interior Design',
+        keywords: [
+          'villa interior design',
+          'apartment decor',
+          'bedroom design',
+          'kitchen decor',
+          'bathroom decor',
+          'wall colors',
+        ],
         description:
           'Design of villas, apartments, and resorts. Bedroom, living room, kitchen, and bathroom décor. Selection of wall colors, flooring, ceilings, and lighting.',
       },
       {
         name: 'Commercial Interior Design',
+        keywords: [
+          'office decor',
+          'showroom design',
+          'restaurant decor',
+          'cafe decor',
+          'brand identity',
+          'furniture layout',
+        ],
         description:
           'Office, showroom, restaurant, and café décor. Designs that suit brand identity and increase customer and employee comfort. Furniture and space distribution solutions to enhance productivity.',
       },
       {
         name: '3D Design Rendering',
+        keywords: [
+          '3d interior design',
+          '3d rendering',
+          'realistic visualization',
+          'virtual presentation',
+          'interior modeling',
+        ],
         description:
           'Providing realistic visualization of space before implementation. Direct modifications to designs based on client feedback.',
       },
       {
         name: 'Material and Finishing Selection',
+        keywords: [
+          'material selection',
+          'interior finishes',
+          'furniture selection',
+          'curtains',
+          'interior lighting',
+          'interior materials',
+        ],
         description:
           'Suggesting the best materials in terms of quality and price. Determining furniture elements, curtains, lighting, and interior materials.',
       },
       {
         name: 'Implementation and Supervision',
+        keywords: [
+          'interior implementation',
+          'decor supervision',
+          'interior designer',
+          'final finishes',
+          'execution quality',
+        ],
         description:
           'Complete supervision of implementation by interior designer in Riyadh. Ensuring quality of final finishes.',
       },
@@ -1552,6 +2217,18 @@ export const servicesEn = [
   {
     title: 'MEP Design Services',
     icon: <FiTool className='w-8 h-8' />,
+    keywords: [
+      'MEP design',
+      'electrical systems',
+      'HVAC systems',
+      'plumbing systems',
+      'lighting design',
+      'electrical load calculation',
+      'Revit MEP',
+      'AutoCAD MEP',
+      'BIM modeling',
+      'mechanical design',
+    ],
     metaDescription:
       'Professional MEP (electrical, HVAC, plumbing) design services in Riyadh with high quality according to Saudi code. Get free consultation from certified engineering office.',
     mainTitle: 'MEP Systems Design in Riyadh – Professional Engineering to Saudi Standards',
@@ -1604,26 +2281,61 @@ export const servicesEn = [
     detailedServices: [
       {
         name: 'Electrical Design',
+        keywords: [
+          'lighting plans',
+          'electrical distribution',
+          'power loads',
+          'electrical panels',
+          'low voltage systems',
+        ],
         description:
           'Interior and exterior lighting plans, electrical distribution systems design, power loads and general distribution, low and medium voltage panels, low voltage security systems.',
       },
       {
         name: 'Mechanical Design (HVAC & Plumbing)',
+        keywords: [
+          'HVAC design',
+          'thermal loads',
+          'AC systems',
+          'air distribution',
+          'plumbing design',
+        ],
         description:
           'Thermal load calculations and AC capacity determination, central and split AC systems design, air distribution plans, water supply and drainage networks design.',
       },
       {
         name: 'Systems Integration',
+        keywords: [
+          'systems integration',
+          'clash detection',
+          'BIM coordination',
+          'MEP coordination',
+          'technical reports',
+        ],
         description:
           'Complete coordination between mechanical, electrical, and architectural systems, clash detection through BIM modeling, technical reports and recommendations preparation.',
       },
       {
         name: 'Ventilation and Pressure Systems',
+        keywords: [
+          'ventilation systems',
+          'pressure systems',
+          'UPS systems',
+          'backup power',
+          'pressure calculations',
+        ],
         description:
           'Positive and negative pressure ventilation systems, consumption and pressure calculations, UPS and backup power systems design.',
       },
       {
         name: 'Safety and Protection Systems',
+        keywords: [
+          'fire alarm systems',
+          'security systems',
+          'surveillance cameras',
+          'protection systems',
+          'safety design',
+        ],
         description:
           'Fire alarm and security systems design, surveillance camera systems, electrical and mechanical protection systems.',
       },
