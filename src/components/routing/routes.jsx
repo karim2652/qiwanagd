@@ -65,6 +65,7 @@ const Home = lazy(() => import('../../pages/Home'));
 const Blog = lazy(() => import('../../pages/Blog'));
 const BlogDetails = lazy(() => import('../../pages/components/Blog/BlogDetails'));
 const Services = lazy(() => import('../../pages/Services'));
+const ServiceDetails = lazy(() => import('../../pages/components/Services/ServiceDetails'));
 const Projects = lazy(() => import('../../pages/Projects'));
 const Contact = lazy(() => import('../../pages/Contact'));
 const Quote = lazy(() => import('../../pages/Quote'));
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
       {
         path: 'services',
         element: <LazyRoute component={Services} />,
+      },
+      {
+        path: 'services/:title',
+        element: <LazyRoute component={ServiceDetails} />,
       },
       {
         path: 'projects',

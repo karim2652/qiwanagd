@@ -1,29 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { FiCheckCircle } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { servicesAr, servicesEn } from '../../../data/servicesData';
 
 const ServiceOverview = () => {
-  const [isRTL, setIsRTL] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const htmlDir = document.documentElement.getAttribute('dir');
-      return htmlDir === 'rtl';
+  const { i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
+
+  // Create slug from title for URL
+  const createSlug = (title) => {
+    // For Arabic titles
+    if (/[\u0600-\u06FF]/.test(title)) {
+      return title
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/[^\u0600-\u06FF\w-]/g, '')
+        .replace(/-+/g, '-')
+        .toLowerCase();
     }
-    return false;
-  });
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const html = document.documentElement;
-    const updateDir = () => setIsRTL(html.getAttribute('dir') === 'rtl');
-
-    const observer = new MutationObserver(updateDir);
-    observer.observe(html, { attributes: true, attributeFilter: ['dir'] });
-
-    updateDir();
-
-    return () => observer.disconnect();
-  }, []);
+    // For English titles
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  };
 
   const services = isRTL ? servicesAr : servicesEn;
   const sectionTitle = isRTL ? ' خدماتنا المتخصصه' : 'Our Services';
@@ -31,6 +36,7 @@ const ServiceOverview = () => {
     ? '  نوفّر حلولًا هندسية شاملة تجمع بين الخبرة المحلية والمعايير العالمية'
     : 'We provide comprehensive engineering solutions that combine local expertise with international standards.';
   const ulDir = isRTL ? 'rtl' : 'ltr';
+
   return (
     <div className='min-h-screen  flex items-center justify-center py-6 px-2'>
       <div className='bg-white rounded-3xl p-6 md:p-10 max-w-6xl w-full shadow-sm border border-[#e9ecef]'>
@@ -44,8 +50,9 @@ const ServiceOverview = () => {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {services.map((service, idx) => (
-            <div
+            <Link
               key={idx}
+              to={`/services/${createSlug(service.title)}`}
               className={`group relative flex flex-col h-full rounded-2xl p-7 transition-all duration-300 border cursor-pointer
                 ${idx === 1 ? 'bg-[#f76f51] text-white border-none' : 'bg-[#f6f9fa] text-[#222] border-[#e9ecef]'}
                 shadow-sm
@@ -53,6 +60,7 @@ const ServiceOverview = () => {
                 hover:-translate-y-1
                 hover:scale-105
                 ${idx !== 1 ? 'hover:border-[#e7401c]' : ''}
+                block no-underline
               `}
             >
               <div
@@ -74,7 +82,7 @@ const ServiceOverview = () => {
                   </li>
                 ))}
               </ul>
-              <button
+              <div
                 className={`
                   absolute bottom-5 ltr:right-5 rtl:left-5 w-10 h-10 rounded-full flex items-center justify-center text-xl shadow-md
                   transition-all duration-500
@@ -91,8 +99,8 @@ const ServiceOverview = () => {
                 >
                   ➔
                 </span>
-              </button>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
