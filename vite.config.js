@@ -105,6 +105,9 @@ export default defineConfig(({ mode }) => {
           cleanupOutdatedCaches: true,
           clientsClaim: !isProduction,
           skipWaiting: !isProduction,
+          // Add better error handling for cache operations
+          mode: isProduction ? 'production' : 'development',
+          sourcemap: !isProduction,
           runtimeCaching: [
             {
               urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -149,9 +152,12 @@ export default defineConfig(({ mode }) => {
           ],
         },
         devOptions: {
-          enabled: !isProduction,
+          enabled: env.VITE_ENABLE_SW_DEV === 'true' && !isProduction,
           type: 'module',
           navigateFallback: undefined,
+          // Add error handling for development
+          suppressWarnings: true,
+          disableDevLogs: true,
         },
       }),
       compression({
