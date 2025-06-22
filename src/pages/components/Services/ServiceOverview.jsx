@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FiCheckCircle } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { servicesAr, servicesEn } from '../../../data/servicesData';
+import { servicesAr, servicesEn } from '../../../data/servicesData.jsx';
 
 const ServiceOverview = () => {
   const { i18n } = useTranslation();

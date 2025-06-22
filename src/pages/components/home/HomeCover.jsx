@@ -5,7 +5,7 @@ import styles from './HomeCover.module.css';
 import { useNavigate } from 'react-router-dom';
 
 // Import images using Vite's import.meta.glob
-const images = import.meta.glob('../../../assets/images/home/*.webp', { eager: true, as: 'url' });
+const images = import.meta.glob('../../../assets/images/home/*.webp', { eager: true, query: '?url', import: 'default' });
 const image1 = images['../../../assets/images/home/1.webp'];
 const image2 = images['../../../assets/images/home/2.webp'];
 const image3 = images['../../../assets/images/home/3.webp'];

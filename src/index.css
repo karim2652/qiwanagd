@@ -1,9 +1,9 @@
+/* Skeleton Loading Styles */
+@import './styles/skeleton.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Skeleton Loading Styles */
-@import './styles/skeleton.css';
 
 /* Language Transition Styles */
 [dir='rtl'] {

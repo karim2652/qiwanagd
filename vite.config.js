@@ -203,10 +203,6 @@ export default defineConfig(({ mode }) => {
         '@hooks': path.resolve(__dirname, './src/hooks'),
         '@utils': path.resolve(__dirname, './src/utils'),
       },
-      glob: {
-        query: '?url',
-        import: 'default',
-      },
     },
     optimizeDeps: {
       include: [

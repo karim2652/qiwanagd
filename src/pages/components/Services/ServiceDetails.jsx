@@ -4,7 +4,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { motion } from 'framer-motion';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { servicesAr, servicesEn } from '../../../data/servicesData';
+import { servicesAr, servicesEn } from '../../../data/servicesData.jsx';
 import { Helmet } from 'react-helmet-async';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import { FaWhatsapp } from 'react-icons/fa';
