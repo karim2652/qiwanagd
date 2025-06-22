@@ -103,8 +103,8 @@ export default defineConfig(({ mode }) => {
           disableDevLogs: true,
           navigateFallback: null,
           cleanupOutdatedCaches: true,
-          clientsClaim: true,
-          skipWaiting: true,
+          clientsClaim: !isProduction,
+          skipWaiting: !isProduction,
           runtimeCaching: [
             {
               urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -134,11 +134,24 @@ export default defineConfig(({ mode }) => {
                 },
               },
             },
+            {
+              urlPattern: /^https:\/\/www\.google-analytics\.com\/.*/i,
+              handler: 'NetworkOnly',
+            },
+            {
+              urlPattern: /^https:\/\/www\.googletagmanager\.com\/.*/i,
+              handler: 'NetworkOnly',
+            },
+            {
+              urlPattern: /^https:\/\/www\.google\.com\.eg\/ads\/.*/i,
+              handler: 'NetworkOnly',
+            },
           ],
         },
         devOptions: {
-          enabled: true,
+          enabled: !isProduction,
           type: 'module',
+          navigateFallback: undefined,
         },
       }),
       compression({

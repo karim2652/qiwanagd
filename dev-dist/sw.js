@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-476a8705'], (function (workbox) { 'use strict';
+define(['./workbox-b40a0fa7'], (function (workbox) { 'use strict';
 
   self.skipWaiting();
   workbox.clientsClaim();
@@ -100,6 +100,9 @@ define(['./workbox-476a8705'], (function (workbox) { 'use strict';
       statuses: [0, 200]
     })]
   }), 'GET');
+  workbox.registerRoute(/^https:\/\/www\.google-analytics\.com\/.*/i, new workbox.NetworkOnly(), 'GET');
+  workbox.registerRoute(/^https:\/\/www\.googletagmanager\.com\/.*/i, new workbox.NetworkOnly(), 'GET');
+  workbox.registerRoute(/^https:\/\/www\.google\.com\.eg\/ads\/.*/i, new workbox.NetworkOnly(), 'GET');
   self.__WB_DISABLE_DEV_LOGS = true;
 
 }));

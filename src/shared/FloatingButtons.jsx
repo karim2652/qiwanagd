@@ -1,8 +1,9 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import './FloatingButtons.css'; // سيتم إنشاء هذا الملف
+import { sendGTMEvent } from '../lib/gtm';
 
 const FloatingButtons = () => {
   const { i18n } = useTranslation();
@@ -17,37 +18,32 @@ const FloatingButtons = () => {
     };
   }, [i18n.language]); // Only recalculate when language changes
 
-  // Check for dataLayer availability
-  useEffect(() => {
-    if (typeof window !== 'undefined' && !window.dataLayer) {
-      console.warn('Google Tag Manager dataLayer is not available. Event tracking will not work.');
-    }
-  }, []);
-
   // Handle WhatsApp click with tracking
   const handleWhatsAppClick = (e) => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'whatsapp_click',
+    try {
+      sendGTMEvent('whatsapp_click', {
         button_text: messages.whatsapp,
         page_path: window.location.pathname,
         button_location: 'Floating Button',
         language: i18n.language,
       });
+    } catch (error) {
+      // Silently handle tracking errors
     }
   };
 
   // Handle phone call click with tracking
   const handlePhoneClick = (e) => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'phone_call_click',
+    try {
+      sendGTMEvent('phone_call_click', {
         button_text: messages.call,
         page_path: window.location.pathname,
         button_location: 'Floating Button',
         phone_number: '+966548240556',
         language: i18n.language,
       });
+    } catch (error) {
+      // Silently handle tracking errors
     }
   };
 

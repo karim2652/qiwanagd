@@ -10,6 +10,7 @@ import emailjs from '@emailjs/browser';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createContactSchema } from '@/schemas/contactSchema';
+import { sendGTMEvent } from '@/lib/gtm';
 
 emailjs.init('yQ03ZUF1VMp4mz9rB');
 
@@ -61,16 +62,17 @@ const ContactForm = () => {
       toast.dismiss();
 
       if (response.status === 200) {
-        // Push Google Ads conversion event
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'lead_form_submission',
-          form_location: 'contact-page',
-          // إضافة معلومات إضافية مفيدة للتتبع
-          lead_type: 'contact',
-          lead_service: 'general_inquiry',
-          lead_source: 'contact_form',
-        });
+        // Track form submission
+        try {
+          sendGTMEvent('lead_form_submission', {
+            form_location: 'contact-page',
+            lead_type: 'contact',
+            lead_service: 'general_inquiry',
+            lead_source: 'contact_form',
+          });
+        } catch (error) {
+          // Silently handle tracking errors
+        }
 
         toast.success(t('contact.toast.success'), {
           position: 'bottom-center',

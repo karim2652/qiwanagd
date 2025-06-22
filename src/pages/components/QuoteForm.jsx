@@ -19,6 +19,7 @@ import { Mail, Phone, User, MessageSquare, CheckCircle2, MapPin } from 'lucide-r
 import { MdBusiness, MdHome, MdFactory, MdLocationCity } from 'react-icons/md';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { createQuoteSchema } from '@/schemas/quoteSchema';
+import { sendGTMEvent } from '@/lib/gtm';
 
 const QuoteForm = () => {
   const { t, i18n } = useTranslation();
@@ -114,16 +115,17 @@ const QuoteForm = () => {
       toast.dismiss();
 
       if (response.status === 200) {
-        // Push Google Ads conversion event
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'lead_form_submission',
-          form_location: 'quote-page',
-          // إضافة معلومات إضافية مفيدة للتتبع
-          lead_type: data.requestType,
-          lead_service: data.requiredService,
-          lead_source: data.howDidYouFind,
-        });
+        // Track form submission
+        try {
+          sendGTMEvent('lead_form_submission', {
+            form_location: 'quote-page',
+            lead_type: data.requestType,
+            lead_service: data.requiredService,
+            lead_source: data.howDidYouFind,
+          });
+        } catch (error) {
+          // Silently handle tracking errors
+        }
 
         toast.success(t('contact.toast.success'), {
           position: 'bottom-center',

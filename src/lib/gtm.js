@@ -7,6 +7,9 @@ let gtmInitialized = false;
 let initializationAttempts = 0;
 const MAX_INITIALIZATION_ATTEMPTS = 3;
 
+// Development mode detection
+const isDevelopment = import.meta.env?.DEV || process.env.NODE_ENV === 'development';
+
 // Default dataLayer configuration
 const defaultDataLayer = {
   pageType: 'home',
@@ -21,10 +24,16 @@ export const initializeGTM = () => {
   if (typeof window === 'undefined') return;
   if (initializationAttempts >= MAX_INITIALIZATION_ATTEMPTS) return;
 
+  // Skip initialization in development unless explicitly enabled
+  if (isDevelopment && !import.meta.env.VITE_ENABLE_GTM_DEV) {
+    console.log('GTM skipped in development mode');
+    return;
+  }
+
   initializationAttempts++;
 
   try {
-    // Initialize TagManager
+    // Initialize TagManager with error handling
     TagManager.initialize({
       gtmId: GTM_ID,
       dataLayer: defaultDataLayer,
@@ -34,23 +43,37 @@ export const initializeGTM = () => {
       },
     });
 
-    // Add GTM script
+    // Add GTM script with better error handling
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
 
     script.onload = () => {
       gtmInitialized = true;
-      // Send initial page view
-      sendGTMEvent('page_view', {
-        page_path: window.location.pathname,
-        page_title: document.title,
-        initialization_attempt: initializationAttempts,
-      });
+      console.log('GTM initialized successfully');
+
+      // Send initial page view with error handling
+      try {
+        sendGTMEvent('page_view', {
+          page_path: window.location.pathname,
+          page_title: document.title,
+          initialization_attempt: initializationAttempts,
+        });
+      } catch (error) {
+        console.warn('Failed to send initial page view:', error);
+      }
     };
 
-    script.onerror = () => {
+    script.onerror = (error) => {
       gtmInitialized = false;
+      console.warn('GTM script failed to load:', error);
+
+      // Retry initialization after delay
+      if (initializationAttempts < MAX_INITIALIZATION_ATTEMPTS) {
+        setTimeout(() => {
+          initializeGTM();
+        }, 2000 * initializationAttempts);
+      }
     };
 
     // Add noscript fallback
@@ -68,24 +91,48 @@ export const initializeGTM = () => {
     document.head.appendChild(script);
   } catch (error) {
     gtmInitialized = false;
+    console.warn('GTM initialization error:', error);
   }
 };
 
 // Enhanced event tracking with performance monitoring
 export const sendGTMEvent = (eventName, eventData = {}) => {
-  if (!gtmInitialized) return;
+  // Skip in development unless explicitly enabled
+  if (isDevelopment && !import.meta.env.VITE_ENABLE_GTM_DEV) {
+    console.log(`GTM Event (dev): ${eventName}`, eventData);
+    return;
+  }
+
+  if (!gtmInitialized) {
+    console.warn('GTM not initialized, event skipped:', eventName);
+    return;
+  }
 
   try {
     const startTime = performance.now();
 
-    TagManager.dataLayer({
-      dataLayer: {
-        event: eventName,
-        event_timestamp: new Date().toISOString(),
-        event_duration: 0,
-        ...eventData,
-      },
-    });
+    // Add network retry logic
+    const sendWithRetry = (retries = 2) => {
+      try {
+        TagManager.dataLayer({
+          dataLayer: {
+            event: eventName,
+            event_timestamp: new Date().toISOString(),
+            event_duration: 0,
+            ...eventData,
+          },
+        });
+      } catch (error) {
+        if (retries > 0) {
+          console.warn(`GTM event retry (${retries} left):`, error);
+          setTimeout(() => sendWithRetry(retries - 1), 1000);
+        } else {
+          console.warn('GTM event failed after retries:', error);
+        }
+      }
+    };
+
+    sendWithRetry();
 
     // Track event performance silently
     const duration = performance.now() - startTime;
@@ -99,13 +146,22 @@ export const sendGTMEvent = (eventName, eventData = {}) => {
       });
     }
   } catch (error) {
-    // Silently handle errors
+    console.warn('GTM event error:', error);
   }
 };
 
 // Enhanced dataLayer management with validation
 export const updateDataLayer = (data) => {
-  if (!gtmInitialized) return;
+  // Skip in development unless explicitly enabled
+  if (isDevelopment && !import.meta.env.VITE_ENABLE_GTM_DEV) {
+    console.log('GTM DataLayer (dev):', data);
+    return;
+  }
+
+  if (!gtmInitialized) {
+    console.warn('GTM not initialized, dataLayer update skipped');
+    return;
+  }
 
   try {
     // Validate data before sending
@@ -123,13 +179,13 @@ export const updateDataLayer = (data) => {
       },
     });
   } catch (error) {
-    // Silently handle errors
+    console.warn('GTM dataLayer update error:', error);
   }
 };
 
 // SPA Page View Tracking
 export const trackPageView = (path, title) => {
-  if (!gtmInitialized) return;
+  if (!gtmInitialized && !isDevelopment) return;
 
   sendGTMEvent('page_view', {
     page_path: path,
@@ -141,7 +197,7 @@ export const trackPageView = (path, title) => {
 
 // User Interaction Tracking
 export const trackUserInteraction = (interactionType, details = {}) => {
-  if (!gtmInitialized) return;
+  if (!gtmInitialized && !isDevelopment) return;
 
   sendGTMEvent('user_interaction', {
     interaction_type: interactionType,
@@ -152,7 +208,7 @@ export const trackUserInteraction = (interactionType, details = {}) => {
 
 // Performance Monitoring
 export const trackPerformance = (metric) => {
-  if (!gtmInitialized) return;
+  if (!gtmInitialized && !isDevelopment) return;
 
   sendGTMEvent('performance_metric', {
     metric_name: metric.name,
@@ -167,16 +223,18 @@ export const checkGTMStatus = () => {
   const status = {
     isInitialized: gtmInitialized,
     hasGTMScript: !!document.querySelector('script[src*="googletagmanager.com/gtm.js"]'),
-    hasDataLayer: typeof window.dataLayer !== 'undefined',
+    hasDataLayer: typeof window !== 'undefined' && typeof window.dataLayer !== 'undefined',
     timestamp: new Date().toISOString(),
+    isDevelopment,
+    initializationAttempts,
   };
 
-  // Send status to GTM for verification
+  // Send status to GTM for verification (only if initialized)
   if (status.isInitialized) {
     try {
       sendGTMEvent('gtm_status_check', status);
     } catch (error) {
-      // Silently handle errors
+      console.warn('GTM status check error:', error);
     }
   }
 

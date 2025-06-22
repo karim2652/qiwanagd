@@ -90,34 +90,62 @@ const trackScrollDepth = (depth) => {
 
 // Track time on page
 const initTimeOnPageTracking = () => {
-  timeOnPageStart = Date.now();
-  const timeThresholds = [30, 60, 120, 300]; // seconds
+  try {
+    timeOnPageStart = Date.now();
+    const timeThresholds = [30, 60, 120, 300]; // seconds
 
-  timeThresholds.forEach((threshold) => {
-    setTimeout(() => {
-      trackTimeOnPage(threshold);
-    }, threshold * 1000);
-  });
+    timeThresholds.forEach((threshold) => {
+      try {
+        setTimeout(() => {
+          if (timeOnPageStart) {
+            // Check if tracking is still valid
+            trackTimeOnPage(threshold);
+          }
+        }, threshold * 1000);
+      } catch (error) {
+        if (import.meta.env?.DEV) {
+          console.warn(`Failed to set timeout for threshold ${threshold}:`, error);
+        }
+      }
+    });
 
-  // Track time on page before unload
-  window.addEventListener('beforeunload', () => {
-    const timeSpent = Math.round((Date.now() - timeOnPageStart) / 1000);
-    trackTimeOnPage(timeSpent);
-  });
+    // Track time on page before unload
+    window.addEventListener('beforeunload', () => {
+      try {
+        if (timeOnPageStart) {
+          const timeSpent = Math.round((Date.now() - timeOnPageStart) / 1000);
+          trackTimeOnPage(timeSpent);
+        }
+      } catch (error) {
+        // Silently handle unload tracking errors
+      }
+    });
+  } catch (error) {
+    if (import.meta.env?.DEV) {
+      console.warn('Failed to initialize time tracking:', error);
+    }
+  }
 };
 
 const trackTimeOnPage = (seconds) => {
-  const event = buildEvent(
-    EVENT_CATEGORIES.ENGAGEMENT,
-    'time_on_page',
-    `time_spent_${seconds}s`,
-    seconds,
-    {
-      ...getCommonParams(),
-      [CUSTOM_METRICS.TIME_ON_PAGE]: seconds,
+  try {
+    const event = buildEvent(
+      EVENT_CATEGORIES.ENGAGEMENT,
+      'time_on_page',
+      `time_spent_${seconds}s`,
+      seconds,
+      {
+        ...getCommonParams(),
+        [CUSTOM_METRICS.TIME_ON_PAGE]: seconds,
+      }
+    );
+    sendGTMEvent('time_on_page', event);
+  } catch (error) {
+    // Silently handle tracking errors to prevent console spam
+    if (import.meta.env?.DEV) {
+      console.warn('Time tracking error:', error);
     }
-  );
-  sendGTMEvent('time_on_page', event);
+  }
 };
 
 // Track user interactions

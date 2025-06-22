@@ -8,6 +8,8 @@ import { servicesAr, servicesEn } from '../../../data/servicesData.jsx';
 import { Helmet } from 'react-helmet-async';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import { FaWhatsapp } from 'react-icons/fa';
+import SuggestedServices from './SuggestedServices';
+import { sendGTMEvent } from '@/lib/gtm';
 
 const ServiceDetails = () => {
   const { t, i18n } = useTranslation();
@@ -16,28 +18,30 @@ const ServiceDetails = () => {
   const navigate = useNavigate();
   // Handle WhatsApp click with tracking
   const handleWhatsAppClick = (e) => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'whatsapp_click',
+    try {
+      sendGTMEvent('whatsapp_click', {
         button_text: isArabic ? 'واتساب' : 'WhatsApp',
         page_path: window.location.pathname,
         button_location: 'Service Details',
         language: i18n.language,
       });
+    } catch (error) {
+      // Silently handle tracking errors
     }
   };
 
   // Handle phone call click with tracking
   const handlePhoneClick = (e) => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'phone_call_click',
+    try {
+      sendGTMEvent('phone_call_click', {
         button_text: isArabic ? 'هاتف' : 'Phone',
         page_path: window.location.pathname,
         button_location: 'Service Details',
         phone_number: '+966548240556',
         language: i18n.language,
       });
+    } catch (error) {
+      // Silently handle tracking errors
     }
   };
 
@@ -498,6 +502,9 @@ const ServiceDetails = () => {
                   </div>
                 </div>
               )}
+
+              {/* Suggested Services */}
+              <SuggestedServices excludeTitle={service.title} isArabic={isArabic} />
             </div>
           </div>
         </div>

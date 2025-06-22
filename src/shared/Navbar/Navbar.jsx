@@ -10,6 +10,7 @@ import logoAr from '../../assets/images/logo/2.svg';
 import logoEn from '../../assets/images/logo/4.svg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { sendGTMEvent } from '../../lib/gtm';
 
 const navigation = [
   { nameKey: 'navigation.home', to: '/' },
@@ -89,13 +90,6 @@ export default function Navbar() {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  // Check for dataLayer availability
-  useEffect(() => {
-    if (typeof window !== 'undefined' && !window.dataLayer) {
-      console.warn('Google Tag Manager dataLayer is not available. Event tracking will not work.');
-    }
-  }, []);
-
   const handleLangSwitch = (code) => {
     try {
       setIsLoading(true);
@@ -122,15 +116,16 @@ export default function Navbar() {
 
   // Handle phone call click with tracking
   const handlePhoneClick = (e) => {
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'phone_call_click',
+    try {
+      sendGTMEvent('phone_call_click', {
         button_text: t('navigation.call_us', 'اتصل بنا'),
         page_path: window.location.pathname,
         button_location: 'Navbar',
         phone_number: '+966548240556',
         language: lang,
       });
+    } catch (error) {
+      // Silently handle tracking errors
     }
   };
 
