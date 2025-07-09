@@ -376,11 +376,11 @@ const Footer = () => {
                       +966 54 824 0556
                     </a>
                     <a
-                      href='tel:+966557770557'
+                      href='tel:+966557770556'
                       className='text-gray-400 hover:text-[#F03E2F] transition-colors duration-300'
                       dir='ltr'
                     >
-                      +966 55 777 0557
+                      +966 55 777 0556
                     </a>
                   </div>
                 </div>
