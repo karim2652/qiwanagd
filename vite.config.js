@@ -36,8 +36,8 @@ export default defineConfig(({ mode }) => {
         },
         output: {
           manualChunks: (id) => {
-            // React and React-related packages
-            if (id.includes('react') || id.includes('react-dom')) {
+            // React and React-related packages - MUST be together
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react/jsx-runtime')) {
               return 'react-vendor';
             }
             // UI libraries
@@ -117,6 +117,9 @@ export default defineConfig(({ mode }) => {
             ['@babel/plugin-transform-runtime', { regenerator: true }],
           ],
         },
+        // Fix React useLayoutEffect issue
+        fastRefresh: true,
+        include: "**/*.{jsx,tsx}",
       }),
       VitePWA({
         registerType: 'autoUpdate',
@@ -301,6 +304,11 @@ export default defineConfig(({ mode }) => {
         minifyIdentifiers: true,
         minifySyntax: true,
         minifyWhitespace: true,
+      },
+      // Fix React useLayoutEffect issue
+      commonjsOptions: {
+        include: [/node_modules/],
+        transformMixedEsModules: true
       }
     },
     server: {
