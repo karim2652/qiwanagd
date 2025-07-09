@@ -35,11 +35,43 @@ export default defineConfig(({ mode }) => {
           main: path.resolve(__dirname, 'index.html'),
         },
         output: {
-          manualChunks: {
-            'react-vendor': ['react', 'react-dom', 'react/jsx-runtime'],
-            'ui-vendor': ['@headlessui/react', '@heroicons/react'],
-            'i18n-vendor': ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
-            'utils-vendor': ['lodash', 'date-fns'],
+          manualChunks: (id) => {
+            // React and React-related packages
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            // UI libraries
+            if (id.includes('@headlessui') || id.includes('@heroicons') || id.includes('lucide-react')) {
+              return 'ui-vendor';
+            }
+            // Internationalization
+            if (id.includes('i18next')) {
+              return 'i18n-vendor';
+            }
+            // Router
+            if (id.includes('react-router')) {
+              return 'router-vendor';
+            }
+            // Animations and graphics
+            if (id.includes('framer-motion') || id.includes('photoswipe') || id.includes('swiper')) {
+              return 'animations-vendor';
+            }
+            // Forms and validation
+            if (id.includes('react-hook-form') || id.includes('zod') || id.includes('@hookform')) {
+              return 'forms-vendor';
+            }
+            // Utilities
+            if (id.includes('lodash') || id.includes('date-fns') || id.includes('canvas')) {
+              return 'utils-vendor';
+            }
+            // Data files - separate chunk for large data
+            if (id.includes('blogData') || id.includes('servicesData')) {
+              return 'data-vendor';
+            }
+            // Node modules that are not categorized above
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
           },
           assetFileNames: (assetInfo) => {
             const info = assetInfo.name.split('.');
@@ -61,6 +93,21 @@ export default defineConfig(({ mode }) => {
       emptyOutDir: true,
       copyPublicDir: true,
       sourcemap: !isProduction,
+      // Additional performance optimizations
+      reportCompressedSize: false, // Faster builds
+      cssCodeSplit: true,
+      // Preload modules for better performance
+      modulePreload: {
+        polyfill: true,
+        resolveDependencies: (url, deps, context) => {
+          // Preload critical dependencies
+          return deps.filter(dep => 
+            dep.includes('react') || 
+            dep.includes('router') || 
+            dep.includes('main')
+          );
+        }
+      },
     },
     plugins: [
       react({
@@ -233,11 +280,28 @@ export default defineConfig(({ mode }) => {
         'i18next',
         'react-i18next',
         'i18next-browser-languagedetector',
-        'lodash',
-        'date-fns',
+        'react-router-dom',
+        'framer-motion',
+        'react-helmet-async',
+        'react-error-boundary',
       ],
-      exclude: [],
+      exclude: [
+        // Exclude large data files from optimization
+        'src/data/blogDataEn.js',
+        'src/data/servicesData.jsx'
+      ],
       force: true,
+      // Optimize dependencies more aggressively
+      esbuildOptions: {
+        target: 'esnext',
+        supported: {
+          'top-level-await': true
+        },
+        keepNames: false,
+        minifyIdentifiers: true,
+        minifySyntax: true,
+        minifyWhitespace: true,
+      }
     },
     server: {
       port: 4000,
