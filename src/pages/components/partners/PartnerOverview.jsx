@@ -1,15 +1,17 @@
-import React, { useRef, useState } from 'react';
-import Slider from 'react-slick';
+import React, { useRef, useState, Suspense, lazy } from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import partnerData from '../../../data/partnerData';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+
+// استبدال الاستيراد المباشر لـ Slider وLightbox
+const Slider = lazy(() => import('react-slick'));
+const Lightbox = lazy(() => import('yet-another-react-lightbox'));
 
 const PartnerOverview = () => {
   const sliderRef = useRef(null);
@@ -95,27 +97,29 @@ const PartnerOverview = () => {
             {/* تأثير التدرج على الجانبين داخل السلايدر */}
             <div className='pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10'></div>
             <div className='pointer-events-none absolute right-0 top-0 bottom-0 w-16 z-10'></div>
-            <Slider ref={sliderRef} {...settings}>
-              {partnerData.map((partner, idx) => (
-                <div key={partner.id} className='px-3'>
-                  <div
-                    className='bg-white rounded-xl p-6 h-40 flex items-center justify-center transform transition-all duration-500 hover:scale-105 hover:shadow-xl border border-gray-100 hover:border-blue-100 cursor-pointer'
-                    onClick={() => {
-                      setLightboxIndex(idx);
-                      setLightboxOpen(true);
-                    }}
-                  >
-                    <LazyLoadImage
-                      src={partner.image}
-                      alt={partner.name}
-                      effect='blur'
-                      className='max-h-full max-w-full object-contain transition-all duration-500'
-                      wrapperClassName='w-full h-full flex items-center justify-center'
-                    />
+            <Suspense fallback={<div>Loading slider...</div>}>
+              <Slider ref={sliderRef} {...settings}>
+                {partnerData.map((partner, idx) => (
+                  <div key={partner.id} className='px-3'>
+                    <div
+                      className='bg-white rounded-xl p-6 h-40 flex items-center justify-center transform transition-all duration-500 hover:scale-105 hover:shadow-xl border border-gray-100 hover:border-blue-100 cursor-pointer'
+                      onClick={() => {
+                        setLightboxIndex(idx);
+                        setLightboxOpen(true);
+                      }}
+                    >
+                      <LazyLoadImage
+                        src={partner.image}
+                        alt={partner.name}
+                        effect='blur'
+                        className='max-h-full max-w-full object-contain transition-all duration-500'
+                        wrapperClassName='w-full h-full flex items-center justify-center'
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </Slider>
+                ))}
+              </Slider>
+            </Suspense>
           </div>
 
           {/* زر التالي خارج السلايدر مباشرة */}
@@ -139,84 +143,86 @@ const PartnerOverview = () => {
       </div>
 
       {/* Lightbox لعرض صور الشركاء */}
-      <Lightbox
-        open={lightboxOpen}
-        close={() => setLightboxOpen(false)}
-        slides={lightboxImages}
-        index={lightboxIndex}
-        render={{
-          slide: ({ slide }) => (
-            <div className='flex items-center justify-center w-full h-full'>
-              <div className='bg-white rounded-2xl shadow-lg p-4 flex items-center justify-center'>
-                <LazyLoadImage
-                  src={slide.src}
-                  alt={slide.alt || ''}
-                  effect='blur'
-                  className='max-h-[80vh] max-w-full object-contain'
-                  wrapperClassName='w-full h-full flex items-center justify-center'
-                  style={{ background: 'white', borderRadius: '1rem' }}
-                />
+      <Suspense fallback={<div>Loading preview...</div>}>
+        <Lightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          slides={lightboxImages}
+          index={lightboxIndex}
+          render={{
+            slide: ({ slide }) => (
+              <div className='flex items-center justify-center w-full h-full'>
+                <div className='bg-white rounded-2xl shadow-lg p-4 flex items-center justify-center'>
+                  <LazyLoadImage
+                    src={slide.src}
+                    alt={slide.alt || ''}
+                    effect='blur'
+                    className='max-h-[80vh] max-w-full object-contain'
+                    wrapperClassName='w-full h-full flex items-center justify-center'
+                    style={{ background: 'white', borderRadius: '1rem' }}
+                  />
+                </div>
               </div>
-            </div>
-          ),
-          iconPrev: () => (
-            <div className='bg-black rounded-full p-2 text-white flex items-center justify-center'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='36'
-                height='36'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              >
-                <path d='m15 18-6-6 6-6' />
-              </svg>
-            </div>
-          ),
-          iconNext: () => (
-            <div className='bg-black rounded-full p-2 text-white flex items-center justify-center'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='36'
-                height='36'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              >
-                <path d='m9 18 6-6-6-6' />
-              </svg>
-            </div>
-          ),
-          iconClose: () => (
-            <div className='bg-black rounded-full p-2 text-white flex items-center justify-center'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              >
-                <path d='M18 6 6 18' />
-                <path d='m6 6 12 12' />
-              </svg>
-            </div>
-          ),
-        }}
-        styles={{
-          container: { backgroundColor: 'rgba(0,0,0,0.9)' },
-          root: { '--yarl__color_backdrop': 'rgba(0,0,0,0.9)' },
-        }}
-      />
+            ),
+            iconPrev: () => (
+              <div className='bg-black rounded-full p-2 text-white flex items-center justify-center'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='36'
+                  height='36'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='m15 18-6-6 6-6' />
+                </svg>
+              </div>
+            ),
+            iconNext: () => (
+              <div className='bg-black rounded-full p-2 text-white flex items-center justify-center'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='36'
+                  height='36'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='m9 18 6-6-6-6' />
+                </svg>
+              </div>
+            ),
+            iconClose: () => (
+              <div className='bg-black rounded-full p-2 text-white flex items-center justify-center'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='M18 6 6 18' />
+                  <path d='m6 6 12 12' />
+                </svg>
+              </div>
+            ),
+          }}
+          styles={{
+            container: { backgroundColor: 'rgba(0,0,0,0.9)' },
+            root: { '--yarl__color_backdrop': 'rgba(0,0,0,0.9)' },
+          }}
+        />
+      </Suspense>
     </div>
   );
 };

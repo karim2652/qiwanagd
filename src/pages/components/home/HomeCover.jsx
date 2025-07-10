@@ -10,6 +10,11 @@ const image1 = images['../../../assets/images/home/1.webp'];
 const image2 = images['../../../assets/images/home/2.webp'];
 const image3 = images['../../../assets/images/home/3.webp'];
 
+// إضافة متغيرات الصور المصغرة
+const mobileImage1 = images['../../../assets/images/home/1-mobile.webp'];
+const mobileImage2 = images['../../../assets/images/home/2-mobile.webp'];
+const mobileImage3 = images['../../../assets/images/home/3-mobile.webp'];
+
 // Preload images
 const preloadImage = (src) => {
   return new Promise((resolve, reject) => {
@@ -20,27 +25,38 @@ const preloadImage = (src) => {
   });
 };
 
-// Define slides array with translation keys
+// تعديل slides ليشمل الصور المصغرة
 const slides = [
   {
     image: image1,
+    mobileImage: mobileImage1,
     titleKey: 'home.slide1.title',
     descriptionKey: 'home.slide1.description',
     highlightKey: 'home.slide1.highlight',
   },
   {
     image: image2,
+    mobileImage: mobileImage2,
     titleKey: 'home.slide2.title',
     descriptionKey: 'home.slide2.description',
     highlightKey: 'home.slide2.highlight',
   },
   {
     image: image3,
+    mobileImage: mobileImage3,
     titleKey: 'home.slide3.title',
     descriptionKey: 'home.slide3.description',
     highlightKey: 'home.slide3.highlight',
   },
 ];
+
+// إضافة دالة لتحديد الصورة المناسبة حسب حجم الشاشة
+const getResponsiveImage = (slide) => {
+  if (window.innerWidth <= 768 && slide.mobileImage) {
+    return slide.mobileImage;
+  }
+  return slide.image;
+};
 
 const HomeCover = memo(() => {
   const { t, i18n } = useTranslation();
@@ -120,11 +136,31 @@ const HomeCover = memo(() => {
       dir={isRTL ? 'rtl' : 'ltr'}
       className={`${styles.homeCover} relative flex items-center justify-center m-4 overflow-hidden`}
     >
+      {/* Preload critical image for LCP optimization */}
+      <link
+        rel="preload"
+        as="image"
+        href={getResponsiveImage(currentContent)}
+        fetchpriority="high"
+        imageSrcSet={currentContent.mobileImage ? `${currentContent.mobileImage} 768w, ${currentContent.image} 1200w` : undefined}
+        imageSizes="(max-width: 768px) 100vw, 100vw"
+      />
+      {/* Visible img for LCP optimization */}
+      <img
+        src={getResponsiveImage(currentContent)}
+        srcSet={currentContent.mobileImage ? `${currentContent.mobileImage} 768w, ${currentContent.image} 1200w` : undefined}
+        sizes="(max-width: 768px) 100vw, 100vw"
+        alt=""
+        fetchpriority="high"
+        decoding="async"
+        style={{ position: 'absolute', width: '1px', height: '1px', opacity: 0, pointerEvents: 'none' }}
+        aria-hidden="true"
+      />
       {/* Background Images with Synchronized Transitions */}
       <div
         className='w-full h-full absolute inset-0 transition-all duration-1000 ease-in-out'
         style={{
-          backgroundImage: `url(${currentContent.image})`,
+          backgroundImage: `url(${getResponsiveImage(currentContent)})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -138,7 +174,7 @@ const HomeCover = memo(() => {
         <div
           className='w-full h-full absolute inset-0 transition-all duration-1000 ease-in-out'
           style={{
-            backgroundImage: `url(${nextContent.image})`,
+            backgroundImage: `url(${getResponsiveImage(nextContent)})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',

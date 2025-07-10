@@ -1,8 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, Suspense, lazy, useCallback, useEffect } from 'react';
 import { projects, projectCategories } from './projectsData';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { motion, AnimatePresence } from 'framer-motion';
-import Lightbox from 'yet-another-react-lightbox';
+// استبدال الاستيراد المباشر لـ Lightbox
+const Lightbox = lazy(() => import('yet-another-react-lightbox'));
 import Skeleton from 'react-loading-skeleton';
 import Masonry from 'react-masonry-css';
 import { useTranslation } from 'react-i18next';
@@ -13,76 +14,94 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 const ProductsOverview = () => {
   const { t, i18n } = useTranslation();
   const [activeFilter, setActiveFilter] = useState('all');
-  const [visibleItems, setVisibleItems] = useState(15);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Detect mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const getInitialVisibleItems = useCallback(() => {
+    return isMobile ? 6 : 8; // تقليل أكثر على الموبايل
+  }, [isMobile]);
+
+  const [visibleItems, setVisibleItems] = useState(getInitialVisibleItems());
   const [isLoading, setIsLoading] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const ITEMS_PER_LOAD = 13;
+  const ITEMS_PER_LOAD = isMobile ? 6 : 8; // تقليل عدد العناصر المحملة
   const currentLanguage = i18n.language;
   const isRTL = currentLanguage === 'ar';
 
-  // Advanced Masonry breakpoints configuration
+  // Simplified breakpoints for better performance
   const breakpointColumnsObj = {
-    default: 4,
-    1440: 4,
-    1280: 3,
-    1024: 3,
+    default: 3,
+    1440: 3,
+    1024: 2,
     768: 2,
-    640: 2,
-    500: 1,
+    640: 1,
   };
 
-  // Enhanced masonry grid styles
+  // Optimized masonry grid styles with reduced reflows
   const masonryStyles = `
     .my-masonry-grid {
       display: flex;
       width: auto;
-      margin-left: -20px; /* Adjust for gutter */
-      margin-right: -20px; /* Adjust for gutter */
+      margin-left: -15px;
+      margin-right: -15px;
+      will-change: transform;
     }
     
     .my-masonry-grid_column {
-      padding-left: 20px; /* Gutter */
-      padding-right: 20px; /* Gutter */
+      padding-left: 15px;
+      padding-right: 15px;
       background-clip: padding-box;
     }
     
     .my-masonry-grid_column > div {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       border-radius: 12px;
       overflow: hidden;
-      transform: translateZ(0); /* Hardware acceleration */
+      transform: translateZ(0);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
     }
     
     .my-masonry-grid_column > div:hover {
-      transform: translateY(-5px);
+      transform: translateY(-5px) translateZ(0);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
     
-    /* Responsive adjustments */
-    @media (max-width: 1280px) {
-      .my-masonry-grid_column > div {
-        margin-bottom: 30px;
-      }
+    /* Mobile CSS Grid fallback for better performance */
+    .mobile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 0 15px;
+    }
+    
+    .mobile-grid > div {
+      border-radius: 12px;
+      overflow: hidden;
+      transform: translateZ(0);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+    
+    .mobile-grid > div:hover {
+      transform: translateY(-5px) translateZ(0);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
     
     @media (max-width: 768px) {
-      .my-masonry-grid_column > div {
-        margin-bottom: 25px;
-      }
-    }
-    
-    @media (max-width: 500px) {
-      .my-masonry-grid {
-        margin-left: -10px;
-        margin-right: -10px;
-      }
-      .my-masonry-grid_column {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
       .my-masonry-grid_column > div {
         margin-bottom: 20px;
       }
@@ -122,30 +141,8 @@ const ProductsOverview = () => {
     return filteredProjects
       .filter((project) => project && project.id) // Filter out invalid projects
       .slice(0, visibleItems) // Only use visible projects
-      .map((project) => ({
-        src: project.src || '/images/placeholder.png',
-        alt:
-          (project.title && typeof project.title === 'object'
-            ? isRTL
-              ? project.title.ar
-              : project.title.en
-            : project.title) || 'Project image',
-        title:
-          (project.title && typeof project.title === 'object'
-            ? isRTL
-              ? project.title.ar
-              : project.title.en
-            : project.title) || '',
-        description:
-          project.category && project.category.title && typeof project.category.title === 'object'
-            ? isRTL
-              ? project.category.title.ar
-              : project.category.title.en
-            : project.category
-              ? project.category.title
-              : '',
-      }));
-  }, [filteredProjects, visibleItems, isRTL]); // Add isRTL as dependency
+      .map((project) => project.src || '/images/placeholder.png');
+  }, [filteredProjects, visibleItems]); // Add isRTL as dependency
 
   const handleLoadMore = () => {
     setVisibleItems((prev) => Math.min(prev + ITEMS_PER_LOAD, filteredProjects.length));
@@ -321,177 +318,244 @@ const ProductsOverview = () => {
         ) : (
           <motion.div variants={containerVariants} initial='hidden' animate='show'>
             <AnimatePresence>
-              <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className='my-masonry-grid'
-                columnClassName='my-masonry-grid_column'
-              >
-                {filteredProjects
-                  .filter((project) => project && project.id) // Filter out any invalid projects
-                  .slice(0, visibleItems)
-                  .map((project, index) => (
-                    <motion.div
-                      key={project.id}
-                      className='group relative overflow-hidden rounded-xl cursor-pointer'
-                      variants={itemVariants}
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                      onClick={() => openLightbox(index)}
-                      style={{ height: getProjectHeight(index) }}
-                    >
-                      <div className='relative h-full w-full overflow-hidden rounded-xl'>
-                        <LazyLoadImage
-                          src={getImageUrl(project.src)}
-                          alt={project.title || 'Project image'}
-                          effect='opacity'
-                          className='w-full h-full object-cover rounded-xl transform transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform group-hover:scale-110'
-                          placeholder={<SkeletonPlaceholder />}
-                          wrapperClassName='w-full h-full'
-                          onError={(e) => {
-                            if (e && e.target) {
-                              e.target.onerror = null;
-                              try {
-                                e.target.src = '/images/placeholder.png';
-                              } catch (_) {
-                                // Ignore any errors when setting fallback
+              {isMobile ? (
+                // Use CSS Grid for mobile - better performance
+                <div className='mobile-grid'>
+                  {filteredProjects
+                    .filter((project) => project && project.id)
+                    .slice(0, visibleItems)
+                    .map((project, index) => (
+                      <motion.div
+                        key={project.id}
+                        className='group relative overflow-hidden rounded-xl cursor-pointer'
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                        onClick={() => openLightbox(index)}
+                        style={{ height: '280px' }} // Fixed height for mobile grid
+                      >
+                        <div className='relative h-full w-full overflow-hidden rounded-xl'>
+                          <LazyLoadImage
+                            src={getImageUrl(project.src)}
+                            alt={project.title || 'Project image'}
+                            effect='opacity'
+                            className='w-full h-full object-cover rounded-xl transform transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform group-hover:scale-110'
+                            placeholder={<SkeletonPlaceholder />}
+                            wrapperClassName='w-full h-full'
+                            onError={(e) => {
+                              if (e && e.target) {
+                                e.target.onerror = null;
+                                try {
+                                  e.target.src = '/images/placeholder.png';
+                                } catch (_) {
+                                  // Ignore any errors when setting fallback
+                                }
                               }
-                            }
-                          }}
-                        />
-                        <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] rounded-xl'>
-                          <div
-                            className={`absolute bottom-0 ${isRTL ? 'right-0' : 'left-0'} w-full p-6 ${isRTL ? 'text-right' : 'text-left'} transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]`}
-                          >
-                            <h3 className='text-white text-xl font-bold mb-3 transform -translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-[50ms] ease-[cubic-bezier(0.4,0,0.2,1)]'>
-                              {project.title && typeof project.title === 'object'
-                                ? isRTL
-                                  ? project.title.ar
-                                  : project.title.en
-                                : project.title}
-                            </h3>
-                            {project.category && (
-                              <p className='text-white/80 text-sm transform -translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-[100ms] ease-[cubic-bezier(0.4,0,0.2,1)]'>
-                                {project.category.title &&
-                                typeof project.category.title === 'object'
+                            }}
+                          />
+                          <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] rounded-xl'>
+                            <div
+                              className={`absolute bottom-0 ${isRTL ? 'right-0' : 'left-0'} w-full p-6 ${isRTL ? 'text-right' : 'text-left'} transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]`}
+                            >
+                              <h3 className='text-white text-xl font-bold mb-3 transform -translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-[50ms] ease-[cubic-bezier(0.4,0,0.2,1)]'>
+                                {project.title && typeof project.title === 'object'
                                   ? isRTL
-                                    ? project.category.title.ar
-                                    : project.category.title.en
-                                  : project.category.title}
-                              </p>
-                            )}
+                                    ? project.title.ar
+                                    : project.title.en
+                                  : project.title}
+                              </h3>
+                              {project.category && (
+                                <p className='text-white/80 text-sm transform -translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-[100ms] ease-[cubic-bezier(0.4,0,0.2,1)]'>
+                                  {project.category.title &&
+                                  typeof project.category.title === 'object'
+                                    ? isRTL
+                                      ? project.category.title.ar
+                                      : project.category.title.en
+                                    : project.category.title}
+                                </p>
+                              )}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  ))}
-              </Masonry>
+                      </motion.div>
+                    ))}
+                </div>
+              ) : (
+                // Use Masonry for desktop
+                <Masonry
+                  breakpointCols={breakpointColumnsObj}
+                  className='my-masonry-grid'
+                  columnClassName='my-masonry-grid_column'
+                >
+                  {filteredProjects
+                    .filter((project) => project && project.id)
+                    .slice(0, visibleItems)
+                    .map((project, index) => (
+                      <motion.div
+                        key={project.id}
+                        className='group relative overflow-hidden rounded-xl cursor-pointer'
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                        onClick={() => openLightbox(index)}
+                        style={{ height: getProjectHeight(index) }}
+                      >
+                        <div className='relative h-full w-full overflow-hidden rounded-xl'>
+                          <LazyLoadImage
+                            src={getImageUrl(project.src)}
+                            alt={project.title || 'Project image'}
+                            effect='opacity'
+                            className='w-full h-full object-cover rounded-xl transform transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform group-hover:scale-110'
+                            placeholder={<SkeletonPlaceholder />}
+                            wrapperClassName='w-full h-full'
+                            onError={(e) => {
+                              if (e && e.target) {
+                                e.target.onerror = null;
+                                try {
+                                  e.target.src = '/images/placeholder.png';
+                                } catch (_) {
+                                  // Ignore any errors when setting fallback
+                                }
+                              }
+                            }}
+                          />
+                          <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] rounded-xl'>
+                            <div
+                              className={`absolute bottom-0 ${isRTL ? 'right-0' : 'left-0'} w-full p-6 ${isRTL ? 'text-right' : 'text-left'} transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]`}
+                            >
+                              <h3 className='text-white text-xl font-bold mb-3 transform -translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-[50ms] ease-[cubic-bezier(0.4,0,0.2,1)]'>
+                                {project.title && typeof project.title === 'object'
+                                  ? isRTL
+                                    ? project.title.ar
+                                    : project.title.en
+                                  : project.title}
+                              </h3>
+                              {project.category && (
+                                <p className='text-white/80 text-sm transform -translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-[100ms] ease-[cubic-bezier(0.4,0,0.2,1)]'>
+                                  {project.category.title &&
+                                  typeof project.category.title === 'object'
+                                    ? isRTL
+                                      ? project.category.title.ar
+                                      : project.category.title.en
+                                    : project.category.title}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                </Masonry>
+              )}
             </AnimatePresence>
           </motion.div>
         )}
 
         {/* Lightbox for image preview */}
-        <Lightbox
-          open={lightboxOpen}
-          close={() => setLightboxOpen(false)}
-          slides={lightboxImages}
-          index={lightboxIndex}
-          render={{
-            slide: ({ slide }) => (
-              <div className='flex items-center justify-center w-full h-full min-h-[90vh]'>
-                <LazyLoadImage
-                  src={slide.src}
-                  alt={slide.alt || ''}
-                  effect='blur'
-                  className='max-h-[90vh] max-w-[90vw] object-contain'
-                  wrapperClassName='flex items-center justify-center'
-                  onError={(e) => {
-                    if (e && e.target) {
-                      e.target.onerror = null;
-                      e.target.src = '/images/placeholder.png';
-                    }
-                  }}
-                />
-              </div>
-            ),
-            iconPrev: () => (
-              <div className='bg-black/30 backdrop-blur-sm p-2 rounded-full text-white'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                >
-                  <path d='m15 18-6-6 6-6' />
-                </svg>
-              </div>
-            ),
-            iconNext: () => (
-              <div className='bg-black/30 backdrop-blur-sm p-2 rounded-full text-white'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                >
-                  <path d='m9 18 6-6-6-6' />
-                </svg>
-              </div>
-            ),
-            iconClose: () => (
-              <div className='bg-black/30 backdrop-blur-sm p-2 rounded-full text-white'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                >
-                  <path d='M18 6 6 18' />
-                  <path d='m6 6 12 12' />
-                </svg>
-              </div>
-            ),
-          }}
-          carousel={{
-            spacing: 20,
-            padding: 20,
-          }}
-          controller={{
-            closeOnBackdropClick: true,
-            closeOnPullDown: true,
-          }}
-          styles={{
-            container: {
-              backgroundColor: 'rgba(0, 0, 0, 0.95)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            },
-            root: {
-              '--yarl__color_backdrop': 'rgba(0, 0, 0, 0.95)',
-              '--yarl__slide_captions_background': 'rgba(0, 0, 0, 0.5)',
-            },
-            slide: {
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            },
-          }}
-        />
+        <Suspense fallback={<div>Loading preview...</div>}>
+          <Lightbox
+            open={lightboxOpen}
+            close={() => setLightboxOpen(false)}
+            slides={lightboxImages}
+            index={lightboxIndex}
+            render={{
+              slide: ({ slide }) => (
+                <div className='flex items-center justify-center w-full h-full min-h-[90vh]'>
+                  <LazyLoadImage
+                    src={slide}
+                    alt='Project image'
+                    effect='blur'
+                    className='max-h-[90vh] max-w-[90vw] object-contain'
+                    wrapperClassName='flex items-center justify-center'
+                    onError={(e) => {
+                      if (e && e.target) {
+                        e.target.onerror = null;
+                        e.target.src = '/images/placeholder.png';
+                      }
+                    }}
+                  />
+                </div>
+              ),
+              iconPrev: () => (
+                <div className='bg-black/30 backdrop-blur-sm p-2 rounded-full text-white'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  >
+                    <path d='m15 18-6-6 6-6' />
+                  </svg>
+                </div>
+              ),
+              iconNext: () => (
+                <div className='bg-black/30 backdrop-blur-sm p-2 rounded-full text-white'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  >
+                    <path d='m9 18 6-6-6-6' />
+                  </svg>
+                </div>
+              ),
+              iconClose: () => (
+                <div className='bg-black/30 backdrop-blur-sm p-2 rounded-full text-white'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  >
+                    <path d='M18 6 6 18' />
+                    <path d='m6 6 12 12' />
+                  </svg>
+                </div>
+              ),
+            }}
+            carousel={{
+              spacing: 20,
+              padding: 20,
+            }}
+            controller={{
+              closeOnBackdropClick: true,
+              closeOnPullDown: true,
+            }}
+            styles={{
+              container: {
+                backgroundColor: 'rgba(0, 0, 0, 0.95)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              },
+              root: {
+                '--yarl__color_backdrop': 'rgba(0, 0, 0, 0.95)',
+                '--yarl__slide_captions_background': 'rgba(0, 0, 0, 0.5)',
+              },
+              slide: {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              },
+            }}
+          />
+        </Suspense>
 
         {visibleItems < filteredProjects.length && (
           <motion.div

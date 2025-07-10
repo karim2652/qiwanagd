@@ -5,6 +5,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* تحسينات الأداء */
+.slow-connection {
+  /* تحسينات للاتصالات البطيئة */
+  --image-quality: 0.7;
+  --animation-duration: 0.2s;
+}
+
+.slow-connection img {
+  filter: blur(0.5px);
+  transition: filter 0.3s ease;
+}
+
+.slow-connection img.loaded {
+  filter: none;
+}
+
+/* تحسين أداء التمرير */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* تحسين تحميل الصور */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* تحسين الأداء للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .performance-optimized {
+    will-change: auto;
+  }
+}
+
 /* Language Transition Styles */
 [dir='rtl'] {
   direction: rtl;

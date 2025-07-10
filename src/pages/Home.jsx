@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO/SEO';
 import HomeCover from './components/home/HomeCover';
 import AboutOverview from './components/about/AboutOverview';
 import ServiceOverview from './components/Services/ServiceOverview';
-import ProductsOverview from './components/Products/ProductsOverview';
 import Location from './components/ContactUs/Location';
 import QrCode from './components/home/QrCode';
-import PartnerOverview from './components/partners/PartnerOverview';
-import ContactForm from './components/ContactUs/ContactForm';
+
+// تفعيل dynamic import للمكونات الثقيلة
+const ProductsOverview = lazy(() => import('./components/Products/ProductsOverview'));
+const PartnerOverview = lazy(() => import('./components/partners/PartnerOverview'));
+const ContactForm = lazy(() => import('./components/ContactUs/ContactForm'));
 
 const Home = () => {
   const { t } = useTranslation();
@@ -25,12 +27,18 @@ const Home = () => {
       <HomeCover />
       <AboutOverview />
       <ServiceOverview />
-      <ProductsOverview />
+      <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center">Loading products...</div>}>
+        <ProductsOverview />
+      </Suspense>
       <Location />
-      <PartnerOverview />
+      <Suspense fallback={<div className="min-h-[300px] flex items-center justify-center">Loading partners...</div>}>
+        <PartnerOverview />
+      </Suspense>
       <div className='flex flex-col md:flex-row justify-center items-center gap-6 p-4 md:p-14'>
         <QrCode />
-        <ContactForm />
+        <Suspense fallback={<div className="min-h-[200px] flex items-center justify-center">Loading contact form...</div>}>
+          <ContactForm />
+        </Suspense>
       </div>
     </>
   );

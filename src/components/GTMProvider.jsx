@@ -13,11 +13,9 @@ const GTMProvider = ({ children }) => {
   const initialized = useRef(false);
 
   useEffect(() => {
-    // Prevent double initialization in development mode
     if (initialized.current) return;
     initialized.current = true;
 
-    // Check if we're in development mode
     const isDevelopment = import.meta.env.DEV || process.env.NODE_ENV === 'development';
 
     // Skip GTM initialization if in development and not explicitly enabled
@@ -26,15 +24,33 @@ const GTMProvider = ({ children }) => {
       return;
     }
 
-    // Initialize GTM with error handling
-    try {
-      initializeGTM();
-    } catch (error) {
-      console.warn('GTM initialization failed:', error);
-      return;
-    }
+    let gtmLoaded = false;
+    const loadGTM = () => {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      try {
+        initializeGTM();
+      } catch (error) {
+        console.warn('GTM initialization failed:', error);
+        return;
+      }
+      // بعد تحميل GTM، أزل المستمعين
+      window.removeEventListener('scroll', loadGTM);
+      window.removeEventListener('click', loadGTM);
+      window.removeEventListener('keydown', loadGTM);
+      window.removeEventListener('touchstart', loadGTM);
+      window.removeEventListener('mousemove', loadGTM);
+    };
 
-    // Initialize performance tracking with error handling
+    // أجل تحميل GTM حتى بعد window.onload أو أول تفاعل
+    window.addEventListener('scroll', loadGTM, { once: true, passive: true });
+    window.addEventListener('click', loadGTM, { once: true, passive: true });
+    window.addEventListener('keydown', loadGTM, { once: true, passive: true });
+    window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
+    window.addEventListener('mousemove', loadGTM, { once: true, passive: true });
+    window.addEventListener('load', () => setTimeout(loadGTM, 1200), { once: true });
+
+    // باقي الكود كما هو (تتبع الأداء وغيره)
     try {
       initPerformanceTracking();
     } catch (error) {
@@ -186,7 +202,7 @@ const GTMProvider = ({ children }) => {
     };
   }, []); // Empty dependency array means this runs once on mount
 
-  return children;
+  return <>{children}</>;
 };
 
 export default GTMProvider;

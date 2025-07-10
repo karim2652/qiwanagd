@@ -10,6 +10,8 @@ import { toast } from 'react-toastify';
 
 // استدعاء Lazy Components بكفاءة عالية باستخدام preload
 const FloatingButtonsLazy = lazy(() => import('./shared/FloatingButtons'));
+const PerformanceOptimizer = lazy(() => import('./components/performance/PerformanceOptimizer'));
+const BackToTop = lazy(() => import('./components/ui/BackToTop'));
 
 // تحميل المكونات والمسارات المشتركة مسبقًا
 const preloadRoutes = () => {
@@ -77,6 +79,12 @@ function App() {
               }}
             />
             <FloatingButtonsLazy />
+            <Suspense fallback={null}>
+              <PerformanceOptimizer />
+            </Suspense>
+            <Suspense fallback={null}>
+              <BackToTop />
+            </Suspense>
           </ErrorBoundary>
         </Suspense>
       </HelmetProvider>

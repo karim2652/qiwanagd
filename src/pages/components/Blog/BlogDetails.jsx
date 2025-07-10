@@ -1,14 +1,15 @@
+import React, { Suspense, lazy } from 'react';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import { blogData } from '../../../data/blogData';
 import { blogDataEn } from '../../../data/blogDataEn';
 import { Helmet } from 'react-helmet-async';
 import SuggestedArticles from './SuggestedArticles';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const BlogDetails = () => {
   const { t, i18n } = useTranslation();
@@ -318,132 +319,134 @@ const BlogDetails = () => {
           <div className='flex flex-col-reverse md:flex-row gap-4 sm:gap-6 md:gap-8'>
             {/* Article content */}
             <div className={`flex-1 order-1 md:order-0 ${isArabic ? 'md:order-1' : 'md:order-0'}`}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className='bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden'
-              >
-                {/* Article main image */}
-                <div className='relative w-full rounded-t-xl sm:rounded-t-2xl overflow-hidden aspect-[2] sm:aspect-[2/1] md:aspect-[2/1]'>
-                  <LazyLoadImage
-                    src={post.image}
-                    alt={post.title}
-                    effect='blur'
-                    className='w-full h-full object-cover object-center transition-transform duration-500'
-                    placeholderSrc='/assets/images/placeholder.png'
-                  />
-                  <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent' />
-                  <div className='absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 lg:p-8 text-white z-10'>
-                    <div className='flex flex-wrap items-center gap-1.5 sm:gap-2 md:gap-3 mb-2 sm:mb-3 md:mb-4'>
-                      <span className='bg-white/20 backdrop-blur-sm text-white text-[11px] sm:text-xs md:text-sm font-medium px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full shadow'>
-                        {getTranslatedCategory(post.category)}
-                      </span>
-                      <span className='text-white/80 text-[11px] sm:text-xs md:text-sm'>
-                        {getTranslatedDate(post.date)}
-                      </span>
-                    </div>
-                    <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 md:mb-4 drop-shadow-lg line-clamp-2'>
-                      {translatedTitle}
-                    </h1>
-                    <div className='flex items-center gap-1.5 sm:gap-2'>
-                      <span className='text-white/80 text-[11px] sm:text-xs md:text-sm'>
-                        {t('blog.by')}
-                      </span>
-                      <span className='font-medium text-[11px] sm:text-xs md:text-sm'>
-                        {post.author || 'Qawi Najd'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Article content */}
-                <div className='p-4 sm:p-5 md:p-6 lg:p-8'>
-                  {/* Article description */}
-                  <div className='my-3 sm:my-4 rounded-lg sm:rounded-xl border border-[#FF5E3A]/10 p-3'>
-                    <h2
-                      className='text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3'
-                      style={{ fontFamily }}
-                    >
-                      {t('blog.details.about_article')}
-                    </h2>
-                    <p
-                      className={`text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed ${isArabic ? 'text-right' : 'text-left'}`}
-                      style={{ fontFamily }}
-                      dir={isArabic ? 'rtl' : 'ltr'}
-                    >
-                      {translatedDescription}
-                    </p>
-                  </div>
-
-                  <div className='prose prose-sm sm:prose-base md:prose-lg max-w-none mt-4 sm:mt-5 md:mt-6'>
-                    <div className='text-gray-600 leading-relaxed space-y-3 sm:space-y-4 md:space-y-5'>
-                      {contentBlocks.length === 0 ? (
-                        <p className='text-sm sm:text-base md:text-lg text-gray-500 italic'>
-                          {t('blog.details.no_content')}
-                        </p>
-                      ) : (
-                        contentBlocks.map((block, index) => (
-                          <ContentBlock key={index} block={block} />
-                        ))
-                      )}
+              <Suspense fallback={<div>Loading animation...</div>}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className='bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden'
+                >
+                  {/* Article main image */}
+                  <div className='relative w-full rounded-t-xl sm:rounded-t-2xl overflow-hidden aspect-[2] sm:aspect-[2/1] md:aspect-[2/1]'>
+                    <LazyLoadImage
+                      src={post.image}
+                      alt={post.title}
+                      effect='blur'
+                      className='w-full h-full object-cover object-center transition-transform duration-500'
+                      placeholderSrc='/assets/images/placeholder.png'
+                    />
+                    <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent' />
+                    <div className='absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 lg:p-8 text-white z-10'>
+                      <div className='flex flex-wrap items-center gap-1.5 sm:gap-2 md:gap-3 mb-2 sm:mb-3 md:mb-4'>
+                        <span className='bg-white/20 backdrop-blur-sm text-white text-[11px] sm:text-xs md:text-sm font-medium px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full shadow'>
+                          {getTranslatedCategory(post.category)}
+                        </span>
+                        <span className='text-white/80 text-[11px] sm:text-xs md:text-sm'>
+                          {getTranslatedDate(post.date)}
+                        </span>
+                      </div>
+                      <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 md:mb-4 drop-shadow-lg line-clamp-2'>
+                        {translatedTitle}
+                      </h1>
+                      <div className='flex items-center gap-1.5 sm:gap-2'>
+                        <span className='text-white/80 text-[11px] sm:text-xs md:text-sm'>
+                          {t('blog.by')}
+                        </span>
+                        <span className='font-medium text-[11px] sm:text-xs md:text-sm'>
+                          {post.author || 'Qawi Najd'}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Tags */}
-                  {post.tags && post.tags.length > 0 && (
-                    <div className='mt-6 sm:mt-8 md:mt-10 pt-4 sm:pt-5 md:pt-6 border-t border-gray-200'>
-                      <h3
-                        className='text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4'
+                  {/* Article content */}
+                  <div className='p-4 sm:p-5 md:p-6 lg:p-8'>
+                    {/* Article description */}
+                    <div className='my-3 sm:my-4 rounded-lg sm:rounded-xl border border-[#FF5E3A]/10 p-3'>
+                      <h2
+                        className='text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3'
                         style={{ fontFamily }}
                       >
-                        {isArabic ? 'الوسوم' : 'Tags'}
-                      </h3>
-                      <div className='flex flex-wrap gap-1.5 sm:gap-2 md:gap-2.5'>
-                        {post.tags.map((tag, index) => (
-                          <span
-                            key={index}
-                            className='bg-gray-100 text-gray-700 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full text-[11px] sm:text-xs md:text-sm font-medium hover:bg-[#FF5E3A] hover:text-white transition-colors duration-300'
-                            style={{ fontFamily }}
-                          >
-                            {getTranslatedTag(tag)}
-                          </span>
-                        ))}
-                      </div>
+                        {t('blog.details.about_article')}
+                      </h2>
+                      <p
+                        className={`text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed ${isArabic ? 'text-right' : 'text-left'}`}
+                        style={{ fontFamily }}
+                        dir={isArabic ? 'rtl' : 'ltr'}
+                      >
+                        {translatedDescription}
+                      </p>
                     </div>
-                  )}
 
-                  {/* Keywords */}
-                  {post.metaKeywords && (
-                    <div className='mt-6 sm:mt-8 md:mt-10 pt-4 sm:pt-5 md:pt-6 border-t border-gray-200'>
-                      <div className='flex flex-wrap gap-1.5 sm:gap-2 md:gap-2.5'>
-                        {(isArabic
-                          ? post.metaKeywords.split(',')
-                          : post.id === 5
-                            ? [
-                                'Surveying Riyadh',
-                                'Certified Survey Office',
-                                'Surveying Cost in Saudi Arabia',
-                                'Surveying Services Riyadh',
-                                'Building Permit Survey',
-                                'Riyadh Municipality',
-                                'Land Surveying',
-                              ]
-                            : post.metaKeywords.split(',')
-                        ).map((keyword, index) => (
-                          <span
-                            key={index}
-                            className='bg-gray-100 text-gray-700 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 my-1 rounded-full text-[11px] sm:text-xs md:text-sm font-medium'
-                            style={{ fontFamily }}
-                          >
-                            {keyword.trim()}
-                          </span>
-                        ))}
+                    <div className='prose prose-sm sm:prose-base md:prose-lg max-w-none mt-4 sm:mt-5 md:mt-6'>
+                      <div className='text-gray-600 leading-relaxed space-y-3 sm:space-y-4 md:space-y-5'>
+                        {contentBlocks.length === 0 ? (
+                          <p className='text-sm sm:text-base md:text-lg text-gray-500 italic'>
+                            {t('blog.details.no_content')}
+                          </p>
+                        ) : (
+                          contentBlocks.map((block, index) => (
+                            <ContentBlock key={index} block={block} />
+                          ))
+                        )}
                       </div>
                     </div>
-                  )}
-                </div>
-              </motion.div>
+
+                    {/* Tags */}
+                    {post.tags && post.tags.length > 0 && (
+                      <div className='mt-6 sm:mt-8 md:mt-10 pt-4 sm:pt-5 md:pt-6 border-t border-gray-200'>
+                        <h3
+                          className='text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4'
+                          style={{ fontFamily }}
+                        >
+                          {isArabic ? 'الوسوم' : 'Tags'}
+                        </h3>
+                        <div className='flex flex-wrap gap-1.5 sm:gap-2 md:gap-2.5'>
+                          {post.tags.map((tag, index) => (
+                            <span
+                              key={index}
+                              className='bg-gray-100 text-gray-700 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full text-[11px] sm:text-xs md:text-sm font-medium hover:bg-[#FF5E3A] hover:text-white transition-colors duration-300'
+                              style={{ fontFamily }}
+                            >
+                              {getTranslatedTag(tag)}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Keywords */}
+                    {post.metaKeywords && (
+                      <div className='mt-6 sm:mt-8 md:mt-10 pt-4 sm:pt-5 md:pt-6 border-t border-gray-200'>
+                        <div className='flex flex-wrap gap-1.5 sm:gap-2 md:gap-2.5'>
+                          {(isArabic
+                            ? post.metaKeywords.split(',')
+                            : post.id === 5
+                              ? [
+                                  'Surveying Riyadh',
+                                  'Certified Survey Office',
+                                  'Surveying Cost in Saudi Arabia',
+                                  'Surveying Services Riyadh',
+                                  'Building Permit Survey',
+                                  'Riyadh Municipality',
+                                  'Land Surveying',
+                                ]
+                              : post.metaKeywords.split(',')
+                          ).map((keyword, index) => (
+                            <span
+                              key={index}
+                              className='bg-gray-100 text-gray-700 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 my-1 rounded-full text-[11px] sm:text-xs md:text-sm font-medium'
+                              style={{ fontFamily }}
+                            >
+                              {keyword.trim()}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              </Suspense>
 
               {/* Back to blog button */}
               <div className='mt-6 sm:mt-8 md:mt-10 pt-4 sm:pt-5 md:pt-6 border-t border-gray-200 flex justify-center'>

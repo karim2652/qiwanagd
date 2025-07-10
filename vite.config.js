@@ -21,9 +21,9 @@ export default defineConfig(({ mode }) => {
       minify: 'terser',
       terserOptions: {
         compress: {
-          drop_console: isProduction,
-          drop_debugger: isProduction,
-          pure_funcs: isProduction ? ['console.log', 'console.info', 'console.debug'] : [],
+          drop_console: true,
+          drop_debugger: true,
+          pure_funcs: ['console.log', 'console.info', 'console.debug'],
         },
         mangle: true,
         format: {
