@@ -101,7 +101,7 @@ export default defineConfig(({ mode }) => {
             '**/*.{js,css,html,ico,png,svg,jpg,jpeg,gif,webp,avif,woff,woff2,eot,ttf,otf}',
           ],
           disableDevLogs: true,
-          navigateFallback: null,
+          navigateFallback: '/index.html',
           cleanupOutdatedCaches: true,
           clientsClaim: !isProduction,
           skipWaiting: !isProduction,
@@ -154,7 +154,7 @@ export default defineConfig(({ mode }) => {
         devOptions: {
           enabled: env.VITE_ENABLE_SW_DEV === 'true' && !isProduction,
           type: 'module',
-          navigateFallback: undefined,
+          navigateFallback: '/index.html',
           // Add error handling for development
           suppressWarnings: true,
           disableDevLogs: true,
